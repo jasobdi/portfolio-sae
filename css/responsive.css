@@ -1,0 +1,259 @@
+
+/* tablet */
+@media (min-width: 768px) {
+
+    /* tablet: TYPOGRAPHY */
+
+
+/* P */
+    .main-about p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+    
+    .main-projects p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+    
+    .main-impressum p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+    
+    
+/* H2 */
+    .main-about h2 {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+    
+    .main-projects h2 {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+    
+    .main-impressum h2 {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+    
+       
+/* H3 */
+    .main-about h3 {
+        font-size: calc(var(--mobile-h3-size)*1.5); 
+    }
+    
+    .main-projects h3 {
+        font-size: calc(var(--mobile-h3-size)*1.5); 
+    }
+        
+    .main-impressum h3 {
+        font-size: calc(var(--mobile-h3-size)*1.5); 
+    }
+  
+/* tablet: NAVIGATION */
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+
+/* tablet: FOOTER */
+
+    .contact-icons a {
+        font-size: 2rem;
+    } 
+    
+    .copyright h6 {
+        font-size: 1rem;
+        font-weight: var(--h6-font-weight);
+    }
+
+
+/* tablet: HOME MAIN */
+
+    .main-home h1 {
+        font-size: calc(var(--mobile-h1-size)*2);
+        margin: 0;
+    }
+    .main-home span {
+        font-size: calc(var(--mobile-h2-size)*2);
+        margin: 0;
+    }
+
+    .main-home a {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+
+/* tablet: ABOUT MAIN */
+
+    .skills-bars div {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .cv a {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+
+/* tablet: PROJECTS MAIN */
+
+    .projects-wrap {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .screendesign {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .wireframes {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .designelemente {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .project a {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+/* tablet: IMPRESSUM MAIN */
+
+    .main-impressum {
+        text-wrap: pretty;
+    }
+
+}
+
+
+
+
+
+/* desktop */
+@media (max-width: 1199px) {
+
+/* desktop: NAVIGATION // bis 1199px width mobile-navigation  */
+    .desktop-navigation {
+        display: none;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+/* desktop: TYPOGRAPHY */
+
+
+/* P */
+
+    .main-about p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .main-projects p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .main-impressum p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+
+    /* H2 */
+
+    .main-about h2 {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+
+    .main-projects h2 {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+
+    .main-impressum h2 {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+
+   
+    /* H3 */
+
+    .main-about h3 {
+        font-size: calc(var(--mobile-h3-size)*1.5); 
+    }
+    .main-projects h3 {
+        font-size: calc(var(--mobile-h3-size)*1.5); 
+    }
+    .main-impressum h3 {
+        font-size: calc(var(--mobile-h3-size)*1.5); 
+    }
+
+
+/* desktop: NAVIGATION // ab 1200px width desktop-navigation  */
+        
+    .mobile-navigation {
+        display: none;
+    }
+
+/* desktop: FOOTER */
+    .footer-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+/* desktop: HOME MAIN */
+
+    .main-home {
+        padding: 4rem 2rem;
+    }
+
+    .main-home img {
+        display: none;
+    }
+
+    .main-home h1 {
+        font-size: calc(var(--mobile-h1-size)*4);
+    }
+        
+    .main-home span {
+        font-size: calc(var(--mobile-h2-size)*3);
+    }
+
+    .main-home a {
+        display: none;
+    }
+
+/* desktop: ABOUT MAIN */
+
+    .pictures-about img {
+        width: 50%;
+    }
+
+    .cv {
+        justify-content: flex-start;
+    }
+
+/* desktop: PROJECTS MAIN */
+
+    .projects-wrap {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        grid-template-rows: 1fr;
+    }
+
+    .screendesign {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .wireframes {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .designelemente {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+}

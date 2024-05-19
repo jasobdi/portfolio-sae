@@ -1,0 +1,33 @@
+
+
+
+:root {
+    --darkblue: #352F3F;
+    --rose: #E5989B;
+    --white: #ffffff;
+    --black: #000000;
+    --gradient-bg: linear-gradient(#E5989B, #fff 50%, #E5989B);
+
+    --h1-font-family: 'monte_carlo', 'Lato', sans-serif;
+    --main-font-family: 'Lato', sans-serif;
+
+    --nav-font-size: 1.5rem;
+    --body-font-size: 1rem;
+
+    --mobile-h1-size: 2.5rem;
+    --mobile-h2-size: 1.5rem;
+    --mobile-h3-size: 1rem;
+    --mobile-h4-size: 1rem;
+    --mobile-h6-size: 1rem;
+
+    
+    --h1-font-weight: 400;
+    --h2-font-weight: 300;
+    --h3-font-weight: 600;
+    --h4-font-weight: 600;
+    --h6-font-weight: 400;
+    --p-font-weight: 400;
+    --nav-font-weight: 400;
+
+    --padding-button: 1rem 2rem;
+}
