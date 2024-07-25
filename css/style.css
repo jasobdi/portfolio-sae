@@ -1,8 +1,6 @@
 
 
-@import url('variables.css');
-@import url('reset.css');
-
+/* IMPORT FONT FACES */
 @font-face {
     font-family: 'monte_carlo';
     src: url('../fonts/monte_carlo/fonts/webfonts/MonteCarlo-Regular.woff2');
@@ -26,6 +24,7 @@
     src: url('../fonts/Lato/Lato-Light.ttf');
 }
 
+/* BODY & HEADER */
 body {
     display: flex;
     flex-direction: column;
@@ -37,6 +36,48 @@ body {
 header {
     flex-grow: 1;
 }
+
+
+/* NAVIGATION */
+ /* desktop */
+
+ .desktop-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--rose);
+    padding: 0.5rem 3rem;
+}
+
+.desktop-navigation img {
+    height: 80px;
+}
+
+
+.desktop-navigation > ul {
+    display: flex;
+    gap: 6rem;
+    list-style: none;
+    margin: 1rem 0 1rem 0;
+}
+
+.desktop-navigation ul a {
+    color: var(--darkblue);
+    text-decoration: none;
+    font-family: var(--main-font-family);
+    font-size: var(--nav-font-size);
+    font-weight: 400;
+    background: var(--rose);
+    padding: var(--padding-button);
+    border: 2px solid var(--darkblue);
+    border-radius: 5px;
+}
+
+.desktop-navigation ul a:hover {
+    color: #fff;
+    background: var(--darkblue);
+ }
+
 
 /* NAVIGATION */
 /* mobile */
@@ -88,56 +129,16 @@ header {
  }
 
 
-/* NAVIGATION */
- /* desktop */
-
-.desktop-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--rose);
-    padding: 1rem 5rem 1rem 3rem;
-}
-
-.desktop-navigation img {
-    height: 80px;
-    margin: 0.5rem 1rem;
-}
-
-
-.desktop-navigation > ul {
-    display: flex;
-    gap: 6rem;
-    list-style: none;
-    margin: 1rem 0 1rem 0;
-}
-
-.desktop-navigation ul a {
-    color: var(--darkblue);
-    text-decoration: none;
-    font-family: var(--main-font-family);
-    font-size: var(--nav-font-size);
-    background: var(--rose);
-    padding: var(--padding-button);
-    border: 3px solid var(--darkblue);
-    border-radius: 5px;
-}
-
-.desktop-navigation ul a:hover {
-    color: #fff;
-    background: var(--darkblue);
- }
-
-
-
-
 /* FOOTER */
 footer {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     background: var(--rose);
     padding: 0.5rem 1rem;
+    
 }
 
 footer p {
@@ -148,13 +149,12 @@ footer p {
 
 .contact-icons {
     display: flex;
-    align-items: flex-end;
-    gap: 1.5rem; 
+    gap: 2rem; 
 }
 
 .contact-icons a{
     color: var(--darkblue);
-    font-size: 1.5rem; 
+    font-size: 3rem; 
 }
 
 
@@ -178,6 +178,7 @@ footer p {
     font-family: var(--main-font-family);
     font-size: var(--mobile-h6-size);
     font-weight: var(--h6-font-weight);
+    margin: 0.5rem 0 0 0;
 }
 
 
@@ -205,13 +206,13 @@ main {
     text-align: center;
     text-wrap: balance;
     color: var(--darkblue);
-    font-family: var(--h1-font-family);
+    font-family: var(--title-font-family);
     font-size: var(--mobile-h1-size);
     margin: 3rem 0 0 0;
 
 }
 
-.main-home span {
+.main-home h2 {
     display: block;
     font-family: var(--main-font-family);
     font-size: var(--mobile-h2-size);
@@ -230,53 +231,93 @@ main {
     margin: 4rem 0;
 }
 
-/* MAIN-ABOUT */
+.main-home .about-button {
+    margin: 4rem 0 1rem 0;
+}
+
+.main-home .projects-button {
+    margin: 1rem 0 ;
+}
+
+/* ABOUT */
 .main-about {
     margin: 0 2rem;
 }
 
-.main-about h2 {
+.main-about h1 {
     text-align: center;
     color: var(--darkblue);
     font-family: var(--main-font-family);
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--h2-font-weight);
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--h1-font-weight);
     margin: 2rem;
 }
 
-/* PICTURES-ABOUT */
-.pictures-about {
+/* IMAGE SLIDER-ABOUT */
+
+.container-slider {
+    width: 100%;
+    height: 300px;
+    position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+    overflow: hidden;
 }
 
-.pictures-about img {
+
+.slide {
+    display: block;
     width: 100%;
+    height: 100%;
+    float: left;
 }
 
+.description p {
+    text-align: center;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    font-weight: var(--p-font-weight);
+    margin: 0 0 1rem 0;
+
+}
+
+.container-buttons {
+    margin: 0 0 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left, .right, .pause-play {
+    color: var(--darkblue);
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.container-buttons button:hover {
+    cursor: pointer;
+  }
 
 /* TEXT-ABOUT */
-.main-about p {
+.main-about .introduction {
     text-align: start;
     color: var(--darkblue);
     font-family: var(--main-font-family);
     font-size: var(--body-font-size);
     font-weight: var(--p-font-weight);
     margin-bottom: 2rem;
+    text-wrap: pretty;
 }
 
-/* H3-ABOUT */
-.main-about h3 {
-    text-align: start;
-    color: var(--darkblue);
-    font-family: var(--main-font-family);
-    font-size: var(--mobile-h3-size);
-    font-weight: var(--h3-font-weight);
-}
+
+/* DIESE SECTION IST AUSKOMMENTIERT WEIL ICH MIR NICHT SICHER BIN OB ICH SIE NOCH WILL */
 
 /* PROGRESS BARS */
 /* CONTAINER AUSSEN*/
+/* 
 .skills-bars {
     margin-bottom: 2rem;
 }
@@ -295,15 +336,14 @@ main {
     font-family: var(--main-font-family);
     font-size: var(--body-font-size);
     font-weight: var(--p-font-weight);
-}
+} */
 
 /* CONTAINER INNEN */
-.skills-container {
-    width: 80%;
+/* .skills-container {
     border: 1px solid var(--darkblue);
-}
+} */
 
-.skills {
+/* .skills {
     text-align: right;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -335,13 +375,14 @@ main {
 .css {
     width: 50%;
     background: var(--rose);
-}
+} */
+
 
 /* BUTTON LEBENSLAUF */
 .cv {
     display: flex;
     justify-content: center;
-    margin: 4rem 0 4rem 0;
+    margin: 4rem 0 2rem 0;
 }
 
 .cv a {
@@ -354,16 +395,94 @@ main {
     padding: var(--padding-button);
 }
 
-/* MAIN-PROJECTS */
-.main-projects {
-    margin: 0 2rem;
-}
-.main-projects h2 {
+/* KONTAKTFORMULAR */
+
+/* H2 */
+.main-about h2 {
     text-align: center;
     color: var(--darkblue);
     font-family: var(--main-font-family);
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--h2-font-weight);
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--h1-font-weight);
+    margin: 2rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.2rem;
+}
+
+form label, form input {
+    color: var(--darkblue);
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--p-font-weight);
+}
+
+form input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+form input:focus-visible {
+    /* outline: var(--rose) solid 2px; */
+    border-radius: 5px;
+}
+
+form textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--darkblue);
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--p-font-weight);
+}
+
+form small {
+    padding-top: 0.5rem;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-weight: var(--p-font-weight);
+}
+
+/* Error Message Form */ 
+form span {
+    margin-bottom: 0.5rem;
+    color: red;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--p-font-weight);
+}
+
+form button {
+    align-self: center;
+    margin: 4rem 0 2rem 0;
+    padding: var(--padding-button);
+    color: var(--darkblue);
+    background: var(--rose);
+    text-decoration: none;
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+/* PROJECTS */
+.main-projects {
+    margin: 0 2rem;
+}
+.main-projects h1 {
+    text-align: center;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--h1-font-weight);
     margin: 2rem;
 }
 
@@ -401,21 +520,22 @@ main {
 
 .project {
 
-    margin: 0 0 3rem 0;
+    margin: 0 0 1rem 0;
 }
 
-/* PLATZHALTER BILDER */
+/* BILDER */
 .project img {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     width: 100%;
-    background: rgb(173, 171, 171);
-    margin: 0 0 2rem 0;
+    border: 1px solid var(--darkblue);
+    border-radius: 10px;
+    
 }
 
-/* BUTTONS */
-.project a {
+/* BUTTONS (statisch) */
+/* .project a {
     display: flex;
     justify-content: center;
     color: var(--darkblue);
@@ -426,23 +546,168 @@ main {
     border-radius: 5px;
     padding: var(--padding-button);
     margin: 0 0 1rem 0; 
+} */
+
+/* Titel (BUTTON) Projekte aus Datenbank */ 
+.project-title {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    margin: 0 0 0.5rem 0;
+    
 }
+
+.project-title a {
+    text-decoration: none;
+    color: var(--darkblue);
+    background: var(--rose);
+    border-radius: 5px;
+    padding: var(--padding-button);
+}
+
+/* Beschreibung Projekte aus Datenbank */ 
+.project-description {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--darkblue);
+    list-style: none;
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    margin: 1rem 0;
+}
+
+/* Abgabe-Datum Projekte aus Datenbank */ 
+.project-date {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--darkblue);
+    list-style: none;
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    margin: 0.2rem 0 2rem 0;
+}
+
+
+/* UNTERSEITE - MAIN-DESIGNELEMENTE */ 
+/* IN PROGRESS */
+.main-projects-designelemente {
+    margin: 0 2rem;
+}
+.main-projects-designelemente h1 {
+    text-align: center;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--h1-font-weight);
+    margin: 2rem;
+}
+
+.main-projects-designelemente p {
+    text-align: start;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    font-weight: var(--p-font-weight);
+    margin-bottom: 2rem;
+}
+
+.designelemente-wrap {
+    display: grid;
+    grid-template-columns: 1, 1fr;
+    gap: 1rem;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+/* DESIGNELEMENTE GRID */
+.colors {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.fonts {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.illustrations {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.logo {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.pictures {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+.elements {
+    margin: 0 0 3rem 0;
+}
+
+/* PLATZHALTER BILDER */
+.elements img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background: rgb(173, 171, 171);
+    margin: 0 0 2rem 0;
+}
+
+.elements p {
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size); 
+}
+
+
 
 /* MAIN-IMPRESSUM */
 .main-impressum {
     margin: 0 2rem;
 }
 
-.main-impressum h2 {
+.main-impressum h1 {
     text-align: start;
     color: var(--darkblue);
     font-family: var(--main-font-family);
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--h2-font-weight);
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--h1-font-weight);
     margin: 2rem 0;
+
 }
 
 .main-impressum p {
+    text-align: start;
+    text-wrap: pretty;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--body-font-size);
+    font-weight: var(--p-font-weight);
+    margin-bottom: 2rem;
+}
+
+/* MAIN-DATENSCHUTZ */
+.main-datenschutz {
+    margin: 0 2rem;
+}
+
+.main-datenschutz h1 {
+    text-align: center;
+    color: var(--darkblue);
+    font-family: var(--main-font-family);
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--h1-font-weight);
+    margin: 2rem 0;
+}
+
+.main-datenschutz p {
     text-align: start;
     text-wrap: pretty;
     color: var(--darkblue);
@@ -456,7 +721,7 @@ p.subtitle {
     margin: 0;
 }
 
-.main-impressum h3 {
+.main-datenschutz h2 {
     color: var(--darkblue);
     font-family: var(--main-font-family);
     font-size: var(--mobile-h4-size);

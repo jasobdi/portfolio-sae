@@ -1,0 +1,27 @@
+[
+    
+  {
+    "id": 1,
+    "title": "Wireframes",
+    "content": "Erstellen meiner ersten Wireframes mit Adobe Xd für die Mobile- und Desktopversion meiner Webseite",
+    "image": "/wireframes.png",
+    "date": "16. November 2023"
+  },
+
+  {
+    "id": 2,
+    "title": "Designelemente",
+    "content": "Erstellen und festlegen meiner Designelemente - Farben, Schriften, Illustrationen & Logo",
+    "image": "/designelemente.png",
+    "date": "30. November 2023"
+  },
+    {
+      "id": 3,
+      "title": "Screendesign",
+      "content": "Erstellen des finalen Screendesigns inklusive prototyping für die Mobile- und Desktopversion meiner Webseite.",
+      "image": "/screendesign.png",
+      "date": "12. Dezember 2023"
+    }
+    
+]
+

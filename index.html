@@ -6,7 +6,11 @@
     <title>Portfolio Janice Bader</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="https://kit.fontawesome.com/9bb62c958c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="https://kit.fontawesome.com/9bb62c958c.js" crossorigin="anonymous" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="code.js" defer></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -14,56 +18,79 @@
 
         <!-- DESKTOP-NAVIGATION -->
         <nav class="desktop-navigation">
-            <a href="#"><img class="logo" src="images/Logo_JB_transparent_noname.png" alt="Initialen JB in schöner Handschrift"></a>
+            <a href="#"><img class="logo" src="images/logo_jb_transparent_noname.png" alt="Initialen JB in schöner Handschrift"></a>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="ueber-mich.html">Über mich</a></li>
                 <li><a href="projekte.html">Projekte</a></li>
             </ul>
         </nav>
         
-        <!-- MOBILE-NAVIGATION -->
-        <nav class="mobile-navigation"> 
+         <!-- MOBILE-NAVIGATION-HAMBURGER -->
+         <nav class="mobile-navigation"> 
             <div id="hamburger-menu">
                 <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
-                <div class="nav-links">
-                    <a href="ueber-mich.html">Über mich</a>
-                    <a href="projekte.html">Projekte</a>
-                    <a href="impressum.html">Impressum & Datenschutzerklärung</a>
-                </div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="ueber-mich.html">Über mich</a>
+                    </li>
+                    <li>
+                        <a href="projekte.html">Projekte</a>
+                    </li>
+                    <li>
+                        <a href="impressum.html">Impressum</a>
+                    </li>
+                    <li>
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </li>
+                </ul>
             </div>
+            <a href="index.html"><img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift"></a>
         </nav>
        
     </header>
 
     <!-- MAIN -->
     <main class="main-home">
-        <img src="images/Logo_JB_transparent_noname.png" alt="Initialen JB in schöner Handschrift">
+        <img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift">
         <h1>Portfolio Janice Bader
-            <span class="subtitle">Herzlich willkommen</span>
+            <h2 class="subtitle">Herzlich willkommen</h2>
         </h1>
-        <a href="ueber-mich.html">Mehr über mich</a>
+        <a class="about-button" href="ueber-mich.html">Mehr über mich</a>
+        <a class="projects-button" href="projekte.html">Meine Projekte</a>
     </main>
 
     <!-- FOOTER -->
     <footer>
+
+         <!-- CONTACT-ICONS -->
         <div class="contact-icons">
-            <a href="https://www.instagram.com/" alt="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/" alt="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:janice.bader@hotmail.com" alt="Email senden"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/" arai-label="Linkedin">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                <span class="sr-only">Linkedin</span>
+            </a>
+            <a href="mailto:janice.bader@hotmail.com" aria-label="Email">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                <span class="sr-only">Email</span>
+            </a>
         </div>
+
+         <!-- LINKS-IMPRESSUM -->
         <div class="footer-links">
             <a href="impressum.html">Impressum</a>
             <p>|</p>
-            <a href="impressum.html">Datenschutzerklärung</a>
+            <a href="datenschutz.html">Datenschutz</a>
         </div>
+
+        <!-- COPYRIGHT -->
         <div class="copyright">
-            <h6>&copy;2023 Janice Bader</h6>
+            <small>&copy;2023 Janice Bader</small>
         </div>
     </footer>
 
-
-
-    <script src="nav.js"></script>
 </body>
 </html>

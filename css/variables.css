@@ -8,23 +8,26 @@
     --black: #000000;
     --gradient-bg: linear-gradient(#E5989B, #fff 50%, #E5989B);
 
-    --h1-font-family: 'monte_carlo', 'Lato', sans-serif;
+    --title-font-family: 'monte_carlo', 'Lato', sans-serif;
     --main-font-family: 'Lato', sans-serif;
 
     --nav-font-size: 1.5rem;
     --body-font-size: 1rem;
 
-    --mobile-h1-size: 2.5rem;
+    --mobile-title-size: 2.5rem;
+    --mobile-h1-size: 2rem;
     --mobile-h2-size: 1.5rem;
     --mobile-h3-size: 1rem;
     --mobile-h4-size: 1rem;
+    --mobile-h5-size: 1rem;
     --mobile-h6-size: 1rem;
 
     
-    --h1-font-weight: 400;
+    --h1-font-weight: 300;
     --h2-font-weight: 300;
     --h3-font-weight: 600;
     --h4-font-weight: 600;
+    --h5-font-weight: 400;
     --h6-font-weight: 400;
     --p-font-weight: 400;
     --nav-font-weight: 400;
