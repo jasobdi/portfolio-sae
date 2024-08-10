@@ -1,4 +1,4 @@
-/* IMAGE SLIDER - ABOUT */ 
+/* IMAGE SLIDER - HOME */ 
 
 
 // Selektion Slider

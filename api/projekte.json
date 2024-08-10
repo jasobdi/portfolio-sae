@@ -2,26 +2,49 @@
     
   {
     "id": 1,
-    "title": "Wireframes",
-    "content": "Erstellen meiner ersten Wireframes mit Adobe Xd für die Mobile- und Desktopversion meiner Webseite",
-    "image": "/wireframes.png",
-    "date": "16. November 2023"
+    "title": "Redesign RedBull",
+    "content": "Redesign des RedBull Logos sowie erstellen eines Mockups für eine Special Edition des Getränks.",
+    "image": "redbull_redesign_logo.png",
+    "type": "Gruppenarbeit"
   },
 
   {
     "id": 2,
-    "title": "Designelemente",
-    "content": "Erstellen und festlegen meiner Designelemente - Farben, Schriften, Illustrationen & Logo",
-    "image": "/designelemente.png",
-    "date": "30. November 2023"
+    "title": "Cafe Alpenblick",
+    "content": "Erstellen eines Logos, eines Flyers mit Eckdaten und eins Instagram-Posts (Mockup) für eine Promotion.",
+    "image": "alpenblick_logo.png",
+    "type": "Partnerarbeit"
   },
     {
       "id": 3,
       "title": "Screendesign",
-      "content": "Erstellen des finalen Screendesigns inklusive prototyping für die Mobile- und Desktopversion meiner Webseite.",
-      "image": "/screendesign.png",
-      "date": "12. Dezember 2023"
-    }
+      "content": "Finales Screendesign für meine Portfolio Webseite",
+      "image": "screendesign_home_mob_v1.png",
+      "type": "Einzelarbeit"
+    },
+
+    {
+      "id": 4,
+      "title": "Portfolio Webseite",
+      "content": "Erstellung meiner Portfolio-Webseite anhand des Screendesigns mit HTML & CSS best practices",
+      "image": "wireframes.png",
+      "type": "Einzelarbeit"
+    },
+  
+    {
+      "id": 5,
+      "title": "Logo Janice Bader",
+      "content": "Der Weg zu meinem eigenen Logo",
+      "image": "designelemente.png",
+      "type": "Einzelarbeit"
+    },
+      {
+        "id": 6,
+        "title": "Image-Slider",
+        "content": "Programmieren eines Image-Sliders mit Javascript.",
+        "image": "screendesign.png",
+        "type": "Einzelarbeit"
+      }
     
 ]
 

@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecke das Portfolio von Janice Bader, einer aufstrebenden Studentin im Webdesign-und Development.">
     <title>Portfolio Janice Bader</title>
+<!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e5989b">
+    <meta name="msapplication-TileColor" content="#e5989b">
+    <meta name="theme-color" content="#e5989b">
+<!-- links -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/reset.css">
     <script src="https://kit.fontawesome.com/9bb62c958c.js" crossorigin="anonymous" defer></script>
-    <script src="nav.js" defer></script>
-    <script src="code.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/code.js" defer></script>
+    <script src="js/slider.js" defer></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -28,36 +40,84 @@
         
          <!-- MOBILE-NAVIGATION-HAMBURGER -->
          <nav class="mobile-navigation"> 
-            <div id="hamburger-menu">
-                <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html"><img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift"></a>
+            <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
+            <div class="overlay-nav">
+                <button class="close-button"><i class="fa-solid fa-close"></i></button>
                 <ul class="nav-links">
                     <li>
-                        <a href="ueber-mich.html">Über mich</a>
+                        <a href="ueber-mich.html">ÜBER MICH</a>
                     </li>
                     <li>
-                        <a href="projekte.html">Projekte</a>
+                        <a href="projekte.html">PROJEKTE</a>
                     </li>
                     <li>
-                        <a href="impressum.html">Impressum</a>
+                        <a href="impressum.html">IMPRESSUM</a>
                     </li>
                     <li>
-                        <a href="datenschutz.html">Datenschutz</a>
+                        <a href="datenschutz.html">DATENSCHUTZ</a>
                     </li>
                 </ul>
             </div>
-            <a href="index.html"><img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift"></a>
         </nav>
-       
+
     </header>
+ 
 
     <!-- MAIN -->
     <main class="main-home">
-        <img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift">
-        <h1>Portfolio Janice Bader
-            <h2 class="subtitle">Herzlich willkommen</h2>
+        <h1>PORTFOLIO JANICE BADER
         </h1>
-        <a class="about-button" href="ueber-mich.html">Mehr über mich</a>
-        <a class="projects-button" href="projekte.html">Meine Projekte</a>
+
+    <!-- IMAGE SLIDER -->
+        <div class="container-slider">
+            <div class="slider">
+                <div class="slide">
+                    <img 
+                        srcset="images/projects/redbull_redesign_logo_296w.png 296w, images/projects/redbull_redesign_logo_600w.png 600w" 
+                        sizes="(max-width: 768px) 296px, 600px"
+                        alt="Redesign Redbull Logo: Bullenkopf aus verschiedenen geometrischen Formen">
+                </div>
+                <div class="slide">
+                    <img 
+                        srcset="images/projects/alpenblick_logo_296w.png 296w, images/projects/alpenblick_logo_600w.png 600w" 
+                        sizes="(max-width: 768px) 296px, 600px"
+                        alt="Logo für das fiktive Cafe Alpenblick">
+                </div>
+                <div class="slide">
+                    <img 
+                        srcset="images/projects/screendesign_home_v1_296w.png 296w, images/projects/screendesign_home_v1_600w.png 600w" 
+                        sizes="(max-width: 768px) 296px, 600px"
+                        alt="Homepage des erstes Desktop-Screendesigns für diese Portfolio Webseite">
+                </div>
+                <div class="slide">
+                    <img 
+                        srcset="images/projects/portfolio_webseite_v1_296w.png 296w, images/projects/portfolio_webseite_v1_600w.png 600w" 
+                        sizes="(max-width: 768px) 296px, 600px"
+                        alt="Homepage des ersten Desktop-Entwurfs meiner Portfolio Webseite">
+                </div>
+                <div class="slide">
+                    <img 
+                        srcset="images/projects/logo_new_296w.png 296w, images/projects/logo_new_600w.png 600w" 
+                        sizes="(max-width: 768px) 296px, 600px"
+                        alt="Logo Janice Bader">
+                </div>
+                <div class="slide">
+                    <img 
+                        srcset="https://picsum.photos/296/300?random=6 296w, https://picsum.photos/600/600?random=6 600w" 
+                        sizes="(max-width: 768px) 296px, 600px"
+                        alt="placeholder image 6">
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <p>super long description that spreads over two lines or more</p>
+        </div>
+        <div class="container-buttons">
+            <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="pause-play"><i class="fa-solid fa-pause"></i> / <i class="fa-solid fa-play"></i></button>
+            <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
     </main>
 
     <!-- FOOTER -->

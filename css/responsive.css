@@ -10,24 +10,19 @@
     }
 
 
-/* tablet: FOOTER */
-
-    
-
 /* tablet: HOME */
 
     .main-home h1 {
         font-size: calc(var(--mobile-title-size)*2);
         margin: 0;
     }
-    .main-home h2 {
-        font-size: calc(var(--mobile-h2-size)*2);
-        margin: 0;
+
+    .container-slider {
+        width: 600px;
+        height: 601px;
     }
 
-    .main-home a {
-        font-size: calc(var(--body-font-size)*1.5);
-    }
+   
 
 
 /* tablet: ABOUT */
@@ -40,19 +35,9 @@
     }
 
     .main-about {
-        margin: 0 4rem;
+        margin: 4rem 4rem;
     }
 
-    .container-slider {
-        height: 300px;
-    }
-
-    .slider {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-    }
 
     .main-about p {
         font-size: calc(var(--body-font-size));
@@ -98,6 +83,10 @@
 
 /* tablet: PROJECTS */
 
+    .main-projects {
+        margin: 4rem 4rem;
+    }
+
     .main-projects h1 {
         font-size: calc(var(--mobile-h1-size)*1.5);
         text-align: start;
@@ -108,13 +97,15 @@
         font-size: calc(var(--body-font-size));
     }
 
-    .projects-wrap {
+    /* .projects-wrap {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         grid-template-rows: repeat(2, 1fr);
-    }
+    } */
 
-    .screendesign {
+    /* PROJECTS GRID */
+    /* statisch */
+    /* .screendesign {
         grid-column: 1/2;
         grid-row: 1/2;
     }
@@ -127,19 +118,18 @@
     .designelemente {
         grid-column: 1/2;
         grid-row: 2/3;
+    } */
+
+
+    .project-img {
+        width: 50%;
     }
 
-    .project {
-        display: flex;
-        justify-content: center;
+    .project-title {
+        margin: 1rem 0;
     }
 
-    .project img {
-        width: 70%;
-        
-    }
-
-    .project a {
+    .project-title a {
         font-size: calc(var(--body-font-size)*1.5);
     }
 
@@ -147,7 +137,7 @@
         margin: 1rem 1rem;
     }
 
-    .project-date {
+    .project-type {
         margin: 0.2rem 1rem 2rem 1rem;
     }
 
@@ -169,7 +159,7 @@
 
     .main-impressum h1 {
         font-size: calc(var(--mobile-h1-size)*1.5);
-        text-align: start;
+        text-align: center;
         margin: 2rem 0;
     }
 
@@ -199,9 +189,9 @@
 
 
 /* DESKTOP */
+/* desktop: NAVIGATION // bis 1199px width: mobile-navigation  */
 @media (max-width: 1199px) {
 
-/* desktop: NAVIGATION // bis 1199px width: mobile-navigation  */
     .desktop-navigation {
         display: none;
     }
@@ -209,8 +199,6 @@
 
 /* desktop: NAVIGATION // ab 1200px width: desktop-navigation  */
 @media (min-width: 1200px) {
-
-/* desktop: NAVIGATION // ab 1200px width: desktop-navigation  */
         
     .mobile-navigation {
         display: none;
@@ -244,23 +232,30 @@
 
     .main-home {
         padding: 4rem 2rem;
-    }
-
-    .main-home img {
-        display: none;
-    }
+        
 
     .main-home h1 {
         font-size: calc(var(--mobile-title-size)*4);
     }
-        
-    .main-home h2 {
-        font-size: calc(var(--mobile-h2-size)*2);
+
+    .container-slider {
+        width: 600px;
+        height: auto;
     }
 
-    .main-home a {
-        display: none;
+    .slider {
+    
     }
+
+    .slide {
+        display: flex;
+
+    }
+
+    .container-buttons {
+        justify-content: space-evenly;
+    }
+
 
 /* desktop: ABOUT */
 
@@ -285,12 +280,13 @@
 /* desktop: PROJECTS */
 
     .projects-wrap {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 40%);
+        gap: 5rem;
+        grid-template-rows: repeat(3, 1fr);
     }
 
-    .screendesign {
+    /* statisch */
+    /* .screendesign {
         grid-column: 1/2;
         grid-row: 1/2;
     }
@@ -303,7 +299,7 @@
     .designelemente {
         grid-column: 3/4;
         grid-row: 1/2;
-    }
-
+    } */
+}
 
 }

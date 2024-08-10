@@ -1,11 +1,12 @@
-
+// url als Variable
+const url = `api/projekte.json`;
 
 // ausführen der asynchronen Funktion getData
-getData();
+getData(url);
 
 // asynchrone Funktion holt die Daten aus der JSON.Datei
 async function getData() {
-    const response = await fetch("api/projekte.json");
+    const response = await fetch(url);
     const data = await response.json()
 
     displayProjects(data);
@@ -21,15 +22,15 @@ function displayProjects (data) {
 
     // so werden die einzelnen posts dargestellt bzw. aufgelistet
     const template = `
-    <div class="project"><img src="images/projects${post.image}"></div>
-    <li class="project-title"><a href="#">${post.title}</a></li>
-    <li class="project-description">${post.content}</li>
-    <li class="project-date">Abgabe: ${post.date}</li></div>`;
+        <li class="project-img"><img src="images/projects/${post.image}"></li>
+        <li class="project-title"><a href="#">${post.title}</a></li>
+        <li class="project-description">${post.content}</li>
+        <li class="project-type">Arbeitsart: ${post.type}</li>`;
 
-    // die innerHTML vom ul-Element wird gemäss der Variabe "template" angepasst
+    // die innerHTML vom div-Element wird gemäss der Variabe "template" angepasst
     ul.innerHTML = template;
 
-    // im Element mit der class ".projects-wrap" wird jeweils ein ul-Element am ende hinzugefügt mit appendChild
+    // im Element mit der class ".projects-wrap" wird jeweils ein div-Element am ende hinzugefügt mit appendChild
     document.querySelector(".projects-wrap").appendChild(ul);
     });
 };
