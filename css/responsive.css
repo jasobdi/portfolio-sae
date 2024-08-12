@@ -17,14 +17,15 @@
         margin: 0;
     }
 
-    .container-slider {
+    .slider {
+        height: 700px;
+    }
+
+    .slide img {
         width: 600px;
-        height: 601px;
     }
 
    
-
-
 /* tablet: ABOUT */
 
 
@@ -56,11 +57,11 @@
     }
 
     /* ABOUT - SKILLS BARS */ 
-
     /* .skills-bars div {
         font-size: calc(var(--body-font-size)*1.5);
         width: 70%
     } */
+
 
     /* ABOUT - CONTACT FORM */ 
 
@@ -97,61 +98,30 @@
         font-size: calc(var(--body-font-size));
     }
 
-    /* .projects-wrap {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        grid-template-rows: repeat(2, 1fr);
-    } */
 
-    /* PROJECTS GRID */
-    /* statisch */
-    /* .screendesign {
-        grid-column: 1/2;
-        grid-row: 1/2;
+    /* DATENBANK */
+     
+    .post {
+        margin: 2rem 0;
     }
 
-    .wireframes {
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
-
-    .designelemente {
-        grid-column: 1/2;
-        grid-row: 2/3;
-    } */
-
-
-    .project-img {
-        width: 50%;
-    }
-
+    /* Titel (BUTTON) Projekte aus Datenbank */
     .project-title {
-        margin: 1rem 0;
+        margin: 3rem 0;
     }
-
+    
     .project-title a {
         font-size: calc(var(--body-font-size)*1.5);
     }
 
+    /* Beschreibung Projekte aus Datenbank */
     .project-description {
-        margin: 1rem 1rem;
+        font-size: calc(var(--body-font-size)*1.5);
+        margin: 0 0 1rem 0;
     }
-
+    /* Arbeitsart Projekte aus Datenbank */ 
     .project-type {
-        margin: 0.2rem 1rem 2rem 1rem;
-    }
-
-
-/* tablet: DESIGNELEMENTE */
-
-    .main-projects-designelemente h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
-        text-align: start;
-        margin: 2rem 0;
-    }
-
-    .main-projects-designelemente p {
-        font-size: calc(var(--body-font-size));
+        font-size: calc(var(--body-font-size)*1.5);
     }
 
 
@@ -280,26 +250,37 @@
 /* desktop: PROJECTS */
 
     .projects-wrap {
-        grid-template-columns: repeat(2, 40%);
-        gap: 5rem;
+        grid-template-columns: repeat(2, 50%);
+        gap: 1rem;
         grid-template-rows: repeat(3, 1fr);
     }
 
-    /* statisch */
-    /* .screendesign {
-        grid-column: 1/2;
-        grid-row: 1/2;
+    /* DATENBANK */
+     
+    .post {
+        margin: 2rem 0;
     }
 
-    .wireframes {
-        grid-column: 2/3;
-        grid-row: 1/2;
+
+
+    /* Titel (BUTTON) Projekte aus Datenbank */
+    .project-title {
+        margin: 3rem 0;
+    }
+    
+    .project-title a {
+        font-size: calc(var(--body-font-size)*1.5);
     }
 
-    .designelemente {
-        grid-column: 3/4;
-        grid-row: 1/2;
-    } */
+    /* Beschreibung Projekte aus Datenbank */
+    .project-description {
+        font-size: calc(var(--body-font-size)*1.5);
+        margin: 0 0 1rem 0;
+    }
+    /* Arbeitsart Projekte aus Datenbank */ 
+    .project-type {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
 }
 
 }

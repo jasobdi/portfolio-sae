@@ -1,100 +1,119 @@
-/* IMAGE SLIDER - HOME */ 
+/* IMAGE SLIDER - HOME */
 
 
-// Selektion Slider
-const slider = document.querySelector(".slider");
+// Selektion Slides
+const allSlides = document.querySelectorAll(".slide");
 
-// Selektion alle Slides
-function getAllSlides() {
-    return document.querySelectorAll(".slide");
+// zu Beginn ein leeres Array namens state
+const state = [];
+
+// forEach loop durch alle Slides und zuweisung von Klassen (html)
+// 1. Slide = 'right', 2. slide = 'active', 3. Slide = 'left', alle andern haben keine Klasse 
+// stellt sicher, dass state.length gleich lang ist wie allSlides.length
+allSlides.forEach(function (element, index) {
+    if (index === 0) {
+        state.push( 'right');
+    } else if (index === 1) {
+        state.push( 'active');
+    } else if (index === 2) {
+        state.push( 'left');
+    } else {
+        state.push( '');
+    }
+});
+
+// Interval von 3 Sekunden
+const sliderInterval = 3000;
+
+// true = der Slider läuft / false = der Slider pausiert
+let autoSlide = true;
+
+// ID um den Intervall zu stoppen ( mit clearInterval)
+let autoSlideTimer = null;
+
+/**
+ * weist den Slides anhand vom Array state Klassen zu 
+*/
+function mapStateToSlides(){
+    allSlides.forEach(function(element, index){
+        // entfernt alle Klassen vom Slide
+        element.classList.remove('left', 'right', 'active');
+        // wenn das Element eine Klasse erhalten soll, wird ihm die entsprechende zugewiesen 
+        // (braucht es keine Klasse, passiert nichts)
+        if (state[index] !== ''){
+            element.classList.add(state[index]);
+            // wenn das Element die Klasse 'active' bekommt, 
+            if (state[index] == 'active'){
+                const description = element.querySelector("img").alt;
+                // wird im alt-attribut des "img" die description geholt
+                // text im p element aktualisieren anhand der variable "description"
+                document.querySelector(".description p").innerText = description;
+            }
+        } 
+    });
 }
 
-// Eventlistener für den klick auf die Pfeile
-document.querySelector(".left").addEventListener("click", moveLeft);
-document.querySelector(".right").addEventListener("click", moveRight);
-
-// current slide iteration auf 1
-let currentSlide = 1;
-
 // deklaration moveRight Funktion
-function moveRight () {
-    const allSlides = getAllSlides();
-    // durch append wird das ausgewählte element am ende des arrays (.slider) hinzugefügt
-    slider.append(allSlides[0]);
-    changeCurrentSlide("right");
-    updateDescription();
+function moveRight() {
+
+    // mit pop wird das letzte Element aus dem Array herausgenommen
+    const lastSlide = state.pop();
+    // und mit unshift am Anfang hinzugefügt
+    state.unshift(lastSlide);
+
+    mapStateToSlides();
+
 }
 
 // deklaration moveLeft Funktion
-function moveLeft () {
-    const allSlides = getAllSlides();
-    // durch prepend wird das ausgewählte element am anfang des arrays (.slider) hinzugefügt
-    slider.prepend(allSlides[allSlides.length - 1]);
-    changeCurrentSlide("left");
-    updateDescription();
+function moveLeft() {
+
+    // mit shift wird das erste Element aus dem Array herausgenommen
+    const firstSlide = state.shift();
+    // und mit push am Ende hinzugefügt
+    state.push(firstSlide);
+
+    mapStateToSlides();
+
 }
 
-// deklaration changeCurrentSlide Funktion
-function changeCurrentSlide (direction) {
-    const allSlides = getAllSlides();
-    // bei direction "right":
-    if (direction === "right") {
-        // ist currentSlide 5, dann wechseln zu Slide 1, sonst auf den nächst höheren Slide
-        currentSlide === allSlides.length ? (currentSlide = 1) : currentSlide++;
-    } else {
-        // bei direction "left": 
-        // ist currentSlide 1, dann auf Slide 5 wechseln, sonst auf den nächst kleineren Slide
-        currentSlide === 1 ? (currentSlide = allSlides.length) : currentSlide--;
-    }
+
+function startSlide() {
+    mapStateToSlides();
+    // setInterval: startet Funktion moveRight mit sliderInterval (3s)
+    autoSlideTimer = setInterval(moveRight, sliderInterval);
 }
 
-// deklaration updateDescription Funktion
-function updateDescription () {
-    const allSlides = getAllSlides();
-    // mit variable alle Slides selektieren / erstes element im array (mit iteration 0) / img elemen & alt text
-    const description = allSlides[0].querySelector("img").alt;
-    // text im p element aktualisieren anhand der variable "description"
-    document.querySelector(".description p").innerText = description;
+function pauseSlide() {
+    clearInterval(autoSlideTimer);
 }
 
-// auf das HTML-Element mit der Klasse .pause-play einen Click-Eventlistener ansetzen
-document.querySelector(".pause-play").addEventListener("click", ()=> {
+
+document.querySelector(".pause-play").addEventListener("click", () => {
     // autoSlide ist "true" (läuft)
-    if(autoSlide === true) {
+    if (autoSlide === true) {
         // dann interval stoppen und autoSlideTimer bei null (0) starten
-        clearInterval(autoSlideTimer)
+        pauseSlide();
         // autoSlide ist jetzt "false" (angehlaten)
-        autoSlide = false; 
+        autoSlide = false;
     } else {
         // autoSlide ist "true" (läuft)
         autoSlide = true;
         // navigationSlider ausführen
-        navigateSlider()
+        startSlide();
     }
 });
 
-// deklaration navigateSlider Funktion
-function navigateSlider () {
-    // autoSlide ist "true" (läuft)
-    if(autoSlide === true) {
-        // variabel autoSlideTimer startet bei 0 und führt den Interval anhand der moveRight Funktion 
-        // und der festgelegten Zeit für den Interval aus
-        // -> die Slides bewegen sich alle 3 Sekunden nach rechts
-        autoSlideTimer = setInterval (
-            function () {
-            moveRight();}, 
-        sliderInterval);
-    }
-}
+// Eventlistener für den klick auf die Pfeile
+document.querySelector(".slider-btn-left").addEventListener("click", function () {
+    pauseSlide();
+    moveLeft();
+    startSlide();
+});
+document.querySelector(".slider-btn-right").addEventListener("click", function () {
+    pauseSlide();
+    moveRight();
+    startSlide();
+});
 
-// Auto Slider intervall 3 Sekunden
-let autoSlide = true;
-const sliderInterval = 3000;
-let autoSlideTimer = null;
-
-if(autoSlide === true) {
-    navigateSlider()
-}
-
-updateDescription();
-
+startSlide();

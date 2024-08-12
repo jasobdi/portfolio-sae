@@ -3,12 +3,12 @@
 
 :root {
     --darkblue: #352F3F;
-    --violet: #310736;
+    /* --violet: #310736; */
     --rose: #E5989B;
     --gray:#EAE7E7;
     --white: #ffffff;
     --black: #000000;
-    --gradient-bg: linear-gradient(#E5989B, #fff 50%, #E5989B);
+    /* --gradient-bg: linear-gradient(#E5989B, #fff 50%, #E5989B); */
     
     --main-font-family: 'Lato', sans-serif;
 
