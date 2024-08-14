@@ -1,15 +1,14 @@
 /* IMAGE SLIDER - HOME */
 
 
-// Selektion Slides
+// Selektion alle Slides
 const allSlides = document.querySelectorAll(".slide");
 
 // zu Beginn ein leeres Array namens state
 const state = [];
 
 // forEach loop durch alle Slides und zuweisung von Klassen (html)
-// 1. Slide = 'right', 2. slide = 'active', 3. Slide = 'left', alle andern haben keine Klasse 
-// stellt sicher, dass state.length gleich lang ist wie allSlides.length
+// 1. Slide = 'right', 2. slide = 'active', 3. Slide = 'left', alle andern Slides haben keine Klasse 
 allSlides.forEach(function (element, index) {
     if (index === 0) {
         state.push( 'right');
@@ -32,7 +31,7 @@ let autoSlide = true;
 let autoSlideTimer = null;
 
 /**
- * weist den Slides anhand vom Array state Klassen zu 
+ * weist den Slides anhand vom Array 'state' Klassen zu 
 */
 function mapStateToSlides(){
     allSlides.forEach(function(element, index){
@@ -50,8 +49,8 @@ function mapStateToSlides(){
                 document.querySelector(".description p").innerText = description;
             }
         } 
-    });
-}
+    })
+};
 
 // deklaration moveRight Funktion
 function moveRight() {
@@ -63,7 +62,7 @@ function moveRight() {
 
     mapStateToSlides();
 
-}
+};
 
 // deklaration moveLeft Funktion
 function moveLeft() {
@@ -74,19 +73,17 @@ function moveLeft() {
     state.push(firstSlide);
 
     mapStateToSlides();
-
-}
-
+};
 
 function startSlide() {
     mapStateToSlides();
     // setInterval: startet Funktion moveRight mit sliderInterval (3s)
     autoSlideTimer = setInterval(moveRight, sliderInterval);
-}
+};
 
 function pauseSlide() {
     clearInterval(autoSlideTimer);
-}
+};
 
 
 document.querySelector(".pause-play").addEventListener("click", () => {
@@ -99,7 +96,7 @@ document.querySelector(".pause-play").addEventListener("click", () => {
     } else {
         // autoSlide ist "true" (läuft)
         autoSlide = true;
-        // navigationSlider ausführen
+        // startSlide ausführen
         startSlide();
     }
 });

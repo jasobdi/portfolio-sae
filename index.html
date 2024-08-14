@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Entdecke das Portfolio von Janice Bader, einer aufstrebenden Studentin im Webdesign-und Development.">
+    <meta name="description" content="Entdecke das Portfolio von Janice Bader, einer aufstrebenden Studentin im Bereich Webdesign-und Development.">
     <title>Portfolio Janice Bader</title>
 <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e5989b">
-    <meta name="msapplication-TileColor" content="#e5989b">
-    <meta name="theme-color" content="#e5989b">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="icon" href="favicon/favicon.ico">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e5989b">
+<meta name="msapplication-TileColor" content="#352f3f">
+<meta name="theme-color" content="#ffffff">
 <!-- links -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -21,16 +21,16 @@
     <link rel="stylesheet" href="css/reset.css">
     <script src="https://kit.fontawesome.com/9bb62c958c.js" crossorigin="anonymous" defer></script>
     <script src="js/nav.js" defer></script>
-    <script src="js/code.js" defer></script>
     <script src="js/slider.js" defer></script>
 </head>
 <body>
+
     <!-- HEADER -->
     <header>
 
         <!-- DESKTOP-NAVIGATION -->
         <nav class="desktop-navigation">
-            <a href="#"><img class="logo" src="images/logo_jb_transparent_noname.png" alt="Initialen JB in schöner Handschrift"></a>
+            <a href="#"><img class="logo" src="images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="ueber-mich.html">Über mich</a></li>
@@ -40,11 +40,14 @@
         
          <!-- MOBILE-NAVIGATION-HAMBURGER -->
          <nav class="mobile-navigation"> 
-            <a href="index.html"><img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift"></a>
+            <a href="index.html"><img src="images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
             <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
             <div class="overlay-nav">
                 <button class="close-button"><i class="fa-solid fa-close"></i></button>
                 <ul class="nav-links">
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
                     <li>
                         <a href="ueber-mich.html">ÜBER MICH</a>
                     </li>
@@ -63,53 +66,61 @@
 
     </header>
  
-
     <!-- MAIN -->
     <main class="main-home">
-        <h1>PORTFOLIO JANICE BADER
+        <h1>PORTFOLIO <br>
+            JANICE BADER
         </h1>
+        <hr>
 
     <!-- IMAGE SLIDER -->
             <div class="slider">
+                <!-- logo redbull -->
                 <div class="slide">
-                    <img 
-                        srcset="images/projects/redbull_redesign_logo_296w.png 296w, images/projects/redbull_redesign_logo_600w.png 600w" 
-                        sizes="(max-width: 768px) 296px, 600px"
-                        alt="Redesign Redbull Logo: Bullenkopf aus verschiedenen geometrischen Formen">
+                    <img
+                        srcset="images/image_slider/redbull_redesign_logo_296w.png 296w, images/image_slider/redbull_redesign_logo_400w.png 400w, images/image_slider/redbull_redesign_logo_500w.png 500w" 
+                        sizes="(max-width: 768px) 296px, 400px, 500px"
+                        alt="Redesign Redbull Logo">
                 </div>
+                <!-- logo alpenblick -->
                 <div class="slide">
                     <img 
-                        srcset="images/projects/alpenblick_logo_296w.png 296w, images/projects/alpenblick_logo_600w.png 600w" 
-                        sizes="(max-width: 768px) 296px, 600px"
+                        srcset="images/image_slider/alpenblick_logo_296w.png 296w, images/image_slider/alpenblick_logo_400w.png 400w, images/image_slider/alpenblick_logo_500w.png 500w" 
+                        sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Logo für das fiktive Cafe Alpenblick">
                 </div>
+                <!-- screendesign -->
                 <div class="slide">
                     <img 
-                        srcset="images/projects/screendesign_home_v1_296w.png 296w, images/projects/screendesign_home_v1_600w.png 600w" 
-                        sizes="(max-width: 768px) 296px, 600px"
-                        alt="Homepage des erstes Desktop-Screendesigns für diese Portfolio Webseite">
+                        srcset="images/image_slider/screendesign_296w.png 296w, images/image_slider/screendesign_400w.png 400w, images/image_slider/screendesign_500w.png 500w" 
+                        sizes="(max-width: 768px) 296px, 400px 500px"
+                        alt="Erste Version Screendesign Potfolio Webseite">
                 </div>
+                <!-- portfolio-webseite -->
                 <div class="slide">
                     <img 
-                        srcset="images/projects/portfolio_webseite_v1_296w.png 296w, images/projects/portfolio_webseite_v1_600w.png 600w" 
-                        sizes="(max-width: 768px) 296px, 600px"
-                        alt="Homepage des ersten Desktop-Entwurfs meiner Portfolio Webseite">
+                        srcset="images/image_slider/portfolio_webseite_296w.png 296w, images/image_slider/portfolio_webseite_400w.png 400w, images/image_slider/portfolio_webseite_500w.png 500w" 
+                        sizes="(max-width: 768px) 296px, 400px, 500px"
+                        alt="Erste Version Portfolio Webseite mit HTML & CSS">
                 </div>
+                <!-- image-slider -->
                 <div class="slide">
                     <img 
-                        srcset="images/projects/logo_new_296w.png 296w, images/projects/logo_new_600w.png 600w" 
-                        sizes="(max-width: 768px) 296px, 600px"
+                        srcset="images/image_slider/image_slider_296w.png 296w, images/image_slider/image_slider_400w.png 400w, images/image_slider/image_slider_500w.png 500w " 
+                        sizes="(max-width: 768px) 296px, 400px, 500px"
+                        alt="Image Slider Portfolio Webseite mit Javascript">
+                </div>
+                <!-- logo jb -->
+                <div class="slide">
+                    <img 
+                        srcset="images/image_slider/logo_jb_296w.png 296w, images/image_slider/logo_jb_400w.png 400w, images/image_slider/logo_jb_500w.png 500w" 
+                        sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Logo Janice Bader">
                 </div>
-                <div class="slide">
-                    <img 
-                        srcset="https://picsum.photos/296/300?random=6 296w, https://picsum.photos/600/600?random=6 600w" 
-                        sizes="(max-width: 768px) 296px, 600px"
-                        alt="placeholder image 6">
-                </div>
             </div>
+            <hr>
         <div class="description">
-            <p>super long description that spreads over two lines or more</p>
+            <p>super long description that spreads over two lines or more on mobile devices</p>
         </div>
         <div class="container-buttons">
             <button class="slider-btn-left"><i class="fa-solid fa-arrow-left"></i></button>
@@ -117,6 +128,7 @@
             <button class="slider-btn-right"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </main>
+    <hr>
 
     <!-- FOOTER -->
     <footer>
@@ -137,7 +149,7 @@
             </a>
         </div>
 
-         <!-- LINKS-IMPRESSUM -->
+         <!-- LINKS -->
         <div class="footer-links">
             <a href="impressum.html">Impressum</a>
             <p>|</p>
@@ -146,7 +158,7 @@
 
         <!-- COPYRIGHT -->
         <div class="copyright">
-            <small>&copy;2023 Janice Bader</small>
+            <small>&copy;2024 Janice Bader</small>
         </div>
     </footer>
 

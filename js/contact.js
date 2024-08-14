@@ -1,5 +1,5 @@
 
-/* ABOUT - FORM VALIDATION */ 
+/* ABOUT - FORM VALIDATION */
 
 
 /* EventListener für den Klick auf den submit Button */
@@ -19,14 +19,14 @@ document.querySelector("#message").addEventListener("blur", validateMessage);
 /* Variable für leere Werte von validationErrors */
 let validationErrors = {};
 
-/* Validierung ganzes Formular auf einmal */
 
-    function validateForm (event) {
-        // verhindern, dass das Formular abgesendet bzw. neu geladen wird bei Klick auf Submit
-        event.preventDefault();
+/* Validierung ganzes Formular auf einmal durch Submit-Button */
+function validateForm(event) {
+    // verhindern, dass das Formular abgesendet bzw. neu geladen wird bei Klick auf Submit
+    event.preventDefault();
+
     // Variablen für leere Werte von data
     let data = {};
-
 
     // Selektion Werte aus HTML-Elementen
     data.nameTitle = document.querySelector("#name-title").value;
@@ -41,8 +41,8 @@ let validationErrors = {};
     data.message = document.querySelector("#message").value;
 
 
-   /* Error Message soll nach dem Anpassen des Inputs nicht mehr angezeigt werden
-     & sich bei weiteren submits nicht vermehren */
+    /* Error Message soll nach dem Anpassen des Inputs nicht mehr angezeigt werden
+      & sich bei weiteren submits nicht vermehren */
     if (document.querySelector("form span")) {
         document.querySelectorAll("form span").forEach((element) => {
             element.remove();
@@ -50,55 +50,55 @@ let validationErrors = {};
     }
 
 
-    // Validation
+    /* VALIDIERUNG*/
 
-    // Error: "Frau", "Herr", "keine Anrede" ist nicht angewählt
-    if ( data.nameTitle === '') {
+    // Error: es ist nichts ausgwählt
+    if (data.nameTitle === '') {
         validationErrors.nameTitle = "Bitte Anrede auswählen";
     }
 
     // Error: Voranme leer / Vorname 2 oder weniger Buchstaben
-    if(!data.firstName) {
+    if (!data.firstName) {
         validationErrors.firstName = "Bitte Vorname ausfüllen";
     } else if (data.firstName.length <= 2) {
         validationErrors.firstName = "Vorname muss mindestens 2 Buchstaben haben";
     }
 
     // Error: Nachname leer / Nachname 2 oder weniger Buchstaben
-    if(!data.lastName) {
+    if (!data.lastName) {
         validationErrors.lastName = "Bitte Nachname ausfüllen";
     } else if (data.lastName.length <= 2) {
         validationErrors.lastName = "Nachname muss mindestens 2 Buchstaben haben";
     }
 
     // Error: Strasse leer
-    if(!data.street) {
+    if (!data.street) {
         validationErrors.street = "Bitte Strasse eingeben";
-    } 
-    
-    // Error: PLZ leer / PLZ mehr als 4 Zahlen
-    if(!data.plz) {
+    }
+
+    // Error: PLZ leer / PLZ weniger oder mehr als 4 Zahlen
+    if (!data.plz) {
         validationErrors.plz = "Bitte Postleitzahl eingeben";
     } else if (data.plz.length != 4) {
         validationErrors.plz = "Postleitzahl ist ungültig";
-    } 
+    }
 
     // Error: Ort leer
-    if(!data.city) {
+    if (!data.city) {
         validationErrors.city = "Bitte Ort eingeben";
-    } 
+    }
 
     // Error: E-mail leer / E-mail ungültig
     if (!data.email) {
         validationErrors.email = "Bitte E-Mail angeben";
     } else {
-            // E-Mail Validierung mit RegEx
-            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm;
+        // E-Mail Validierung mit RegEx
+        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm;
 
-            if (!emailRegex.test(data.email)) {
-                validationErrors.email = "Die E-Mail ist ungültig";
-            }
+        if (!emailRegex.test(data.email)) {
+            validationErrors.email = "Die E-Mail ist ungültig";
         }
+    }
 
     // Error: Telefonnummer leer / Telefonnummer ungültig
     if (!data.phone) {
@@ -107,9 +107,10 @@ let validationErrors = {};
         // Telefonnummer Validierung mit RegEx (ohne Vorwahl mit oder ohne gängige Abstände)
         const phoneRegex = /(0){1}?[0-9]{2}[\s]?[0-9]{3}[\s]?[0-9]{2}[\s]?[0-9]{2}$/gm;
 
-    if (!phoneRegex.test(data.phone)) {
-        validationErrors.phone = "Die Telefonnummer ist ungültig";
-    }}
+        if (!phoneRegex.test(data.phone)) {
+            validationErrors.phone = "Die Telefonnummer ist ungültig";
+        }
+    }
 
     // Error: Message leer 
     if (!data.message) {
@@ -129,24 +130,24 @@ let validationErrors = {};
 
 }
 
-/* Hinzufügen Fehlermeldungen für ganzes Formular auf einmal */
+/* Hinzufügen Fehlermeldungen für ganzes Formular auf einmal durch Submit-Button */
 
 function displayErrors(errors) {
 
-//     // Fehlermeldung nameTitle
+    //     // Fehlermeldung nameTitle
     if (errors.nameTitle) {
         const errContainer = document.createElement("span");
         errContainer.innerHTML = errors.nameTitle;
         document.querySelector("#name-title").after(errContainer);
     }
 
-//     // Fehlermeldung firstName
+    //     // Fehlermeldung firstName
     if (errors.firstName) {
         const errContainer = document.createElement("span");
         errContainer.innerHTML = errors.firstName;
         document.querySelector("#first-name").after(errContainer);
     }
-    
+
     if (errors.lastName) {
         // Fehlermeldung lastName
         const errContainer = document.createElement("span");
@@ -195,8 +196,7 @@ function displayErrors(errors) {
 
 
 
-/* VALIDIERUNG & Fehlermeldung PRO INPUT-FELD */
-
+/* VALIDIERUNG & ERROR-MESSAGE PRO INPUT-FELD */
 
 function validateNameTitle(event) {
     event.preventDefault();
@@ -223,7 +223,7 @@ function validateFirstName(event) {
     event.preventDefault();
     const firstName = event.target.value;
     // Error: Voranme leer / Vorname 2 oder weniger Buchstaben
-    if(!firstName) {
+    if (!firstName) {
         validationErrors.firstName = "Bitte Vorname ausfüllen";
     } else if (firstName.length <= 2) {
         validationErrors.firstName = "Vorname muss mindestens 2 Buchstaben haben";
@@ -245,7 +245,7 @@ function validateLastName(event) {
     event.preventDefault();
     const lastName = event.target.value;
     // Error: Nachname leer / Nachname 2 oder weniger Buchstaben
-    if(!lastName) {
+    if (!lastName) {
         validationErrors.lastName = "Bitte Nachname ausfüllen";
     } else if (lastName.length <= 2) {
         validationErrors.lastName = "Nachname muss mindestens 2 Buchstaben haben";
@@ -266,8 +266,8 @@ function validateLastName(event) {
 function validateStreet(event) {
     event.preventDefault();
     const street = event.target.value;
-     // Error: Strasse leer
-     if(!street) {
+    // Error: Strasse leer
+    if (!street) {
         validationErrors.street = "Bitte Strasse eingeben";
     } else {
         document.querySelector('#street + span')?.remove();
@@ -286,8 +286,8 @@ function validateStreet(event) {
 function validatePLZ(event) {
     event.preventDefault();
     const plz = event.target.value;
-    // Error: PLZ leer / PLZ mehr als 4 Zahlen
-    if(!plz) {
+    // Error: PLZ leer / PLZ weniger oder mehr als 4 Zahlen
+    if (!plz) {
         validationErrors.plz = "Bitte Postleitzahl eingeben";
     } else if (plz.length != 4) {
         validationErrors.plz = "Postleitzahl ist ungültig";
@@ -309,7 +309,7 @@ function validateCity(event) {
     event.preventDefault();
     const city = event.target.value;
     // Error: Ort leer
-    if(!city) {
+    if (!city) {
         validationErrors.city = "Bitte Ort eingeben";
     } else {
         document.querySelector('#city + span')?.remove();
@@ -323,7 +323,6 @@ function validateCity(event) {
         errContainer.innerHTML = validationErrors.city;
         document.querySelector("#city").after(errContainer);
     }
-
 };
 
 function validateEmail(event) {
@@ -333,27 +332,27 @@ function validateEmail(event) {
     if (!email) {
         validationErrors.email = "Bitte E-Mail angeben";
     } else {
-            // E-Mail Validierung mit RegEx
-            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        // E-Mail Validierung mit RegEx
+        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
-            if (!emailRegex.test(email)) {
-                validationErrors.email = "Die E-Mail ist ungültig";
-            } else {
+        if (!emailRegex.test(email)) {
+            validationErrors.email = "Die E-Mail ist ungültig";
+        } else {
             document.querySelector('#email + span')?.remove();
             delete validationErrors.email;
-            }
-    } 
+        }
+    }
 
     // Fehlermeldung email
     if (validationErrors.email) {
-            document.querySelector('#email + span')?.remove();
-            const errContainer = document.createElement("span");
-            errContainer.innerHTML = validationErrors.email;
-            document.querySelector("#email").after(errContainer);
+        document.querySelector('#email + span')?.remove();
+        const errContainer = document.createElement("span");
+        errContainer.innerHTML = validationErrors.email;
+        document.querySelector("#email").after(errContainer);
     }
 };
 
-function validatePhone (event) {
+function validatePhone(event) {
     event.preventDefault();
     const phone = event.target.value;
     // Error: Telefonnummer leer / Telefonnummer ungültig
@@ -363,11 +362,11 @@ function validatePhone (event) {
         // Telefonnummer Validierung mit RegEx (ohne Vorwahl mit oder ohne gängige Abstände)
         const phoneRegex = /(0){1}?[0-9]{2}[\s]?[0-9]{3}[\s]?[0-9]{2}[\s]?[0-9]{2}$/gm;
 
-    if (!phoneRegex.test(phone)) {
-        validationErrors.phone = "Die Telefonnummer ist ungültig";
-    } else {
-        document.querySelector('#phone + span')?.remove();
-        delete validationErrors.phone;
+        if (!phoneRegex.test(phone)) {
+            validationErrors.phone = "Die Telefonnummer ist ungültig";
+        } else {
+            document.querySelector('#phone + span')?.remove();
+            delete validationErrors.phone;
         }
     }
 
@@ -390,7 +389,7 @@ function validateMessage(event) {
     } else {
         document.querySelector('#message + span')?.remove();
         delete validationErrors.message;
-        }
+    }
 
     // Fehlermeldung message
     if (validationErrors.message) {
@@ -403,4 +402,4 @@ function validateMessage(event) {
 
 
 
-  
+

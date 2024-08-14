@@ -6,14 +6,14 @@
     <meta name="description" content="Lerne Janice und ihre Arbeit besser kennen, erfahre mehr über ihren Werdegang sowie ihre Fähigkeiten und Kompetenzen.">
     <title>Portfolio Janice Bader - Über mich</title>
 <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e5989b">
-    <meta name="msapplication-TileColor" content="#e5989b">
-    <meta name="theme-color" content="#e5989b">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="icon" href="favicon/favicon.ico">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e5989b">
+<meta name="msapplication-TileColor" content="#352f3f">
+<meta name="theme-color" content="#ffffff">
 <!-- links -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -25,12 +25,13 @@
 
 </head>
 <body>
+
 <!-- HEADER -->
     <header>
 
 <!-- DESKTOP-NAVIGATION -->
         <nav class="desktop-navigation">
-            <a href="index.html"><img class="logo" src="images/logo_jb_transparent_noname.png" alt="Initialen JB in schöner Handschrift"></a>
+            <a href="index.html"><img class="logo" src="images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="ueber-mich.html">Über mich</a></li>
@@ -40,11 +41,14 @@
 
 <!-- MOBILE-NAVIGATION-HAMBURGER -->
         <nav class="mobile-navigation"> 
-            <a href="index.html"><img src="images/logo_jb_transparent_fett_noname.png" alt="Initialen JB in schöner Handschrift"></a>
+            <a href="index.html"><img src="images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
             <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
             <div class="overlay-nav">
                 <button class="close-button"><i class="fa-solid fa-close"></i></button>
                 <ul class="nav-links">
+                   <li>
+                        <a href="index.html">HOME</a>
+                    </li>
                     <li>
                         <a href="ueber-mich.html">ÜBER MICH</a>
                     </li>
@@ -68,21 +72,34 @@
         <section class="about-me">
             <h1>Über mich</h1>
 
-<!-- INTRODUCTION-ABOUT -->
-                <p class="introduction">
-                    Mein Name ist Janice, ich bin 26 Jahre alt und momentan studiere ich Webdesign & Development am SAE Institute Zürich, nebenbei arbeite ich als Empfangsmitarbeiterin in einem internationalen Software-Unternehmen.
-                    Nach einer Grundausbildung im kaufmännischen Bereich, über fünfjährigen Erfahrung in der Hotellerie und einer Marketingweiterbildung habe ich mich für eine Umbildung entschieden. Die Informatik, vor allem aber Webdesign interessiern mich schon mein Leben lang, mit der Ausbildung an der SAE habe ich die richtige Option für mich gefunden.
+<!-- INTRODUCTION -->
+            <div class="introduction-left">
+                <p class="introduction now">
+                    Ich bin Janice. <br>
+                    Zurzeit absolviere ich meine Ausbildung im Bereich Webdesign und -Development am SAE Institut in Zürich. Nebenbei arbeite ich am Empfang eines internationalen Software-Unternehmens. <br> <br>
+                    Design, Programmieren und IT interessieren mich schon eine Weile, durch die SAE habe ich die Möglichkeit meine Interessen zum Beruf zu machen.
                 </p>
+                <img 
+                srcset="images/janice_bader_296w.png 296w, images/janice_bader_300w.png 300w, images/janice_bader_400w.png 400w " 
+                sizes="(max-width: 768px) 296px, 300px, 400px"
+                alt="junge Frau mit Brille und geraden blonden Haaren lächelt für ein Bewerbungsfoto">
+            </div>
+            <div class="introduction-right">
+                <p class="introduction me">
+                    In meiner Freizeit male und zeichne ich gerne, ausserdem spiele ich Unihockey und bewege mich viel im Ausgleich zum Alltag vor dem Bildschirm.
+                </p>
+                <img 
+                srcset="images/janice_black_white_296w.png 296w, images/janice_black_white_300w.png 300w, images/janice_black_white_400w.png 400w" 
+                sizes="(max-width: 768px) 296px, 300px, 400px"
+                alt="schwarz-weiss-Bild von einer jugen Frau mit gewellten Haaren und Hut, die im Wald steht">
+            </div>
 
 <!-- BUTTON-LEBENSLAUF -->
                 <div class="cv"><a href="assets/CV_JB.pdf">Download Lebenslauf</a></div>
         </section>
             
 
-
-
-
-<!-- PROGRESS-BARS-SKILLS -->
+<!-- PROGRESS-BARS-SKILLS zu einem späteren Zeitpunkt-->
             <!-- <section class="skills-bars">
                 <h2>Kenntnisse</h2>
                 <p>Adobe Photoshop</p>
@@ -169,7 +186,7 @@
             </a>
         </div>
         
-<!-- LINKS-IMPRESSUM -->
+<!-- LINKS -->
         <div class="footer-links">
             <a href="impressum.html">Impressum</a>
             <p>|</p>
