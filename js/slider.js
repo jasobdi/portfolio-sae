@@ -4,11 +4,12 @@
 // Selektion alle Slides
 const allSlides = document.querySelectorAll(".slide");
 
-// zu Beginn ein leeres Array namens state
+// zu Beginn ein leeres Array namens 'state'
 const state = [];
 
 // forEach loop durch alle Slides und zuweisung von Klassen (html)
 // 1. Slide = 'right', 2. slide = 'active', 3. Slide = 'left', alle andern Slides haben keine Klasse 
+// push -> adds the specified elements to the end of an array and returns the new length of the array
 allSlides.forEach(function (element, index) {
     if (index === 0) {
         state.push( 'right');
