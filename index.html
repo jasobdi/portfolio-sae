@@ -69,7 +69,7 @@
     <!-- MAIN -->
     <main class="main-home">
         <h1>PORTFOLIO <br>
-            JANICE BADER
+            <span>JANICE BADER</span>
         </h1>
         <hr>
 
@@ -120,12 +120,15 @@
             </div>
             <hr>
         <div class="description">
-            <p>super long description that spreads over two lines or more on mobile devices</p>
+            <p>description</p>
         </div>
         <div class="container-buttons">
-            <button class="slider-btn-left"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="pause-play"><i class="fa-solid fa-pause"></i> / <i class="fa-solid fa-play"></i></button>
-            <button class="slider-btn-right"><i class="fa-solid fa-arrow-right"></i></button>
+            <button class="slider-btn left" aria-label="arrow-left"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="control-container">
+                <button class="pause-play stop" aria-label="pause"><i class="fa-solid fa-pause"></i></button>
+                <button class="pause-play start hidden" aria-label="play"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <button class="slider-btn right" aria-label="arrow-right"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </main>
     <hr>

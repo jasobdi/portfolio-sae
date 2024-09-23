@@ -20,11 +20,11 @@
 
     .main-home h1 {
         font-size: calc(var(--mobile-title-size)*2);
-        margin: 0;
+        margin: 0 0 2rem 0;
     }
 
     .slider {
-        height: 700px;
+        height: 600px;
     }
 
     .slide img {
@@ -34,6 +34,10 @@
     .description p {
         font-size: var(--mobile-h2-size);
         font-weight: var(--lato-light);
+    }
+
+    .slider-btn.left, .slider-btn.right, .pause-play {
+        font-size: 3rem;
     }
 
    
@@ -262,11 +266,15 @@
 /* desktop: HOME */
 
     .main-home {
-        padding: 4rem 2rem;
+        padding: 2rem 2rem 0rem;
     } 
 
     .main-home h1 {
-        font-size: calc(var(--mobile-title-size)*4);
+        font-size: calc(var(--mobile-title-size)*3);
+    }
+
+    .main-home h1 span {
+        font-size: calc(var(--mobile-title-size)*2.5);
     }
 
     /* HOME - IMAGE-SLIDER */
@@ -276,16 +284,21 @@
     }
 
     .description p {
-        font-size: var(--mobile-h2-size);
+        font-size: calc(var(--mobile-h2-size)*1.5);
         font-weight: var(--lato-light);
+        margin: 2rem 0 4rem 0;
     }
 
     .container-buttons {
         justify-content: space-evenly;
     }
 
-    .slider-btn-left, .slider-btn-right, .pause-play {
-        font-size: 3rem;
+    .slider-btn.left, .slider-btn.right {
+        font-size: 4rem;
+    }
+
+    .pause-button {
+        font-size: 4rem;
     }
 
 

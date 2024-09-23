@@ -225,9 +225,6 @@ main {
     margin: 2rem 0;
 }
 
-.main-home h1:hover {
-    color: var(--rose);
-}
 
 /* MAIN-HOME - IMAGE-SLIDER */
 
@@ -290,18 +287,39 @@ main {
     align-items: center;
 }
 
-.slider-btn-left, .slider-btn-right, .pause-play {
+.slider-btn.left, .slider-btn.right {
     color: var(--darkblue);
     background: none;
     border: none;
     font-size: 2rem;
 }
 
-.container-buttons button:hover {
-    cursor: pointer;
+.slider-btn.left:hover, .slider-btn.right:hover {
     color: var(--rose);
 }
 
+.control-container {
+    width: 40px;
+}
+
+.pause-play {
+    color: inherit;
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.pause-play.start {
+    color: var(--rose);
+}
+
+.hidden {
+    display: none;
+}
+
+.container-buttons button:hover {
+    cursor: pointer;
+}
 
 /* ABOUT */
 
