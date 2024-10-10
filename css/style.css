@@ -194,6 +194,7 @@ footer p {
 
 .footer-links a:hover {
     color: var(--rose);
+    text-decoration: underline;
 }
 
 .copyright {

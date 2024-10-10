@@ -272,11 +272,7 @@
     .main-home h1 {
         font-size: calc(var(--mobile-title-size)*3);
     }
-
-    .main-home h1 span {
-        font-size: calc(var(--mobile-title-size)*2.5);
-    }
-
+    
     /* HOME - IMAGE-SLIDER */
 
     .slide {
