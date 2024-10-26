@@ -1,22 +1,24 @@
 
+/* RESPONSIVE */
+
 /* TABLET */
 @media (min-width: 768px) {
 
 
-/* tablet: NAVIGATION */
+    /* tablet: NAVIGATION */
 
     .nav-links a {
         font-size: 20px;
     }
 
-/* tablet: FOOTER */
+    /* tablet: FOOTER */
 
     footer {
         margin-top: 2rem;
     }
 
 
-/* tablet: HOME */
+    /* tablet: HOME */
 
     .main-home h1 {
         font-size: calc(var(--mobile-title-size)*2);
@@ -36,12 +38,14 @@
         font-weight: var(--lato-light);
     }
 
-    .slider-btn.left, .slider-btn.right, .pause-play {
+    .slider-btn.left,
+    .slider-btn.right,
+    .pause-play {
         font-size: 3rem;
     }
 
-   
-/* tablet: ABOUT */
+
+    /* tablet: ABOUT */
 
 
     .main-about h1 {
@@ -80,7 +84,7 @@
     }
 
 
-    /* ABOUT - CV-BUTTON */ 
+    /* ABOUT - CV-BUTTON */
 
     .cv {
         display: flex;
@@ -92,7 +96,7 @@
     }
 
 
-    /* ABOUT - SKILLS BARS */ 
+    /* ABOUT - SKILLS BARS */
 
     /* .skills-bars div {
         font-size: calc(var(--body-font-size)*1.5);
@@ -100,14 +104,14 @@
     } */
 
 
-    /* ABOUT - CONTACT FORM */ 
+    /* ABOUT - CONTACT FORM */
 
     .main-about h2 {
-        font-size: calc(var(--mobile-h1-size)*1.5); 
+        font-size: calc(var(--mobile-h1-size)*1.5);
         text-align: start;
         margin: 2rem 0;
     }
-    
+
     .contact-form form {
         width: 70%
     }
@@ -121,10 +125,10 @@
         align-self: start;
         font-size: calc(var(--body-font-size)*1.5);
         margin: 4rem 0;
-    } 
+    }
 
 
-/* tablet: PROJECTS */
+    /* tablet: PROJECTS */
 
     .main-projects {
         margin: 2rem 4rem 4rem 4rem;
@@ -149,7 +153,7 @@
 
 
     /* PROJECTS - DATENBANK */
-     
+
     .post {
         margin: 2rem 0;
     }
@@ -163,7 +167,7 @@
     .project-title {
         margin: 3rem 0;
     }
-    
+
     .project-title a {
         font-size: calc(var(--body-font-size)*1.5);
     }
@@ -175,14 +179,14 @@
         margin: 0 0 1rem 0;
     }
 
-    /* Arbeitsart Projekte aus Datenbank */ 
+    /* Arbeitsart Projekte aus Datenbank */
     .project-type {
         font-size: calc(var(--body-font-size)*1.5);
         font-weight: var(--lato-light);
     }
 
 
-/* tablet: IMPRESSUM */
+    /* tablet: IMPRESSUM */
 
     .main-impressum h1 {
         font-size: calc(var(--mobile-h1-size)*1.5);
@@ -197,7 +201,7 @@
     }
 
 
-/* tablet: DATENSCHUTZ */
+    /* tablet: DATENSCHUTZ */
 
     .main-datenschutz h1 {
         font-size: calc(var(--mobile-h1-size)*1.5);
@@ -208,8 +212,30 @@
     .main-datenschutz h2 {
         font-weight: var(--lato-bold);
     }
-}
 
+
+
+    /* tablet: REGISTRIEREN - FORM */
+    .main-registration h1 {
+        text-align: start;
+        font-size: calc(var(--mobile-h1-size)*1.5);
+    }
+
+    .registration-form form {
+        width: 70%;
+    }
+
+     /* tablet: LOGIN - FORM */
+    .main-login h1 {
+        text-align: start;
+        font-size: calc(var(--mobile-h1-size)*1.5);
+    }
+
+    .login-form form {
+        width: 70%;
+    }
+
+}
 
 
 
@@ -227,13 +253,13 @@
 
 /* desktop: NAVIGATION // ab 1200px width: desktop-navigation  */
 @media (min-width: 1200px) {
-        
+
     .mobile-navigation {
         display: none;
     }
 
 
-/* desktop: FOOTER */
+    /* desktop: FOOTER */
 
     footer {
         flex-direction: row;
@@ -245,7 +271,7 @@
     }
 
     .contact-icons a {
-        font-size: 3rem; 
+        font-size: 3rem;
     }
 
     .footer-links {
@@ -263,16 +289,16 @@
     }
 
 
-/* desktop: HOME */
+    /* desktop: HOME */
 
     .main-home {
         padding: 2rem 2rem 0rem;
-    } 
+    }
 
     .main-home h1 {
         font-size: calc(var(--mobile-title-size)*3);
     }
-    
+
     /* HOME - IMAGE-SLIDER */
 
     .slide {
@@ -289,7 +315,8 @@
         justify-content: space-evenly;
     }
 
-    .slider-btn.left, .slider-btn.right {
+    .slider-btn.left,
+    .slider-btn.right {
         font-size: 4rem;
     }
 
@@ -298,7 +325,7 @@
     }
 
 
-/* desktop: ABOUT */
+    /* desktop: ABOUT */
 
     .main-about h1 {
         font-size: calc(var(--mobile-h1-size)*1.5);
@@ -315,21 +342,27 @@
     }
 
     .introduction-right {
-        padding: 0 6rem;;
+        padding: 0 6rem;
+        ;
     }
 
     .main-about h2 {
-        font-size: calc(var(--mobile-h2-size)*2); 
+        font-size: calc(var(--mobile-h2-size)*2);
     }
 
     /* ABOUT - CONTACT-FORM */
 
     .contact-form form {
-        width: 50%
+        width: 50%;
     }
 
-    form label, form input {
+    form label,
+    form input {
         font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    form input {
+        margin-bottom: 1rem;
     }
 
     form select {
@@ -337,10 +370,10 @@
     }
 
 
-/* desktop: PROJECTS */
+    /* desktop: PROJECTS */
 
     .main-projects {
-    margin: 2rem 4rem;
+        margin: 2rem 4rem;
     }
 
     .main-projects p {
@@ -357,7 +390,7 @@
 
 
     /* PROJECTS - DATENBANK */
-     
+
     .post {
         margin: 2rem 0;
     }
@@ -366,7 +399,7 @@
     .project-title {
         margin: 3rem 0;
     }
-    
+
     .project-title a {
         font-size: calc(var(--body-font-size)*1.5);
     }
@@ -378,22 +411,48 @@
         margin: 0 4rem 1rem 4rem;
     }
 
-    /* Arbeitsart Projekte aus Datenbank */ 
+    /* Arbeitsart Projekte aus Datenbank */
     .project-type {
         font-size: calc(var(--body-font-size)*1.5);
         font-weight: var(--lato-light);
     }
 
 
-/* desktop: DATENSCHUTZ */ 
+    /* desktop: DATENSCHUTZ */
 
-    .main-datenschutz h2{
+    .main-datenschutz h2 {
         font-size: calc(var(--body-font-size)*1.5);
         font-weight: var(--lato-bold);
     }
 
-    .main-datenschutz p{
+    .main-datenschutz p {
         font-size: calc(var(--body-font-size)*1.5);
     }
-}
 
+
+    /* desktop: REGISTRIEREN - FORM */
+
+    .registration-form form {
+        width: 50%;
+    }
+
+    .registration-form label,
+    .registration-form legend {
+        margin-bottom: 0.7rem;
+    }
+
+    form legend {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    /* desktop: LOGIN - FORM */
+
+    .login-form form {
+        width: 50%;
+    }
+
+    .login-form label {
+        margin-bottom: 1rem;
+    }
+
+}

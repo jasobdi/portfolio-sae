@@ -1,84 +1,36 @@
+<?php 
+?>
+
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hier findest du die Datenschutzerklärung.">
-    <title>Portfolio Janice Bader - Datenschutzerklärung</title>
-<!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="icon" href="favicon/favicon.ico">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#e5989b">
-    <meta name="msapplication-TileColor" content="#352f3f">
-    <meta name="theme-color" content="#ffffff">
-<!-- links -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <script src="https://kit.fontawesome.com/9bb62c958c.js" crossorigin="anonymous" defer></script>
-    <script src="js/nav.js" defer></script>
-</head>
+    <!--  HEAD  -->
+    <?php include('partials/head.php') ?>
 <body>
 
     <!-- HEADER -->
     <header>
-
-        <!-- DESKTOP-NAVIGATION -->
-        <nav class="desktop-navigation">
-            <a href="index.html"><img class="logo" src="images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ueber-mich.html">Über mich</a></li>
-                <li><a href="projekte.html">Projekte</a></li>
-            </ul>
-        </nav>
-
-        <!-- MOBILE-NAVIGATION-HAMBURGER -->
-        <nav class="mobile-navigation"> 
-            <a href="index.html"><img src="images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
-            <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
-            <div class="overlay-nav">
-                <button class="close-button"><i class="fa-solid fa-close"></i></button>
-                <ul class="nav-links">
-                    <li>
-                        <a href="index.html">HOME</a>
-                    </li>
-                    <li>
-                        <a href="ueber-mich.html">ÜBER MICH</a>
-                    </li>
-                    <li>
-                        <a href="projekte.html">PROJEKTE</a>
-                    </li>
-                    <li>
-                        <a href="impressum.html">IMPRESSUM</a>
-                    </li>
-                    <li>
-                        <a href="datenschutz.html">DATENSCHUTZ</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-       
+        <?php include('partials/nav.php') ?>
     </header>
 
     <!-- MAIN -->
     <main class="main-datenschutz">
         
         <h1>Datenschutz</h1>
+
         <h2>1 Datenschutzerklärung</h2>
-        <p>Die vorliegende Datenschutzerklärung klärt Sie über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten auf unserer Website <DOMAIN> (im Folgenden „Website“) durch Janice Bader (im Folgenden „wir“ oder „uns“) auf und gibt über die Ihnen zustehenden Rechte Auskunft. Diese Rechte richten sich nach den anwendbaren Datenschutzgesetzen.</p>
+        <p>
+            Die vorliegende Datenschutzerklärung klärt Sie über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten auf unserer Website (DOMAIN) (im Folgenden „Website“) durch Janice Bader (im Folgenden „wir“ oder „uns“) auf und gibt über die Ihnen zustehenden Rechte Auskunft. Diese Rechte richten sich nach den anwendbaren Datenschutzgesetzen.
+        </p>
+
         <h2>2 Verantwortlicher für die Datenbearbeitung</h2>
-        <p>Verantwortlicher für die Datenbearbeitung auf dieser Website und Ansprechpartner für Datenschutzanliegen ist: <br>
+        <p>
+            Verantwortlicher für die Datenbearbeitung auf dieser Website und Ansprechpartner für Datenschutzanliegen ist: <br>
             FIRMA <br>
             ADRESSE <br>
             TELEFON <br>
             E-MAIL
         </p>
+
         <h2>3 Datenerfassung auf dieser Website</h2>
         <p class="subtitle">
             3.1 Logfiles
@@ -99,15 +51,18 @@
             In Ihrem Browser können Sie einstellen, dass Sie über das Setzen von Cookies vorab informiert werden und im Einzelfall entscheiden können, ob Sie die Annahme von Cookies für bestimmte Fälle oder generell ausschliessen, oder dass Cookies komplett verhindert werden. Dadurch kann die Funktionalität der Website eingeschränkt werden.
             Cookies, die für den elektronischen Kommunikationsvorgang oder von Ihnen gewünschte Funktionen erforderlich sind oder Ihr Benutzererlebnis optimieren, werden – sofern die DSGVO anwendbar ist – auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert.
         </p>
+
         <h2>4 Links</h2>
         <p>
             Auf unserer Website finden Sie Links auf Seiten von Drittanbietern. Wir sind nicht verantwortlich für die Inhalte und Datenschutzvorkehrungen auf externen Websites, welche Sie über die Links erreichen können. Bitte informieren Sie sich über den Datenschutz direkt auf den entsprechenden Websites.
         </p>
+
         <h2>5 Weitergabe von Daten an Dritte</h2>
         <p>
             Damit wir Ihnen die Informationen auf unserer Website anbieten können, arbeiten wir mit verschiedenen Dienstleistern zusammen, namentlich mit IT-Dienstleistern, um Ihnen eine zeitgemässe Website anbieten zu können. Diese verwenden Ihre Daten nur im Rahmen der Auftragsabwicklungen für uns.
             Mit Ausnahme der Bestimmungen in Ziffer 3.4 dieser Datenschutzerklärung, nehmen wir eine Datenübermittlung an Stellen ausserhalb der Schweiz und der Europäischen Union (Drittstaat) ohne Ihre Einwilligung nur vor, sofern dies nach dem jeweiligen Vertrag erforderlich ist, zur Erfüllung gesetzlicher Verpflichtungen oder zur Wahrung unserer berechtigten Interessen.
         </p> 
+
         <h2>6 Ihre Rechte</h2>
         <p>
             Soweit von dem auf Sie anwendbaren Datenschutzrecht vorgesehen, können Sie unentgeltlich Auskunft über die auf Sie bezogenen gespeicherten Daten, deren Herkunft und Empfänger und den Zweck der Datenbearbeitung verlangen. Ebenso steht Ihnen unter den gesetzlichen Voraussetzungen ein Recht auf Berichtigung, Löschung, Einschränkung der oder Widerspruch gegen die Bearbeitung sowie, sofern die DSGVO zur Anwendung gelangt, auf Herausgabe dieser Daten zur Übertragung an eine andere Stelle zu.  
@@ -115,6 +70,7 @@
             Bitte beachten Sie, dass die vorstehenden Rechte gesetzlichen Einschränkungen unterstehen und ggf. die Erbringung unserer Dienstleistungen beeinträchtigen oder verunmöglichen können.
             Sie sind berechtigt, Ihre Ansprüche gerichtlich durchzusetzen oder eine Beschwerde bei der zuständigen Datenschutzbehörde einzureichen. Für die Schweiz ist der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte zuständig (http://www.edoeb.admin.ch).
         </p>
+
         <h2>7 Aktualität und Änderung dieser Datenschutzerklärung</h2>
         <p>
             Wir können diese Datenschutzerklärung jederzeit ändern oder anpassen. Die aktuelle Datenschutzerklärung kann auf DOMAIN abgerufen werden.
@@ -123,39 +79,10 @@
             Diese Datenschutzerklärung wurde erstellt mit Hilfe von Rentschpartner.ch
         </p>
             
-     </main>
+    </main>
 
-      <!-- FOOTER -->
-     <footer>
-
-      <!-- CONTACT-ICONS -->
-     <div class="contact-icons">
-        <a href="https://www.instagram.com/" aria-label="Instagram">
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            <span class="sr-only">Instagram</span>
-        </a>
-        <a href="https://www.linkedin.com/" arai-label="Linkedin">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            <span class="sr-only">Linkedin</span>
-        </a>
-        <a href="mailto:janice.bader@hotmail.com" aria-label="Email">
-            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-            <span class="sr-only">Email</span>
-        </a>
-    </div>
-
-    <!-- LINKS -->
-        <div class="footer-links">
-            <a href="impressum.html">Impressum</a>
-            <p>|</p>
-            <a href="datenschutz.html">Datenschutz</a>
-        </div>
-
-          <!-- COPYRIGHT -->
-        <div class="copyright">
-            <small>&copy;2024 Janice Bader</small>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+    <?php include('partials/footer.php') ?>
 
 </body>
 </html>
