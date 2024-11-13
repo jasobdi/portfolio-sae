@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-   // Array Monitor:
+// Array Monitor:
 // echo '<pre>';
 // print_r($_POST);
 // echo '</pre>';
@@ -21,7 +21,7 @@ $language = '';
 $agb = false;
 
 // wenn der Register-Button gecklikt wurde
-if(isset($_POST['register'])){
+if (isset($_POST['register'])) {
     // SANITIZING
     $username = strip_tags(trim($_POST['username']));
     $email = strip_tags(trim($_POST['email']));
@@ -49,7 +49,7 @@ if(isset($_POST['register'])){
     // passwort
     if (empty($password)) {
         $errorMessages['password'] = 'Bitte ein Passwort eingeben';
-    } else if (!preg_match("/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,}$/", $password)) { 
+    } else if (!preg_match("/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,}$/", $password)) {
         $errorMessages['password'] = 'Das Passwort ist ungültig';
     }
 
@@ -68,17 +68,11 @@ if(isset($_POST['register'])){
         $errorMessages['agb'] = "Bitte die AGB's akzeptieren";
     }
 
+    // wenn keine Fehlermeldungen vorhanden -> Erfolgsmeldung
+    if (count($errorMessages) == 0) {
+        $formSuccess = true; // Setze die Erfolgsmeldung
+    }
 }
-
-   // ERFOLGSMELDUNG - bei Versand an Server
-
-// if ($formSuccess) {
-//     echo "<p style='color: green;background:#88d19b;border:solid 1px;border-radius:5px;'>
-//     Registrierung abgeschlossen!</p>";
-// } else if (!empty($error)) {
-//     echo "<p style='color: red;background:##db9191;border:solid 1px;border-radius:5px;'>
-//     Fehler: $error</p>";
-// }
 
 ?>
 
@@ -99,12 +93,12 @@ if(isset($_POST['register'])){
     <main class="main-registration">
         <h1>Registrieren</h1>
 
-        <?php 
-        // wenn keine Fehlermeldungen vorhanden -> Erfolgsmeldung
-        if( count($errorMessages) == 0){
-            echo '<span style=color:#2d700f;font-weight:600;margin-bottom:2rem;>Registrierung erfolgreich</span>';
-        }
-        ?>
+        <?php
+    // Erfolgsmeldung anzeigen
+    if ($formSuccess) {
+        echo '<span style="color:#2d700f;font-weight:600;margin-bottom:2rem;">Registrierung erfolgreich</span>';
+    }
+    ?>
 
         <section class="registration-form">
             <form action="" method="POST" novalidate>
@@ -175,4 +169,5 @@ if(isset($_POST['register'])){
     <?php include('partials/footer.php') ?>
 
 </body>
+
 </html>

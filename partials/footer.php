@@ -23,7 +23,8 @@
         <p>|</p>
         <a href="datenschutz.php">Datenschutz</a>
     </div>
-    <a href="registration2.php">Registrieren</a>
+    <a href="registration_validation.php">Registrieren</a>
+    <a href="registration_db.php">Registrieren2</a>
     <a href="login.php">Login</a>
 
     <!-- COPYRIGHT -->
