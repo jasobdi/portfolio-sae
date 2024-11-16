@@ -1,93 +1,15 @@
-<?php
-
-// Array Monitor:
-// echo '<pre>';
-// print_r($_POST);
-// echo '</pre>';
-
-/**
- * FORMULARVALIDIERUNG REGISTRIERUNGS-FORMULAR
- */
-
-$formSuccess = false; // Erfolgsmeldung nach Versand
-$formError = ''; // Fehlermeldung wenn Versand nicht mögl.
-
-$errorMessages = array(); // Container für Fehlermeldungen
-$username = '';
-$email = '';
-$password = '';
-$usertype = '';
-$language = '';
-$agb = false;
-
-// wenn der Register-Button gecklikt wurde
-if (isset($_POST['register'])) {
-    // SANITIZING
-    $username = strip_tags(trim($_POST['username']));
-    $email = strip_tags(trim($_POST['email']));
-    $password = strip_tags(trim($_POST['password']));
-    $usertype = isset($_POST['usertype']) ? $_POST['usertype'] : '';
-    $language = isset($_POST['language']) ? $_POST['language'] : '';
-    $agb = isset($_POST['agb']);
-
-    // VALIDIERUNG EINZELNE INPUT-FELDER
-
-    // username
-    if (empty($username)) {
-        $errorMessages['username'] = 'Bitte Username eingeben';
-    } else if (!preg_match("/^.{4,16}$/", $username)) { // 4-16 Zeichen
-        $errorMessages['username'] = 'Der Username muss zwischen 4 und 16 Zeichen lang sein.';
-    }
-
-    // email 
-    if (empty($email)) {
-        $errorMessages['email'] = 'Bitte E-Mail eingeben';
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMessages['email'] = 'Die E-Mail ist ungültig';
-    }
-
-    // passwort
-    if (empty($password)) {
-        $errorMessages['password'] = 'Bitte ein Passwort eingeben';
-    } else if (!preg_match("/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,}$/", $password)) {
-        $errorMessages['password'] = 'Das Passwort ist ungültig';
-    }
-
-    // nutzertyp (Radio-Buttons)
-    if (empty($usertype)) {
-        $errorMessages['usertype'] = 'Bitte einen Nutzertyp auswählen';
-    }
-
-    // sprache (Select-Input)
-    if (empty($language)) {
-        $errorMessages['language'] = 'Bitte eine Sprache auswählen';
-    }
-
-    // AGB (Checkbox)
-    if (!$agb) {
-        $errorMessages['agb'] = "Bitte die AGB's akzeptieren";
-    }
-
-    // wenn keine Fehlermeldungen vorhanden -> Erfolgsmeldung
-    if (count($errorMessages) == 0) {
-        $formSuccess = true; // Setze die Erfolgsmeldung
-    }
-}
-
-?>
-
-<!-- HTML -->
+<?php include('../controller/registration.php') ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <!--  HEAD  -->
-<?php include('partials/head.php') ?>
+<?php include('../partials/head.php') ?>
 
 <body>
 
     <!-- HEADER -->
     <header>
-        <?php include('partials/nav.php') ?>
+        <?php include('../partials/nav.php') ?>
     </header>
 
     <main class="main-registration">
@@ -104,33 +26,37 @@ if (isset($_POST['register'])) {
             <form action="" method="POST" novalidate>
 
                 <label for="username">Benutzername</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>">
+                <input type="text" id="username" name="username" required value="<?php echo htmlspecialchars($username); ?>">
                 <?php if (isset($errorMessages['username'])): ?>
                     <span><?php echo $errorMessages['username']; ?></span>
                 <?php endif; ?>
 
 
                 <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
+                <input type="email" id="email" name="email" required value="<?php echo htmlspecialchars($email); ?>">
                 <?php if (isset($errorMessages['email'])): ?>
                     <span><?php echo $errorMessages['email']; ?></span>
                 <?php endif; ?>
 
-
                 <label for="password">Passwort</label>
-                <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($password); ?>">
+                <input type="password" id="password" name="password" required value="<?php echo htmlspecialchars($password); ?>">
                 <?php if (isset($errorMessages['password'])): ?>
                     <span><?php echo $errorMessages['password']; ?></span>
                 <?php endif; ?>
 
+                <label for="confirmpassword">Passwort wiederholen</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" required value="<?php echo htmlspecialchars($confirmpassword); ?>">
+                <?php if (isset($errorMessages['confirmpassword'])): ?>
+                    <span><?php echo $errorMessages['confirmpassword']; ?></span>
+                <?php endif; ?>
 
                 <legend>Nutzertyp</legend>
                 <div class="radio-registration">
-                    <input type="radio" id="administrator" name="usertype" value="administrator" <?php echo ($usertype == 'administrator') ? 'checked' : ''; ?>>
+                    <input type="radio" id="administrator" name="usertype" value="1" <?php echo ($usertype == '1') ? 'checked' : ''; ?>>
                     <label for="administrator">Administrator</label>
                 </div>
                 <div class="radio-registration">
-                    <input type="radio" id="user" name="usertype" value="user" <?php echo ($usertype == 'user') ? 'checked' : ''; ?>>
+                    <input type="radio" id="user" name="usertype" value="2" <?php echo ($usertype == '2') ? 'checked' : ''; ?>>
                     <label for="user">Nutzer</label>
                 </div>
                 <?php if (isset($errorMessages['usertype'])): ?>
@@ -139,7 +65,7 @@ if (isset($_POST['register'])) {
 
 
                 <label for="language">Bevorzugte Sprache</label>
-                <select name="language" id="language">
+                <select name="language" id="language" required>
                     <option value="" selected hidden>Sprache auswählen</option>
                     <option value="deutsch" <?php echo ($language == 'deutsch') ? 'selected' : ''; ?>>Deutsch</option>
                     <option value="english" <?php echo ($language == 'english') ? 'selected' : ''; ?>>English</option>
@@ -166,7 +92,7 @@ if (isset($_POST['register'])) {
     </main>
 
     <!-- FOOTER -->
-    <?php include('partials/footer.php') ?>
+    <?php include('../partials/footer.php') ?>
 
 </body>
 

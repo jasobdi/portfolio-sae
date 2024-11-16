@@ -1,15 +1,13 @@
-<?php 
-?>
 
 <!DOCTYPE html>
 <html lang="de">
     <!--  HEAD  -->
-    <?php include('partials/head.php') ?>
+    <?php include('../partials/head.php') ?>
 <body>
 
     <!-- HEADER -->
     <header>
-        <?php include('partials/nav.php') ?>
+        <?php include('../partials/nav.php') ?>
     </header>
 
     <!-- MAIN -->
@@ -23,42 +21,42 @@
                 <!-- logo redbull -->
                 <div class="slide">
                     <img
-                        srcset="images/image_slider/redbull_redesign_logo_296w.png 296w, images/image_slider/redbull_redesign_logo_400w.png 400w, images/image_slider/redbull_redesign_logo_500w.png 500w" 
+                        srcset="../images/image_slider/redbull_redesign_logo_296w.png 296w, ../images/image_slider/redbull_redesign_logo_400w.png 400w, ../images/image_slider/redbull_redesign_logo_500w.png 500w" 
                         sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Redesign Redbull Logo">
                 </div>
                 <!-- logo alpenblick -->
                 <div class="slide">
                     <img 
-                        srcset="images/image_slider/alpenblick_logo_296w.png 296w, images/image_slider/alpenblick_logo_400w.png 400w, images/image_slider/alpenblick_logo_500w.png 500w" 
+                        srcset="../images/image_slider/alpenblick_logo_296w.png 296w, ../images/image_slider/alpenblick_logo_400w.png 400w, ../images/image_slider/alpenblick_logo_500w.png 500w" 
                         sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Logo für das fiktive Cafe Alpenblick">
                 </div>
                 <!-- screendesign -->
                 <div class="slide">
                     <img 
-                        srcset="images/image_slider/screendesign_296w.png 296w, images/image_slider/screendesign_400w.png 400w, images/image_slider/screendesign_500w.png 500w" 
+                        srcset="../images/image_slider/screendesign_296w.png 296w, ../images/image_slider/screendesign_400w.png 400w, ../images/image_slider/screendesign_500w.png 500w" 
                         sizes="(max-width: 768px) 296px, 400px 500px"
                         alt="Erste Version Screendesign Potfolio Webseite">
                 </div>
                 <!-- portfolio-webseite -->
                 <div class="slide">
                     <img 
-                        srcset="images/image_slider/portfolio_webseite_296w.png 296w, images/image_slider/portfolio_webseite_400w.png 400w, images/image_slider/portfolio_webseite_500w.png 500w" 
+                        srcset="../images/image_slider/portfolio_webseite_296w.png 296w, ../images/image_slider/portfolio_webseite_400w.png 400w, ../images/image_slider/portfolio_webseite_500w.png 500w" 
                         sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Erste Version Portfolio Webseite mit HTML & CSS">
                 </div>
                 <!-- image-slider -->
                 <div class="slide">
                     <img 
-                        srcset="images/image_slider/image_slider_296w.png 296w, images/image_slider/image_slider_400w.png 400w, images/image_slider/image_slider_500w.png 500w " 
+                        srcset="../images/image_slider/image_slider_296w.png 296w, ../images/image_slider/image_slider_400w.png 400w, ../images/image_slider/image_slider_500w.png 500w " 
                         sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Image Slider Portfolio Webseite mit Javascript">
                 </div>
                 <!-- logo jb -->
                 <div class="slide">
                     <img 
-                        srcset="images/image_slider/logo_jb_296w.png 296w, images/image_slider/logo_jb_400w.png 400w, images/image_slider/logo_jb_500w.png 500w" 
+                        srcset="../images/image_slider/logo_jb_296w.png 296w, ../images/image_slider/logo_jb_400w.png 400w, ../images/image_slider/logo_jb_500w.png 500w" 
                         sizes="(max-width: 768px) 296px, 400px, 500px"
                         alt="Logo Janice Bader">
                 </div>
@@ -79,7 +77,7 @@
     <hr>
 
     <!-- FOOTER -->
-    <?php include('partials/footer.php') ?>
+    <?php include('../partials/footer.php') ?>
 
 </body>
 </html>

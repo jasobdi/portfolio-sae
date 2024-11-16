@@ -785,3 +785,17 @@ form legend {
     display: flex;
     flex-direction: column;
 }
+
+
+/* DASHBOARD - DESKTOP!!! */
+
+.main-dashboard {
+    margin: 0 2rem;
+}
+
+.main-about h1 {
+    text-align: center;
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--lato-light);
+    margin: 2rem 0;
+}

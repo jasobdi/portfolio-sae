@@ -38,51 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $user['username'];
         $_SESSION['userid'] = $user['ID'];
         $_SESSION['logintime'] = time(); // Zeitstempel
-        header("Location: index.php"); // Weiterleitung nach dem Login
+        header("Location: dashboard.php"); // Weiterleitung nach dem Login
         exit();
     }
 }
 session_regenerate_id(); // Session ID erneuern gegen Session Hijacking
 
 ?>
-
-<!DOCTYPE html>
-<html lang="de">
-<!--  HEAD  -->
-<?php include('partials/head.php') ?>
-
-<body>
-
-    <!-- HEADER -->
-    <header>
-        <?php include('partials/nav.php') ?>
-    </header>
-
-    <main class="main-login">
-        <h1>Login</h1>
-
-        <section class="login-form">
-            <form action="" method="POST">
-                <label for="username">Benutzername</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>">
-
-                <label for="password">Passwort</label>
-                <input type="password" id="password" name="password">
-
-                <?php if (!empty($errorMessages)): ?>
-                    <div class="error-messages">
-                        <?php foreach ($errorMessages as $message): ?>
-                            <p style="color: red;"><?php echo htmlspecialchars($message); ?></p>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-
-                <button type="submit" class="login">Login</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <?php include('partials/footer.php') ?>
-</body>
-</html>

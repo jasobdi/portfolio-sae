@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html lang="de">
     <!--  HEAD  -->
-    <?php include('partials/head.php') ?>
+    <?php include('../partials/head.php') ?>
 <body>
 
     <!-- HEADER -->
     <header>
-        <?php include('partials/nav.php') ?>
+        <?php include('../partials/nav.php') ?>
     </header>
 
     <!-- MAIN -->
@@ -25,7 +25,7 @@
                     Design, Programmieren und IT interessieren mich schon eine Weile, durch die SAE habe ich die Möglichkeit meine Interessen zum Beruf zu machen.
                 </p>
                 <img 
-                srcset="images/janice_bader_296w.png 296w, images/janice_bader_300w.png 300w, images/janice_bader_400w.png 400w " 
+                srcset="../images/janice_bader_296w.png 296w, ../images/janice_bader_300w.png 300w, ../images/janice_bader_400w.png 400w " 
                 sizes="(max-width: 768px) 296px, 300px, 400px"
                 alt="junge Frau mit Brille und geraden blonden Haaren lächelt für ein Bewerbungsfoto">
             </div>
@@ -34,7 +34,7 @@
                     In meiner Freizeit male und zeichne ich gerne, ausserdem spiele ich Unihockey und bewege mich viel im Ausgleich zum Alltag vor dem Bildschirm.
                 </p>
                 <img 
-                srcset="images/janice_black_white_296w.png 296w, images/janice_black_white_300w.png 300w, images/janice_black_white_400w.png 400w" 
+                srcset="../images/janice_black_white_296w.png 296w, ../images/janice_black_white_300w.png 300w, ../images/janice_black_white_400w.png 400w" 
                 sizes="(max-width: 768px) 296px, 300px, 400px"
                 alt="schwarz-weiss-Bild von einer jugen Frau mit gewellten Haaren und Hut, die im Wald steht">
             </div>
@@ -113,7 +113,7 @@
     </main>
 
     <!-- FOOTER -->
-    <?php include('partials/footer.php') ?>
+    <?php include('../partials/footer.php') ?>
     
 </body>
 </html>

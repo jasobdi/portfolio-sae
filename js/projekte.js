@@ -2,7 +2,7 @@
 
 
 // url als Variable
-const url = `api/projekte.json`;
+const url = `../api/projekte.json`;
 
 // ausführen der asynchronen Funktion getData
 getData(url);
@@ -25,7 +25,7 @@ function displayProjects (data) {
 
     // so werden die einzelnen posts aufgelistet
     const template = `
-        <li class="project-img"><img src="images/projects/${post.image}"></li>
+        <li class="project-img"><img src="../images/projects/${post.image}"></li>
         <li class="project-title"><a href="#">${post.title}</a></li>
         <li class="project-description">${post.content}</li>
         <li class="project-type">Arbeitsart: ${post.type}</li>`;

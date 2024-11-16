@@ -23,9 +23,9 @@
         <p>|</p>
         <a href="datenschutz.php">Datenschutz</a>
     </div>
-    <a href="registration_validation.php">Registrieren</a>
-    <a href="registration_db.php">Registrieren2</a>
+    <a href="registration.php">Registrieren</a>
     <a href="login.php">Login</a>
+    <a href="dashboard.php">Dashboard</a>
 
     <!-- COPYRIGHT -->
     <div class="copyright">

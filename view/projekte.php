@@ -1,16 +1,14 @@
-<?php 
-?>
 
 <!DOCTYPE html>
 <html lang="de">
     <!--  HEAD  -->
-    <?php include('partials/head.php') ?>
+    <?php include('../partials/head.php') ?>
     
 <body>
 
     <!-- HEADER -->
     <header>
-        <?php include('partials/nav.php') ?>
+        <?php include('../partials/nav.php') ?>
     </header>
 
     <!-- MAIN -->
@@ -24,7 +22,7 @@
     </main>
 
     <!-- FOOTER -->
-    <?php include('partials/footer.php') ?>
+    <?php include('../partials/footer.php') ?>
     
 </body>
 </html>

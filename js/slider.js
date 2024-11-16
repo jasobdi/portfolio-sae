@@ -111,53 +111,6 @@ document.querySelectorAll(".pause-play").forEach(element => {
     })
 })
 
-// const pausePlayButton = document.querySelector(".pause-play i");
-// const colorChange = document.querySelector(".pause-button");
-
-// // autoSlide ist "true" (läuft)
-// if (autoSlide === true) {
-//     // dann interval stoppen und autoSlideTimer bei null (0) starten
-//     pauseSlide();
-//     // autoSlide ist jetzt "false" (angehlaten)
-//     autoSlide = false;
-
-//     // Ändern des Icons zu "fa-play"
-//     pausePlayButton.classList.remove("fa-pause");
-//     pausePlayButton.classList.add("fa-play");
-
-//     // Play-Button wird rosa
-//     colorChange.classList.add("paused");
-//     colorChange.classList.remove("playing");
-
-// } else {
-//     // autoSlide ist "true" (läuft)
-//     autoSlide = true;
-//     // startSlide ausführen
-//     startSlide();
-
-//     // Ändern des Icons zu "fa-pause"
-//     pausePlayButton.classList.remove("fa-play");
-//     pausePlayButton.classList.add("fa-pause");
-// }
-
-//     // Pause-Button wird dunkelblau
-//     colorChange.classList.remove("playing");
-//     colorChange.classList.add("paused");
-// });
-
-// Eventlistener für den klick auf die Pfeile
-// document.querySelector(".slider-btn left").addEventListener("click", function () {
-//     pauseSlide();
-//     moveLeft();
-//     startSlide();
-// });
-// document.querySelector(".slider-btn right").addEventListener("click", function () {
-//     pauseSlide();
-//     moveRight();
-//     startSlide();
-// });
-
-
 // Click-Event für alle Elemente mit der class "slider-btn"
 document.querySelectorAll('.slider-btn').forEach(element=>{
     element.addEventListener('click', ()=>{
