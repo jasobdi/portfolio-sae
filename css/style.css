@@ -723,32 +723,6 @@ p.subtitle {
     flex-direction: column;
 }
 
-.registration-form i{
-    font-size: var(--body-font-size);
-}
-
-.registration-form i:hover {
-    color: var(--rose);
-}
-
-/* .form-info-overlay {
-    display: none;
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
-    font-size: var(--body-font-size);
-    color: var(--darkblue);
-    position: fixed;
-    height: 30vh;
-    width: 80%;
-    background: white;
-    border-radius: 5px;
-    z-index: 3;
-}
-
-.form-info-overlay.active {
-    display: block;
-} */
-
 form legend {
     margin-bottom: 0.5rem;
     font-size: var(--body-font-size);
@@ -789,13 +763,57 @@ form legend {
 
 /* DASHBOARD - DESKTOP!!! */
 
-.main-dashboard {
-    margin: 0 2rem;
+.mobile-backend-navigation {
+    display: none;
+}
+.desktop-backend-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background: var(--gray);
 }
 
-.main-about h1 {
-    text-align: center;
-    font-size: var(--mobile-h1-size);
+
+.main-dashboard {
+    margin: 2rem 4rem;
+}
+
+.main-dashboard h1 {
     font-weight: var(--lato-light);
+    font-size: calc(var(--mobile-title-size)*3);
+    text-align: start;
+    margin: 0 0 2rem 0;
+}
+
+.main-dashboard h2 {
+    font-weight: var(--lato-light);
+    font-size: calc(var(--mobile-h1-size)*1.5);
+    text-align: start;
     margin: 2rem 0;
 }
+
+.form-check {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.file-upload button {
+    margin: 2rem 0 2rem 0;
+    padding: var(--padding-button);
+    color: var(--rose);
+    background: var(--white);
+    text-decoration: none;
+    font-size: var(--mobile-h2-size);
+    font-weight: var(--lato-bold);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.file-upload button:hover {
+    text-decoration: underline;
+}
+
+

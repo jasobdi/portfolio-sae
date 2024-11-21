@@ -25,3 +25,10 @@ Nun kannst du dich mit deinem eben erstellten Benutzernamen & Passwort einloggen
 
 Um das Login erneut zu testen, findest du im Footer ebenfalls den Link *Login* oder öffne die Datei login.php.
 
+## Dateiupload testen
+
+Um den Dateiupload im Browser über den Localhost zu öffnen, verwende die Datei *dashboard.php* im Ordner *view* oder den Link *Dashboard* im Footer der Webseite.
+Die zugehörige PHP-Klasse (NewUpload) findest du in der Datei *NewUpload.class.php* im Unterordner *class* vom Ordner *controller*.
+
+
+

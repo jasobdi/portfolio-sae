@@ -23,4 +23,5 @@
     <script src="../js/slider.js" defer></script>
     <script src="../js/projekte.js" defer></script>
     <script src="../js/registration.js" defer></script>
+    <script src="../js/nav-backend.js" defer></script>
 </head>
