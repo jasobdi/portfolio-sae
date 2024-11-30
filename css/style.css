@@ -761,6 +761,7 @@ form legend {
 }
 
 
+
 /* DASHBOARD - DESKTOP!!! */
 
 .mobile-backend-navigation {
@@ -814,6 +815,22 @@ form legend {
 }
 .file-upload button:hover {
     text-decoration: underline;
+}
+
+.feedback {
+    margin-bottom: 1rem;
+    color: blue;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--p-font-weight);
+}
+
+.error-messages {
+    margin-bottom: 1rem;
+    color: red;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--p-font-weight);
 }
 
 

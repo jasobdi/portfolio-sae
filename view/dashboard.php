@@ -1,41 +1,39 @@
 <?php
 
-// FOR TESTING
-// if (isset($_POST['upload'])) {
-//     echo "<div class=\"output\">";
-//     echo "<pre>";
-//     print_r($_FILES['upload-file']);
-//     echo "</pre>";
-//     echo "</div>";
-// }
+$feedback = ""; // Allgemeines Feedback
 
+// Arrays für die spezifischen Fehler für jedes Eingabefeld
+$errorMessages = [];
+$fileErrors = [];
+$titleErrors = [];
+$descErrors = [];
 
 if (isset($_POST['upload'])) {
     // Eingabefelder auf leere Werte überprüfen
     if (empty($_FILES['upload-file']['name'])) {
-        $feedback .= "Bitte wählen Sie eine Datei aus.<br>";
+        $fileErrors[] = "Bitte wählen Sie eine Datei aus";
     }
 
     if (empty($_POST['upload-title'])) {
-        $feedback .= "Bitte geben Sie einen Titel ein.<br>";
+        $titleErrors[] = "Bitte geben Sie einen Titel ein";
     }
 
     if (empty($_POST['upload-desc'])) {
-        $feedback .= "Bitte geben Sie eine Beschreibung ein.<br>";
+        $descErrors[] = "Bitte geben Sie eine Beschreibung ein";
     }
 
     // Nur fortfahren, wenn keine Fehler 
-    if (empty($feedback)) {
+    if (empty($fileErrors) && empty($titleErrors) && empty($descErrors)) {
 
         // Definieren Zielordner
         $targetFolder = "../images/projects";
         $path = $targetFolder;
 
-        // Instanz der NewUpload-Klasse erstellen
+        // require von config-file & NewUpload-Klasse
+        require('../controller/config.php');
         require_once('../controller/class/NewUpload.class.php');
-
-        $feedback = "";
-        $upload = new NewUpload($targetFolder);
+        
+        $upload = new NewUpload($host = 'localhost', $user = 'root', $passwd = 'root', $dbname = 'portfolio_jb', $path = $targetFolder);
         $step1 = $upload->checkFileError();
 
         if ($step1) {
@@ -45,25 +43,28 @@ if (isset($_POST['upload'])) {
                 $step3 = $upload->moveFile();
 
                 if ($step3) {
-                    $feedback .= "Die Datei wurde erfolgreich hochgeladen.<br>";
+                    $errorMessages[] = "Die Datei wurde erfolgreich hochgeladen<br>";
                 } else {
-                    $feedback .= "Fehler beim hochladen der Datei.<br>";
+                    $errorMessages[] = "Fehler beim hochladen der Datei<br>";
                 }
             } else {
-                $feedback .= "Fehler beim Überprüfen der Datei.<br>";
+                $errorMessages[] = "Fehler beim Überprüfen der Datei";
             }
         } else {
-            $feedback .= "Die Datei ist fehlerhaft.<br>";
+            $errorMessages[] = "Die Datei ist fehlerhaft";
         }
 
-        // Fehlermeldungen ausgeben
-        foreach ($upload->errorMessages as $error) {
-            $feedback .= $error;
+        // Alle Fehler in einem Array zusammenführen
+        $errorMessages = array_merge($fileErrors, $titleErrors, $descErrors);
+
+        // Danach Fehler aus der NewUpload-Klasse hinzufügen
+        if (!empty($upload->errorMessages)) {
+            $errorMessages = array_merge($errorMessages, $upload->errorMessages);
         }
     }
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,27 +82,50 @@ if (isset($_POST['upload'])) {
             <h2>Neues Projekt</h2>
 
             <form method="post" enctype="multipart/form-data" novalidate>
-                <input type="hidden" name="MAX_FILE_SIZE" value="<? $maxFileSize ?>">
+                <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize; ?>">
 
-                <?php if (!empty($feedback)): ?>
+                <?php if (!empty($errorMessages)){ ?>
                     <div class="feedback">
-                    <p><?= $feedback ?></p>
+                        <?php foreach ($errorMessages as $error){ ?>
+                            <p class="error"><?= $error ?></p>
+                        <?php } ?>
                     </div>
-                <?php endif; ?>
+                <?php } ?>
 
                 <div class="form-check">
                     <label for="upload-file">Bild auswählen</label>
                     <input type="file" accept="image/*" name="upload-file" id="upload-file" required>
+                    <?php if (!empty($fileErrors)){ ?>
+                        <span class="error-messages">
+                            <?php foreach ($fileErrors as $fileError){ ?>
+                                <p class="error"><?= $fileError ?></p>
+                            <?php } ?>
+                        </span>
+                    <?php } ?>
                 </div>
 
                 <div class="form-check">
                     <label for="upload-title">Titel</label>
                     <input type="text" name="upload-title" id="upload-title" required>
+                    <?php if (!empty($titleErrors)) { ?>
+                        <span class="error-messages">
+                            <?php foreach ($titleErrors as $titleError){ ?>
+                                <p class="error"><?= $titleError ?></p>
+                            <?php } ?>
+                        </span>
+                    <?php } ?>
                 </div>
 
                 <div class="form-check">
                     <label for="upload-desc">Beschreibung <small>(max. 150 Zeichen)</small></label>
                     <textarea name="upload-desc" id="upload-desc" maxlength="150" cols="50" rows="5" required></textarea>
+                    <?php if (!empty($descErrors)) { ?>
+                        <span class="error-messages">
+                            <?php foreach ($descErrors as $descError){ ?>
+                                <p class="error"><?= $descError ?></p>
+                            <?php } ?>
+                        </span>
+                    <?php } ?>
                 </div>
 
                 <div class="form-check">

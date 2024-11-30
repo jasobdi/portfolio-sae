@@ -78,7 +78,7 @@
         <!-- KONTAKTFORMULAR -->
         <section class="contact-form">
                 
-            <form>
+            <form novalidate>
                 <h2>Kontakt</h2>
                 <label for="name-title">*Anrede</label>
                 <select name="name-title" id="name-title" required>
