@@ -3,17 +3,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <!--  HEAD  -->
-<?php include('../partials/head.php') ?>
+<?php include('../partials/head-cms.php') ?>
 
 <body>
 
     <!-- HEADER -->
     <header>
-        <?php include('../partials/nav.php') ?>
     </header>
 
     <main class="main-login">
-        <h1>Login</h1>
+        <h1>Anmelden</h1>
 
         <section class="login-form">
             <form action="" method="POST">
@@ -31,12 +30,16 @@
                     </div>
                 <?php endif; ?>
 
-                <button type="submit" class="login">Login</button>
+                <button type="submit" class="login">Anmelden</button>
             </form>
         </section>
+        <div class="registration-link">
+            <a href="registration.php">Registrieren</a>
+        </div>
+        
     </main>
 
     <!-- FOOTER -->
-    <?php include('../partials/footer.php') ?>
+    <?php include('../partials/footer-cms.php') ?>
 </body>
 </html>

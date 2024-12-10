@@ -14,5 +14,7 @@
             </a>
         </button>
     </main>
+    <!-- FOOTER -->
+    <?php include('../partials/footer-cms.php') ?>
 </body>
 </html>

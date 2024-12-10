@@ -227,13 +227,23 @@
 
      /* tablet: LOGIN - FORM */
     .main-login h1 {
-        text-align: start;
         font-size: calc(var(--mobile-h1-size)*1.5);
     }
 
     .login-form form {
         width: 70%;
     }
+
+    button.login {
+        align-self: center;
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .registration-link a {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    
 
 }
 

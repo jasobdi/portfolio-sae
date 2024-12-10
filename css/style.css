@@ -745,7 +745,6 @@ form legend {
     margin: 0 2rem;
 }
 
-
 .main-login h1 {
     text-align: center;
     font-size: var(--mobile-h1-size);
@@ -753,11 +752,44 @@ form legend {
     margin: 2rem 0;
 }
 
+.registration-link {
+    display: flex;
+    justify-content: center;
+}
+
+.registration-link a {
+    text-decoration: none;
+    font-size: var(--body-font-size);
+    color: var(--rose);
+    background-color: var(--white);
+    font-weight: var(--lato-bold);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.registration-link a:hover {
+    text-decoration: underline;
+}
+
 /* LOGIN - FORM */
 
 .login-form form {
+    width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+}
+
+button.login {
+    font-size: var(--body-font-size);
+    color: var(--darkblue);
+    background-color: var(--rose);
+    font-weight: var(--lato-bold);
+
 }
 
 
@@ -799,7 +831,7 @@ form legend {
     font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     color: var(--darkblue);
-    margin: 2rem 0 2rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .new-project-btn {
@@ -842,7 +874,7 @@ form legend {
     font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     color: var(--darkblue);
-    margin: 2rem 0 2rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .edit-home {
@@ -853,6 +885,10 @@ form legend {
 }
 
 .edit-home label {
+    font-size: var(--body-font-size);
+}
+
+.edit-home button {
     font-size: var(--body-font-size);
 }
 
@@ -867,7 +903,7 @@ form legend {
     font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     color: var(--darkblue);
-    margin: 2rem 0 2rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .edit-about {
@@ -881,12 +917,28 @@ form legend {
     font-size: var(--body-font-size);
 }
 
+.edit-about button {
+    font-size: var(--body-font-size);
+}
+
 /* platzhalter für bilder */
 .img-top, .img-bottom {
     height: 250px;
     width: 250px;
     background-color: antiquewhite;
     margin-bottom: 1rem;
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.label-container i:hover {
+    color: var(--rose);
+    cursor: pointer;
 }
 
 /* EDIT PROJECTPAGE - CMS */
@@ -913,6 +965,10 @@ form legend {
     font-size: var(--body-font-size);
 }
 
+.edit-projectpage button {
+    font-size: var(--body-font-size);
+}
+
 
 /* EDIT PROJECTS - CMS */
 
@@ -925,15 +981,15 @@ form legend {
     font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     color: var(--darkblue);
-    margin: 2rem 0 2rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .main-edit-projects-cms h2 {
-    text-align: start;
+    text-align: center;
     font-weight: var(--lato-light);
     font-size: var(--mobile-h1-size);
     color: var(--darkblue);
-    margin: 2rem 0;
+    margin: 3rem 0 2rem 0;
 }
 
 .project-upload label {
@@ -946,6 +1002,9 @@ form legend {
     flex-direction: column;
     justify-content: flex-start;
     width: 90%;
+}
+.form-check button {
+    font-size: var(--body-font-size);
 }
 
 .feedback {

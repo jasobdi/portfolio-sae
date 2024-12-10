@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <!--  HEAD  -->
-<?php include('../partials/head.php') ?>
+<?php include('../partials/head-cms.php') ?>
 
 <body>
 
     <!-- HEADER -->
     <header>
-        <?php include('../partials/nav.php') ?>
     </header>
 
     <main class="main-registration">
@@ -50,7 +49,7 @@
                     <span><?php echo $errorMessages['confirmpassword']; ?></span>
                 <?php endif; ?>
 
-                <legend>Nutzertyp</legend>
+                <!-- <legend>Nutzertyp</legend>
                 <div class="radio-registration">
                     <input type="radio" id="administrator" name="usertype" value="1" <?php echo ($usertype == '1') ? 'checked' : ''; ?>>
                     <label for="administrator">Administrator</label>
@@ -84,7 +83,7 @@
                 </div>
                 <?php if (isset($errorMessages['agb'])): ?>
                     <span><?php echo $errorMessages['agb']; ?></span>
-                <?php endif; ?>
+                <?php endif; ?> -->
 
                 <button type="submit" class="register" name="register">Registrieren</button>
             </form>
@@ -92,7 +91,7 @@
     </main>
 
     <!-- FOOTER -->
-    <?php include('../partials/footer.php') ?>
+    <?php include('../partials/footer-cms.php') ?>
 
 </body>
 

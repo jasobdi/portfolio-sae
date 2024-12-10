@@ -18,5 +18,7 @@
             <button type="submit" name="safe">Speichern</button> 
         </form>
     </main>
+    <!-- FOOTER -->
+    <?php include('../partials/footer-cms.php') ?>
 </body>
 </html>

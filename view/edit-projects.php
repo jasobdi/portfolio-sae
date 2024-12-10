@@ -137,6 +137,8 @@ if (isset($_POST['upload'])) {
             <h2>Projekte bearbeiten</h2>
         </section>
     </main>
+    <!-- FOOTER -->
+    <?php include('../partials/footer-cms.php') ?>
 </body>
 
 </html>
