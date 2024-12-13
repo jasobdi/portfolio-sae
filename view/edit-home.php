@@ -1,3 +1,5 @@
+<?php include('../controller/edit-home.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--  HEAD  -->
@@ -8,21 +10,14 @@
 
     <main class="main-edit-home-cms">
         <h1>Home bearbeiten</h1>
-        <form class="edit-home" action="" novalidate>
+        <form class="edit-home" action="" method="POST" novalidate>
 
             <label for="pagetitle">Seitentitel*</label>
-            <input type="text" name="pagetitle" id="pagetitle" required>
+            <input type="text" name="pagetitle" id="pagetitle" value="<?php echo htmlspecialchars($currentTitle['title'] ?? ''); ?>" required>
 
-            <!-- <div class="">
-                <label for="images">Bilder</label>
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div> -->
 
             <button type="submit" name="safe">Speichern</button>
+
         </form>
     </main>
     <!-- FOOTER -->

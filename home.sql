@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Erstellungszeit: 10. Dez 2024 um 17:19
+-- Erstellungszeit: 11. Dez 2024 um 12:42
 -- Server-Version: 8.0.35
 -- PHP-Version: 8.2.20
 
@@ -24,14 +24,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `user`
+-- Tabellenstruktur für Tabelle `home`
 --
 
-CREATE TABLE `user` (
-  `ID` int NOT NULL,
-  `username` varchar(16) NOT NULL,
-  `useremail` varchar(255) NOT NULL,
-  `userpassword` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+CREATE TABLE `home` (
+    `ID` int NOT NULL,
+    `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -39,22 +37,20 @@ CREATE TABLE `user` (
 --
 
 --
--- Indizes für die Tabelle `user`
+-- Indizes für die Tabelle `home`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `useremail` (`useremail`),
-  ADD UNIQUE KEY `username` (`username`);
+ALTER TABLE `home`
+    ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT für Tabelle `user`
+-- AUTO_INCREMENT für Tabelle `home`
 --
-ALTER TABLE `user`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `home`
+    MODIFY `ID` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

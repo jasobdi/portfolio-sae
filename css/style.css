@@ -356,71 +356,6 @@ main {
     width: 296px;
 }
 
-
-/* PROGRESS BARS - zu einem späteren Zeitunkt */
-
-/* CONTAINER AUSSEN*/
-/* 
-.skills-bars {
-    margin-bottom: 2rem;
-}
-
-.skills-bars p {
-    text-align: start;
-    color: var(--darkblue);
-    font-family: var(--main-font-family);
-    font-size: var(--body-font-size);
-    font-weight: var(--p-font-weight);
-    margin: 0.5rem;
-}
-
-.skills-bars div {
-    color: var(--darkblue);
-    font-family: var(--main-font-family);
-    font-size: var(--body-font-size);
-    font-weight: var(--p-font-weight);
-} */
-
-/* CONTAINER INNEN */
-/* .skills-container {
-    border: 1px solid var(--darkblue);
-}
-
-.skills {
-    text-align: right;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    color: var(--darkblue);
-    border-radius: 0 5px 5px 0;
-}
-
-.ps {
-    width: 60%;
-    background: var(--rose);
-}
-.ai {
-    width: 70%;
-    background: var(--rose);
-}
-.xd {
-    width: 90%;
-    background: var(--rose);
-}
-.id {
-    width: 60%;
-    background: var(--rose);
-}
-.html {
-    width: 60%;
-    background: var(--rose);
-}
-.css {
-    width: 50%;
-    background: var(--rose);
-} */
-
-
 /* ABOUT - BUTTON CV */
 
 .cv {
@@ -723,20 +658,13 @@ p.subtitle {
     flex-direction: column;
 }
 
-form legend {
-    margin-bottom: 0.5rem;
-    font-size: var(--body-font-size);
-    font-weight: var(--lato-regular);
+.registration-form ul {
+    margin-bottom: 1rem;
 }
 
-.radio-registration {
-    margin-bottom: 0.5rem;
-    padding-left: 2rem;
-}
-
-.checkbox-registration {
-    margin-top: 0.5rem;
-    padding-left: 2rem;
+.registration-form ul li {
+    font-weight: var(--lato-light);
+    margin-left: 1rem;
 }
 
 /* LOGIN */
@@ -814,6 +742,18 @@ button.login {
     position: relative;
     padding: 0 0 0 1rem;
     height: 60px;
+}
+
+.mobile-nav-cms .overlay-nav .nav-links {
+    padding: 20vh 0 0 0;
+}
+
+.mobile-nav-cms .logout-link {
+    color: var(--white);
+    background: var(--darkblue);
+    padding: 1rem 1rem;
+    border-radius: 100px;
+    
 }
 
 /* (HAMBURGER & OVERLAY bei MOBILE-NAVIGATION) */
@@ -921,12 +861,16 @@ button.login {
     font-size: var(--body-font-size);
 }
 
-/* platzhalter für bilder */
+/* bilder */
 .img-top, .img-bottom {
     height: 250px;
     width: 250px;
     background-color: antiquewhite;
     margin-bottom: 1rem;
+}
+
+.img1, .img2 {
+    margin-bottom: 2rem;
 }
 
 .label-container {
@@ -1008,7 +952,7 @@ button.login {
 }
 
 .feedback {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 2rem;
     color: blue;
     font-size: var(--body-font-size);
     font-family: var(--main-font-family);
@@ -1016,7 +960,7 @@ button.login {
 }
 
 .error-messages {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 2rem;
     color: red;
     font-size: var(--body-font-size);
     font-family: var(--main-font-family);

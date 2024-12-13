@@ -12,7 +12,7 @@ class NewUpload extends PDO {
     public $descErrors = [];
 
     // Eigenschaft für die maximale Dateigröße
-    private $maxFileSize = 300000;
+    private $maxFileSize = 500000;
 
     // Erlaubte MIME-Typen
     private $allowedMimeTypes = ["image/jpeg", "image/png", "image/webp"];

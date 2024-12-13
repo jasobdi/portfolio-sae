@@ -1,9 +1,17 @@
+<?php 
+require_once('../controller/config.php');
+require_once ('../controller/class/Auth.class.php');
+
+// Prüfen ob User eingeloggt ist anhand von CheckLogIn-Methode von Auth.class.php
+Auth::checkLogIn(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--  HEAD  -->
 <?php include('../partials/head-cms.php') ?>
 <body>
-    <!-- SIDEBAR-NAVIGATION -->
+    <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>
 
     <main class="main-dashboard-cms">

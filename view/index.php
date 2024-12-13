@@ -1,3 +1,16 @@
+<?php
+
+// Datenbankverbindung herstellen
+require_once('../controller/config.php');
+require_once('../controller/class/Database.class.php');
+
+$db = new Database();
+$title = $db->getHomePageTitle(); // Titel aus der Datenbank holen
+
+// Fallback falls kein Titel vorhanden ist
+$pageTitle = $title['title'] ?? 'PORTFOLIO JANICE BADER'; 
+
+?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -12,8 +25,7 @@
 
     <!-- MAIN -->
     <main class="main-home">
-        <h1>PORTFOLIO JANICE BADER
-        </h1>
+        <h1><?php echo htmlspecialchars($pageTitle); ?></h1>
         <hr> 
 
     <!-- IMAGE SLIDER -->

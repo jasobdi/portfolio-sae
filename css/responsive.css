@@ -84,7 +84,7 @@
     }
 
 
-    /* ABOUT - CV-BUTTON */
+    /* tablet: ABOUT - CV-BUTTON */
 
     .cv {
         display: flex;
@@ -95,16 +95,7 @@
         font-size: calc(var(--body-font-size)*1.5);
     }
 
-
-    /* ABOUT - SKILLS BARS */
-
-    /* .skills-bars div {
-        font-size: calc(var(--body-font-size)*1.5);
-        width: 70%
-    } */
-
-
-    /* ABOUT - CONTACT FORM */
+    /* tablet: ABOUT - CONTACT FORM */
 
     .main-about h2 {
         font-size: calc(var(--mobile-h1-size)*1.5);
@@ -118,7 +109,7 @@
 
     form span {
         font-size: calc(var(--body-font-size)*1.5);
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     form button {
@@ -452,13 +443,8 @@
         width: 50%;
     }
 
-    .registration-form label,
-    .registration-form legend {
+    .registration-form label {
         margin-bottom: 0.7rem;
-    }
-
-    form legend {
-        font-size: calc(var(--body-font-size)*1.5);
     }
 
     /* desktop: LOGIN - FORM */
@@ -500,12 +486,20 @@
         font-size: var(--mobile-h2-size);
         color: var(--white);
         padding: 1rem 0 1rem 2rem;
-
     }
 
     .sidenav-cms a:hover {
         color: var(--rose);
         text-decoration: underline;
+    }
+
+    .sidenav-cms a:last-child {
+        color: var(--rose);
+        margin-top: 8rem;
+    }
+
+    .sidenav-cms a:last-child:hover {
+        color: var(--white);
     }
 
     /* dasktop: DASHBOARD-CMS */

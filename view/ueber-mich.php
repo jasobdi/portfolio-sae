@@ -1,4 +1,8 @@
 <?php 
+// Datenbankverbindung und Abrufen der Daten
+require_once('../controller/class/Database.class.php');
+$db = Database::getInstance();
+$aboutData = $db->getAboutPageData();
 ?>
 
 <!DOCTYPE html>
@@ -15,65 +19,29 @@
     <!-- MAIN -->
     <main class="main-about">
         <section class="about-me">
-            <h1>Über mich</h1>
+            <h1><?php echo htmlspecialchars($aboutData['title']); ?></h1>
 
             <!-- INTRODUCTION -->
             <div class="introduction-left">
                 <p class="introduction now">
-                    Ich bin Janice. <br>
-                    Zurzeit absolviere ich meine Ausbildung im Bereich Webdesign und -Development am SAE Institut in Zürich. Nebenbei arbeite ich am Empfang eines internationalen Software-Unternehmens. <br> <br>
-                    Design, Programmieren und IT interessieren mich schon eine Weile, durch die SAE habe ich die Möglichkeit meine Interessen zum Beruf zu machen.
+                    <?php echo nl2br(htmlspecialchars($aboutData['description_1'])); ?>
                 </p>
-                <img 
-                srcset="../images/janice_bader_296w.png 296w, ../images/janice_bader_300w.png 300w, ../images/janice_bader_400w.png 400w " 
-                sizes="(max-width: 768px) 296px, 300px, 400px"
-                alt="junge Frau mit Brille und geraden blonden Haaren lächelt für ein Bewerbungsfoto">
+                <?php if ($aboutData['image_1']) { ?>
+                    <img src="<?php echo $aboutData['image_1']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="">
+                <?php } ?>
             </div>
             <div class="introduction-right">
                 <p class="introduction me">
-                    In meiner Freizeit male und zeichne ich gerne, ausserdem spiele ich Unihockey und bewege mich viel im Ausgleich zum Alltag vor dem Bildschirm.
+                    <?php echo nl2br(htmlspecialchars($aboutData['description_2'])); ?>
                 </p>
-                <img 
-                srcset="../images/janice_black_white_296w.png 296w, ../images/janice_black_white_300w.png 300w, ../images/janice_black_white_400w.png 400w" 
-                sizes="(max-width: 768px) 296px, 300px, 400px"
-                alt="schwarz-weiss-Bild von einer jugen Frau mit gewellten Haaren und Hut, die im Wald steht">
+                <?php if ($aboutData['image_2']) { ?>
+                    <img src="<?php echo $aboutData['image_2']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="">
+                <?php } ?>
             </div>
 
             <!-- BUTTON-LEBENSLAUF -->
             <div class="cv"><a href="assets/CV_JB.pdf">Download Lebenslauf</a></div>
         </section>
-            
-
-        <!-- PROGRESS-BARS-SKILLS zu einem späteren Zeitpunkt-->
-        <!-- <section class="skills-bars">
-                <h2>Kenntnisse</h2>
-                <p>Adobe Photoshop</p>
-                <div class="skills-container">
-                    <div class="skills ps">60%</div>
-                </div>
-                <p>Adobe Illustrator</p>
-                <div class="skills-container">
-                    <div class="skills ai">70%</div>
-                </div>
-                <p>Adobe Xd</p>
-                <div class="skills-container">
-                    <div class="skills xd">90%</div>
-                </div>
-                <p>Adobe InDesign</p>
-                <div class="skills-container">
-                    <div class="skills id">60%</div>
-                </div>
-                <p>HTML</p>
-                <div class="skills-container">
-                    <div class="skills html">60%</div>
-                </div>
-                <p>CSS</p>
-                <div class="skills-container">
-                    <div class="skills css">50%</div>
-                </div>
-        </section> -->
-
-            
 
         <!-- KONTAKTFORMULAR -->
         <section class="contact-form">
