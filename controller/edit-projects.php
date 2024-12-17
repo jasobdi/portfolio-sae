@@ -1,15 +1,15 @@
 <?php
 
-// require von config-file & NewUpload-Klasse
-require('config.php');
+require_once('config.php');
 require_once('class/Auth.class.php');
+require_once('class/Database.class.php');
 require_once('class/NewUpload.class.php');
 
-// Prüfen ob User eingeloggt ist anhand von CheckLogIn-Methode von Auth.class.php
+// Prüfen ob User eingeloggt ist
 Auth::checkLogIn(); 
 
-
-$feedback = ""; // Allgemeines Feedback
+// Datenbankverbindung initialisieren
+$db = Database::getInstance();
 
 // Arrays für die spezifischen Fehler für jedes Eingabefeld
 $errorMessages = [];
@@ -17,55 +17,48 @@ $fileErrors = [];
 $titleErrors = [];
 $descErrors = [];
 
-if (isset($_POST['upload'])) {
-    // Eingabefelder auf leere Werte überprüfen
-    if (empty($_FILES['upload-file']['name'])) {
-        $fileErrors[] = "Bitte wählen Sie eine Datei aus";
-    }
+// Aktuelle Projekt-Daten aus Datenbank holen
+$currentProject = $db->getProjectData(); 
 
-    if (empty($_POST['upload-title'])) {
-        $titleErrors[] = "Bitte geben Sie einen Titel ein";
-    }
 
-    if (empty($_POST['upload-desc'])) {
-        $descErrors[] = "Bitte geben Sie eine Beschreibung ein";
-    }
+// Prüfen, ob das Formular abgeschickt wurde
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload'])) {
+    // Eingabedaten aus dem Formular
+    $projectId = $_POST['project_id']; // Projekt-ID
+    $newTitle = trim($_POST['title']);
+    $newDescription = trim($_POST['description']);
+    $newCreatedBy = $_POST['created_by'];
+    
+    // Zielordner für die Bilder
+    $targetFolder = "../images/projects"; 
 
-    // Nur fortfahren, wenn keine Fehler 
-    if (empty($fileErrors) && empty($titleErrors) && empty($descErrors)) {
-
-        // Definieren Zielordner
-        $targetFolder = "../images/projects";
-        $path = $targetFolder;
-
-        $upload = new NewUpload($host = 'localhost', $user = 'root', $passwd = 'root', $dbname = 'portfolio_jb', $path = $targetFolder);
-        $step1 = $upload->checkFileError();
-
-        if ($step1) {
-            $step2 = $upload->checkFileInQuarantine();
-
-            if ($step2) {
-                $step3 = $upload->moveFile();
-
-                if ($step3) {
-                    $errorMessages[] = "Die Datei wurde erfolgreich hochgeladen<br>";
-                } else {
-                    $errorMessages[] = "Fehler beim hochladen der Datei<br>";
-                }
-            } else {
-                $errorMessages[] = "Fehler beim Überprüfen der Datei";
-            }
+    // Instanz der NewUpload-Klasse für den Upload
+    $upload = new NewUpload($targetFolder);
+    
+    // Bild hochladen
+    $newProjectImage = '';
+    if (isset($_FILES['upload-file'])) {
+        $uploadedImage = $upload->uploadFile($_FILES['upload-file']);
+        if ($uploadedImage) {
+            $newProjectImage = $uploadedImage; // Pfad zum hochgeladenen Bild
         } else {
-            $errorMessages[] = "Die Datei ist fehlerhaft";
+            // Fehlermeldungen aus NewUpload-Klasse holen
+            $errorMessages = array_merge($errorMessages, $upload->getErrorMessages());
         }
+    }
 
-        // Alle Fehler in einem Array zusammenführen
-        $errorMessages = array_merge($fileErrors, $titleErrors, $descErrors);
-
-        // Danach Fehler aus der NewUpload-Klasse hinzufügen
-        if (!empty($upload->errorMessages)) {
-            $errorMessages = array_merge($errorMessages, $upload->errorMessages);
+    // Überprüfen, ob Pflichtfelder ausgefüllt sind
+    if (!empty($newTitle) && !empty($newDescription)) {
+        // Wenn alle Felder korrekt -> Daten speichern
+        if ($db->updateProjectData($newTitle, $newDescription, $newFilepath, $newCreatedBy, $newCreatedAt)) {
+            // Erfolgreich gespeichert
+            header('Location: edit-projects.php?success=1');
+            exit();
+        } else {
+            $errorMessages[] = 'Es gab ein Problem beim Speichern der Daten, bitte versuche es erneut.';
         }
+    } else {
+        $errorMessages[] = 'Alle Felder müssen ausgefüllt sein.';
     }
 }
 ?>

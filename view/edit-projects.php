@@ -40,7 +40,7 @@
 
                 <div class="form-check">
                     <label for="upload-title">Titel</label>
-                    <input type="text" name="upload-title" id="upload-title" required>
+                    <input type="text" name="upload-title" id="upload-title" value="<?= htmlspecialchars($newTitle ?? '') ?>" required>
                     <?php if (!empty($titleErrors)) { ?>
                         <span class="error-messages">
                             <?php foreach ($titleErrors as $titleError){ ?>
@@ -52,7 +52,7 @@
 
                 <div class="form-check">
                     <label for="upload-desc">Beschreibung <small>(max. 150 Zeichen)</small></label>
-                    <textarea name="upload-desc" id="upload-desc" maxlength="150" cols="50" rows="5" required></textarea>
+                    <textarea name="upload-desc" id="upload-desc" maxlength="150" cols="50" rows="5" required><?= htmlspecialchars($newDescription ?? '') ?></textarea>
                     <?php if (!empty($descErrors)) { ?>
                         <span class="error-messages">
                             <?php foreach ($descErrors as $descError){ ?>

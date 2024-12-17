@@ -1,4 +1,4 @@
-<?php include('../controller/edit-home.php') ?>
+<?php include('../controller/edit-portfolio.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +8,8 @@
     <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>
 
-    <main class="main-edit-home-cms">
-        <h1>Home bearbeiten</h1>
+    <main class="main-edit-portfolio-cms">
+        <h1>Portfolioseite bearbeiten</h1>
 
         <!-- Erfolgsmeldung -->
         <?php if (isset($_GET['success']) && $_GET['success'] == 1) { ?>
@@ -20,15 +20,15 @@
         <?php if (isset($error)) { ?>
             <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
         <?php } ?>
-        
-        <form class="edit-home" action="" method="POST" novalidate>
 
+        <form class="edit-portfolio" action="" method="POST" novalidate>
             <label for="pagetitle">Seitentitel*</label>
-            <input type="text" name="pagetitle" id="pagetitle" value="<?php echo htmlspecialchars($currentTitle['title'] ?? ''); ?>" required>
+            <input type="text" name="pagetitle" id="pagetitle" value="<?php echo htmlspecialchars($currentPortfolioData['title']); ?>" required>
 
-
-            <button type="submit" name="safe">Speichern</button>
-
+            <label for="desc-projects">Beschreibung</label>
+            <textarea name="desc-projects" id="desc-projects"><?php echo htmlspecialchars($currentPortfolioData['description']); ?></textarea>
+                
+            <button type="submit" name="safe">Speichern</button> 
         </form>
     </main>
     <!-- FOOTER -->

@@ -7,7 +7,7 @@
         <a href="../view/dashboard.php">Dashboard</a>
         <a href="../view/edit-home.php">Home</a>
         <a href="../view/edit-about.php">About</a>
-        <a href="../view/edit-projectpage.php">Projektseite</a>
+        <a href="../view/edit-portfolio.php">Portfolio</a>
         <a href="../view/edit-projects.php">Projekte</a>
         <a href="../controller/logout.php" class="logout-link">Abmelden</a>
     </div>
@@ -31,7 +31,7 @@
                 <a href="../view/edit-about.php">About</a>
             </li>
             <li>
-                <a href="../view/edit-projectpage.php">Projektseite</a>
+                <a href="../view/edit-portfolio.php">Portfolio</a>
             </li>
             <li>
                 <a href="../view/edit-projects.php">Projekte</a>

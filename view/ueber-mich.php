@@ -1,8 +1,8 @@
 <?php 
 // Datenbankverbindung und Abrufen der Daten
 require_once('../controller/class/Database.class.php');
-$db = Database::getInstance();
-$aboutData = $db->getAboutPageData();
+$db = Database::getInstance();  // Database-Klasse Initialisieren
+$aboutData = $db->getAboutPageData(); // Daten aus der Datenbank holen
 ?>
 
 <!DOCTYPE html>
@@ -24,18 +24,18 @@ $aboutData = $db->getAboutPageData();
             <!-- INTRODUCTION -->
             <div class="introduction-left">
                 <p class="introduction now">
-                    <?php echo nl2br(htmlspecialchars($aboutData['description_1'])); ?>
+                    <?php echo nl2br(htmlspecialchars($aboutData['intro_1'])); ?>
                 </p>
                 <?php if ($aboutData['image_1']) { ?>
-                    <img src="<?php echo $aboutData['image_1']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="">
+                    <img src="<?php echo $aboutData['image_1']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="<?php echo (htmlspecialchars($aboutData['desc_1'])); ?>">
                 <?php } ?>
             </div>
             <div class="introduction-right">
                 <p class="introduction me">
-                    <?php echo nl2br(htmlspecialchars($aboutData['description_2'])); ?>
+                    <?php echo nl2br(htmlspecialchars($aboutData['intro_2'])); ?>
                 </p>
                 <?php if ($aboutData['image_2']) { ?>
-                    <img src="<?php echo $aboutData['image_2']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="">
+                    <img src="<?php echo $aboutData['image_2']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="<?php echo (htmlspecialchars($aboutData['desc_2'])); ?>">
                 <?php } ?>
             </div>
 

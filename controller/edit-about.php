@@ -1,45 +1,64 @@
-<?php 
+<?php
+
+/** FUNKTIONIERT!!! */
 
 require_once('config.php');
 require_once('class/Auth.class.php');
 require_once('class/Database.class.php');
 require_once('class/NewUpload.class.php');
 
-// Prüfen, ob der User eingeloggt ist
-Auth::checkLogIn(); 
+// Prüfen ob der User eingeloggt ist
+Auth::checkLogIn();
+
+// Fehlermeldungen Array
+$errorMessages = [];
 
 // Datenbankverbindung initialisieren
 $db = Database::getInstance();
 
-// Aktuelle Daten aufrufen
+// Aktuelle Daten holen
 $currentData = $db->getAboutPageData();
 
-// Prüfen, ob das Formular abgeschickt wurde und die neuen Daten speichern
+// Prüfen ob das Formular abgeschickt wurde
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['safe'])) {
+    // Eingabedaten
     $newTitle = trim($_POST['pagetitle']);
+    $newIntroduction1 = trim($_POST['intro-top']);
     $newDescription1 = trim($_POST['desc-top']);
+    $newIntroduction2 = trim($_POST['intro-bottom']);
     $newDescription2 = trim($_POST['desc-bottom']);
 
-    // Wenn Bilder hochgeladen werden, solltest du den Upload hier durchführen
+    // Zielordner für die Bilder
+    $targetFolder = "../images/about";
 
-
-    // Bild 1
+    // Neue Upload-Instanz für die Bilder
+    $upload = new NewUpload($targetFolder);
+    
+    // Bild 1 hochladen
     $newImage1 = '';
-    if (isset($_FILES['img-top']) && $_FILES['img-top']['error'] === UPLOAD_ERR_OK) {
-        $newImage1 = '/images/' . basename($_FILES['img-top']['name']);
-        move_uploaded_file($_FILES['img-top']['tmp_name'], $newImage1);
+    if (isset($_FILES['img-top'])) {
+        $uploadedImage1 = $upload->uploadFile($_FILES['img-top']);
+        if ($uploadedImage1) {
+            $newImage1 = $uploadedImage1; // Pfad zum hochgeladenen Bild
+        } else {
+            $errorMessages = array_merge($errorMessages, $upload->getErrorMessages());
+        }
     }
 
-    // Bild 2
+    // Bild 2 hochladen
     $newImage2 = '';
-    if (isset($_FILES['img-bottom']) && $_FILES['img-bottom']['error'] === UPLOAD_ERR_OK) {
-        $newImage2 = 'images/' . basename($_FILES['img-bottom']['name']);
-        move_uploaded_file($_FILES['img-bottom']['tmp_name'], $newImage2);
+    if (isset($_FILES['img-bottom'])) {
+        $uploadedImage2 = $upload->uploadFile($_FILES['img-bottom']);
+        if ($uploadedImage2) {
+            $newImage2 = $uploadedImage2; // Pfad zum hochgeladenen Bild
+        } else {
+            $errorMessages = array_merge($errorMessages, $upload->getErrorMessages());
+        }
     }
 
-    // Sicherstellen, dass der Titel nicht leer ist
-    if (!empty($newTitle) && !empty($newDescription1) && !empty($newDescription2)) {
-        if ($db->updateAboutPageData($newTitle, $newDescription1, $newImage1, $newDescription2, $newImage2)) {
+    // Sicherstellen, dass die Pflichtfelder ausgefüllt sind
+    if (!empty($newTitle) && !empty($newIntroduction1) && !empty($newDescription1) &&  !empty($newIntroduction2) && !empty($newDescription2)) {
+        if ($db->updateAboutPageData($newTitle, $newIntroduction1, $newDescription1, $newImage1, $newIntroduction2, $newDescription2, $newImage2)) {
             // Erfolgreich gespeichert
             header('Location: edit-about.php?success=1');
             exit();

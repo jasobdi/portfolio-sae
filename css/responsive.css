@@ -504,6 +504,14 @@
 
     /* dasktop: DASHBOARD-CMS */
 
+    .success-message{ 
+    margin: 0 0 1rem 2rem;
+    color: blue;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--lato-regular);
+    }
+
     .main-dashboard-cms {
         margin: 0 0 0 12rem;
     }
@@ -561,23 +569,23 @@
 
     }
 
-    /* desktop: EDIT PROJECTPAGE - CMS */
-    .main-edit-projectpage-cms {
+    /* desktop: EDIT PORTFOLIO - CMS */
+    .main-edit-portfolio-cms {
         margin: 0 0 0 12rem;
     }
 
-    .main-edit-projectpage-cms h1 {
+    .main-edit-portfolio-cms h1 {
         text-align: start;
         font-size: calc(var(--mobile-h1-size)*1.5);
         margin: 2rem 0 2rem 2rem;
     }
 
-    .edit-projectpage {
+    .edit-portfolio {
         width: 70%;
         margin: 0 0 0 2rem;
     }
 
-    .edit-projectpage label {
+    .edit-portfolio label {
         font-size: calc(var(--body-font-size)*1.5);
 
     }

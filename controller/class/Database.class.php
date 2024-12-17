@@ -27,6 +27,11 @@ class Database {
         return self::$instance;
     }
 
+    // Verbindung zu PDO
+    public function getConnection() {
+        return $this->db;
+    }
+
     // METHODEN FÜR REGISTRIERUNG
 
     // überpfürfen ob Username existiert
@@ -93,33 +98,96 @@ class Database {
 
     // Alle Daten holen (Titel, Beschreibungen, Bilder)
     public function getAboutPageData() {
-        $stmt = $this->db->prepare('SELECT title, description_1, image_1, description_2, image_2 FROM about WHERE id = 1');
+        $stmt = $this->db->prepare('SELECT title, intro_1, desc_1, image_1, intro_2, desc_2, image_2 FROM about WHERE id = 1');
         $stmt->execute();
 
         // Rückgabe Standardwerte, falls keine Zeile gefunden wird
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ? $result : [
             'title' => 'About',
-            'description_1' => '',
+            'intro_1' => '',
+            'desc_1' => '',
             'image_1' => '',
-            'description_2' => '',
+            'intro_2' => '',
+            'desc_2' => '',
             'image_2' => ''
         ];
     }
 
     // Update alle Daten (Titel, Beschreibungen, Bilder)
-    public function updateAboutPageData($newTitle, $newDescription1, $newImage1, $newDescription2, $newImage2) {
-        $stmt = $this->db->prepare('UPDATE about SET title = :title, description_1 = :desc1, image_1 = :img1, description_2 = :desc2, image_2 = :img2 WHERE id = 1');
+    public function updateAboutPageData($newTitle, $newIntroduction1, $newDescription1, $newImage1, $newIntroduction2, $newDescription2, $newImage2) {
+        $stmt = $this->db->prepare('UPDATE about SET title = :title, intro_1 = :intro1, desc_1 = :desc1, image_1 = :img1, intro_2 = :intro2, desc_2 = :desc2, image_2 = :img2 WHERE id = 1');
         
         $stmt->bindParam(':title', $newTitle);
+        $stmt->bindParam(':intro1', $newIntroduction1);
         $stmt->bindParam(':desc1', $newDescription1);
         $stmt->bindParam(':img1', $newImage1);
+        $stmt->bindParam(':intro2', $newIntroduction2);
         $stmt->bindParam(':desc2', $newDescription2);
         $stmt->bindParam(':img2', $newImage2);
-        
         return $stmt->execute();
     }
 
+
+    // METHODEN FÜR EDIT-PORTFOLIO
+
+    // Alle Daten holen (Titel, Beschreibung)
+    public function getPortfolioData() {
+        $stmt = $this->db->prepare('SELECT title, description FROM portfolio WHERE id = 1');
+        $stmt->execute();
+
+        // Rückgabe Standardwerte, falls keine Zeile gefunden wird
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? $result : [
+            'title' => 'Portfolio',
+            'description' => '',
+        ];
+    }
+
+    // Update alle Daten (Titel, Beschreibungen, Bilder)
+    public function updatePortfolioData($newTitle, $newDesc) {
+        $stmt = $this->db->prepare('UPDATE portfolio SET title = :title, description = :description WHERE id = 1');
+        
+        $stmt->bindParam(':title', $newTitle);
+        $stmt->bindParam(':description', $newDesc);
+        return $stmt->execute();
+    }
+
+
+    // METHODEN FÜR EDIT-PROJECTS
+
+    // Abrufen Projekt-Daten aus der Datenbank
+public function getProjectData() {
+    $stmt = $this->db->prepare('SELECT ID, filepath, title, description, created_by, created_at FROM project WHERE ID = :id');
+    $stmt->bindParam(':id', $projectId, PDO::PARAM_INT); 
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result ? $result : [
+        'ID' => null,
+        'filepath' => '',
+        'title' => '',
+        'description' => '',
+        'created_by' => '',
+        'created_at' => ''
+    ];
+}
+
+public function updateProjectData($projectId, $newFilepath, $newTitle, $newDescription, $newCreatedBy) {
+    // Vorbereiten des SQL-Statements, um die Projekt-Daten zu aktualisieren
+    $stmt = $this->db->prepare('UPDATE project SET filepath = :filepath, title = :title, description = :description, created_by = :created_by WHERE ID = :id');
+
+    // Binde die Parameter an die Platzhalter
+        $stmt->bindParam(':filepath', $newFilepath);
+    $stmt->bindParam(':title', $newTitle);
+    $stmt->bindParam(':description', $newDescription);
+    $stmt->bindParam(':created_by', $newCreatedBy);
+    $stmt->bindParam(':id', $projectId, PDO::PARAM_INT);
+
+    // Die Datenbankabfrage ausführen
+    return $stmt->execute();
+}
 
 
 

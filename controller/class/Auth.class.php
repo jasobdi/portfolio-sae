@@ -41,7 +41,8 @@ class Auth {
 
         // Hat es in der Datenbank einen User mit dem $username?
         $query = 'SELECT * FROM `user` WHERE username = :username';
-        $statement = $db->prepare($query);
+        $pdo = $db->getConnection();
+        $statement = $pdo->prepare($query);
         $values = array('username' => $username);
         $statement->execute($values);
 

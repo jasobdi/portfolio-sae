@@ -1,3 +1,10 @@
+<?php 
+// Datenbankverbindung & Abrufen von Daten
+require_once('../controller/class/Database.class.php');
+$db = Database::getInstance(); // Database-Klasse Initialisieren
+$PortfolioData = $db->getPortfolioData(); // Daten aus der Datenbank holen
+?>
+
 
 <!DOCTYPE html>
 <html lang="de">
@@ -13,9 +20,8 @@
 
     <!-- MAIN -->
     <main class="main-projects">
-        <h1>Projekte</h1>
-        <p>Hier präsentiere ich einige der Projekte welche während meiner Ausbildung an der SAE entstanden sind. Auf den jeweiligen Unterseiten finden sich weitere Angaben zum Arbeitsprozess, den Tools und natürlich weitere Bilder.
-        </p>
+        <h1><?php echo htmlspecialchars($PortfolioData['title']); ?></h1>
+        <p><?php echo nl2br(htmlspecialchars($PortfolioData['description'])); ?></p>
         <section class="projects-wrap">
             <!-- java script: projekte.json -->
         </section>

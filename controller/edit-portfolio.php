@@ -13,22 +13,24 @@ Auth::checkLogIn();
 $db = Database::getInstance();
 
 // aktueller Seitentitel abrufen
-$currentTitle = $db->getHomePageTitle();
+$currentPortfolioData = $db->getPortfolioData();
 
-// Prüfen ob Formular geschickt & neuen Titel speichern
+// Prüfen ob Formular abgeschickt wurde
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['safe'])) {
+    // Eingabedaten
     $newTitle = trim($_POST['pagetitle']);
+    $newDesc = trim($_POST['desc-projects']);
     
-    if (!empty($newTitle)) {
-        if ($db->updateHomePageTitle($newTitle)) {
+    if (!empty($newTitle) && !empty($newDesc)) {
+        if ($db->updatePortfolioData($newTitle, $newDesc)) {
             // Erfolgreich gespeichert
-            header('Location: edit-home.php?success=1');
+            header('Location: edit-portfolio.php?success=1');
             exit();
         } else {
             $error = 'Es gab ein Problem beim Speichern des Titels, bitte versuche es erneut.';
         }
     } else {
-        $error = 'Der Titel darf nicht leer sein.';
+        $error = 'Alle Felder müssen ausgefüllt sein.';
     }
 }
 

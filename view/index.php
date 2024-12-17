@@ -1,10 +1,12 @@
 <?php
 
+/** FUNKTIONIERT!! */
+
 // Datenbankverbindung herstellen
 require_once('../controller/config.php');
 require_once('../controller/class/Database.class.php');
 
-$db = new Database();
+$db = Database::getInstance(); // Database-Klasse Initialisieren
 $title = $db->getHomePageTitle(); // Titel aus der Datenbank holen
 
 // Fallback falls kein Titel vorhanden ist
