@@ -1,26 +1,26 @@
+<!-- HTML zuoberst weil das Dokument im Browser im "Quirk Mode" war -->
+
+<!DOCTYPE html>
+<html lang="en">
 <?php 
 require_once('../controller/config.php');
 require_once ('../controller/class/Auth.class.php');
+require_once('../controller/edit-projects.php');
 
 // Prüfen ob User eingeloggt ist anhand von CheckLogIn-Methode von Auth.class.php
 Auth::checkLogIn(); 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<!--  HEAD  -->
-<?php include('../partials/head-cms.php') ?>
+<head>
+    <?php include('../partials/head-cms.php') ?>
+</head>
 <body>
     <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>
 
     <main class="main-dashboard-cms">
         <h1>Dashboard</h1>
-        <button class="new-project-btn"> 
-            <a href="edit-projects.php">Neues Projekt
-                <i class="fa-solid fa-circle-plus"></i>
-            </a>
-        </button>
+        <a href="new-project.php" class="btn-new-project">Neues Projekt</a>
+        <a href="edit-projects.php" class="btn-view-all">Alle Projekte anzeigen</a>
     </main>
     <!-- FOOTER -->
     <?php include('../partials/footer-cms.php') ?>

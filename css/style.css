@@ -750,8 +750,7 @@ button.login {
 
 .mobile-nav-cms .logout-link {
     color: var(--white);
-    background: var(--darkblue);
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
     border-radius: 100px;
     
 }
@@ -771,8 +770,13 @@ button.login {
 }
 
 .main-dashboard-cms {
-    margin: 0 2rem;
-}
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+
 
 .main-dashboard-cms h1 {
     text-align: center;
@@ -782,33 +786,45 @@ button.login {
     margin: 1rem 0 2rem 0;
 }
 
-.new-project-btn {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--white);
-    border: none;
-    border-radius: 5px;
-    height: 4rem;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+.btn-new-project {
+    display: inline-block; 
+    padding: 10px 20px; 
+    font-size: var(--body-font-size);
+    background: var(--white);  
+    border-radius: 5px; 
+    text-align: center;
+    margin: 20px 0 20px 2rem; 
 }
 
-.new-project-btn a {
-    color: var(--darkblue);
-    text-decoration: none;
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--lato-light);
-}
-
-.new-project-btn a:hover {
+.btn-new-project:hover {
     text-decoration: underline;
 }
 
-.new-project-btn i {
+a.btn-new-project{
     color: var(--rose);
+    text-decoration: none;
     font-size: var(--mobile-h2-size);
+    font-weight: var(--lato-regular);
+}
+
+.btn-view-all {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin: 2rem 0 0 0;
+}
+
+.btn-view-all:hover {
+    color: var(--rose);
+}
+
+a.btn-view-all {
+    color: var(--darkblue);
+    font-size: var(--mobile-h2-size);
+    font-weight: var(--lato-light);
 }
 
 
@@ -945,6 +961,20 @@ button.login {
     margin: 3rem 0 2rem 0;
 }
 
+/* NEUES PORJEKT */
+
+.main-new-project-cms {
+    margin: 0 2rem;
+}
+
+.main-new-project-cms h1 {
+    text-align: center;
+    font-size: var(--mobile-title-size);
+    font-weight: var(--lato-light);
+    color: var(--darkblue);
+    margin: 1rem 0 2rem 0;
+}
+
 .project-upload label {
     font-size: var(--body-font-size);
     color: var(--darkblue);
@@ -975,3 +1005,64 @@ button.login {
     font-family: var(--main-font-family);
     font-weight: var(--lato-regular);
 }
+
+/* PROJEKTE BEARBEITEN */
+
+.project-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.project-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.project-table tr {
+    display: block; 
+    margin-bottom: 15px; 
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.project-table td {
+    display: block;
+    width: 100%;
+}
+
+/* buttons in tabelle */
+.btn-edit, .btn-delete {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-edit {
+    background-color: blue;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.project-table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    .btn-edit, .btn-delete {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+
+

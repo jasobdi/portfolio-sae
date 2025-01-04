@@ -18,16 +18,17 @@ $titleErrors = [];
 $descErrors = [];
 
 // Aktuelle Projekt-Daten aus Datenbank holen
-$currentProject = $db->getProjectData(); 
+$currentProject = $db->getProjectData($id); 
+// Alle Projekte aus der Datenbank holen
+$allProjects = $db->getAllProjects();
 
 
 // Prüfen, ob das Formular abgeschickt wurde
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload'])) {
     // Eingabedaten aus dem Formular
-    $projectId = $_POST['project_id']; // Projekt-ID
-    $newTitle = trim($_POST['title']);
-    $newDescription = trim($_POST['description']);
-    $newCreatedBy = $_POST['created_by'];
+    $newTitle = trim($_POST['upload-title']);
+    $newDescription = trim($_POST['upload-desc']);
+    $newCreatedBy = Auth::getUserName();
     
     // Zielordner für die Bilder
     $targetFolder = "../images/projects"; 
@@ -36,21 +37,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload'])) {
     $upload = new NewUpload($targetFolder);
     
     // Bild hochladen
-    $newProjectImage = '';
-    if (isset($_FILES['upload-file'])) {
-        $uploadedImage = $upload->uploadFile($_FILES['upload-file']);
-        if ($uploadedImage) {
-            $newProjectImage = $uploadedImage; // Pfad zum hochgeladenen Bild
-        } else {
-            // Fehlermeldungen aus NewUpload-Klasse holen
+    $uploadedProjectImage = '';
+
+    if (isset($_FILES['upload-file']) && $_FILES['upload-file']['error'] === UPLOAD_ERR_OK) {
+        $uploadedProjectImage = $upload->uploadFile($_FILES['upload-file']);
+        if (!$uploadedProjectImage) {
             $errorMessages = array_merge($errorMessages, $upload->getErrorMessages());
         }
     }
 
-    // Überprüfen, ob Pflichtfelder ausgefüllt sind
-    if (!empty($newTitle) && !empty($newDescription)) {
-        // Wenn alle Felder korrekt -> Daten speichern
-        if ($db->updateProjectData($newTitle, $newDescription, $newFilepath, $newCreatedBy, $newCreatedAt)) {
+    // Überprüfen, ob alle Pflichtfelder ausgefüllt sind
+    if (!empty($newTitle) && !empty($newDescription) && $uploadedProjectImage) {
+        if ($db->insertProjectData($uploadedProjectImage, $newTitle, $newDescription, $newCreatedBy)) {
             // Erfolgreich gespeichert
             header('Location: edit-projects.php?success=1');
             exit();

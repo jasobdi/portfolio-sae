@@ -26,7 +26,6 @@
             <label for="pagetitle">Seitentitel*</label>
             <input type="text" name="pagetitle" id="pagetitle" value="<?php echo htmlspecialchars($currentTitle['title'] ?? ''); ?>" required>
 
-
             <button type="submit" name="safe">Speichern</button>
 
         </form>

@@ -26,7 +26,7 @@
             <input type="text" name="pagetitle" id="pagetitle" value="<?php echo htmlspecialchars($currentPortfolioData['title']); ?>" required>
 
             <label for="desc-projects">Beschreibung</label>
-            <textarea name="desc-projects" id="desc-projects"><?php echo htmlspecialchars($currentPortfolioData['description']); ?></textarea>
+            <textarea name="desc-projects" id="desc-projects" cols="30" rows="10"><?php echo htmlspecialchars($currentPortfolioData['description']); ?></textarea>
                 
             <button type="submit" name="safe">Speichern</button> 
         </form>

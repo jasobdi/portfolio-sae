@@ -1,5 +1,4 @@
 <?php 
-
 // Prüft ob der User eingeloggt ist
 
 class Auth {
@@ -10,11 +9,6 @@ class Auth {
             session_name(SESSIONCOOKIE_NAME);
             session_start(); // Session starten
         }
-
-        // Debugging: Überprüfen, ob die Session-Variablen gesetzt sind
-       // echo '<pre>';
-       // print_r($_SESSION); // Ausgabe der Session-Variablen zur Fehleranalyse
-       // echo '</pre>';
 
         // keine userid gesetzt oder userid leer
         if(!isset($_SESSION['userid']) || empty($_SESSION['userid'])) {
@@ -76,5 +70,4 @@ class Auth {
             return isset($_SESSION['userid']) && !empty($_SESSION['userid']);
         }
     }
-
 ?>

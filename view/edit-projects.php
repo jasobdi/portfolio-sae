@@ -12,63 +12,42 @@
     <main class="main-edit-projects-cms">
         <h1>Projekte</h1>
 
-        <section class="project-upload">
-            <h2>Neues Projekt</h2>
-
-            <form method="post" enctype="multipart/form-data" novalidate>
-                <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize; ?>">
-
-                <?php if (!empty($errorMessages)){ ?>
-                    <div class="feedback">
-                        <?php foreach ($errorMessages as $error){ ?>
-                            <p class="error"><?= $error ?></p>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-
-                <div class="form-check">
-                    <label for="upload-file">Bild auswählen</label>
-                    <input type="file" accept="image/*" name="upload-file" id="upload-file" required>
-                    <?php if (!empty($fileErrors)){ ?>
-                        <span class="error-messages">
-                            <?php foreach ($fileErrors as $fileError){ ?>
-                                <p class="error"><?= $fileError ?></p>
-                            <?php } ?>
-                        </span>
-                    <?php } ?>
-                </div>
-
-                <div class="form-check">
-                    <label for="upload-title">Titel</label>
-                    <input type="text" name="upload-title" id="upload-title" value="<?= htmlspecialchars($newTitle ?? '') ?>" required>
-                    <?php if (!empty($titleErrors)) { ?>
-                        <span class="error-messages">
-                            <?php foreach ($titleErrors as $titleError){ ?>
-                                <p class="error"><?= $titleError ?></p>
-                            <?php } ?>
-                        </span>
-                    <?php } ?>
-                </div>
-
-                <div class="form-check">
-                    <label for="upload-desc">Beschreibung <small>(max. 150 Zeichen)</small></label>
-                    <textarea name="upload-desc" id="upload-desc" maxlength="150" cols="50" rows="5" required><?= htmlspecialchars($newDescription ?? '') ?></textarea>
-                    <?php if (!empty($descErrors)) { ?>
-                        <span class="error-messages">
-                            <?php foreach ($descErrors as $descError){ ?>
-                                <p class="error"><?= $descError ?></p>
-                            <?php } ?>
-                        </span>
-                    <?php } ?>
-                </div>
-
-                <div class="form-check">
-                    <button type="submit" name="upload">Hochladen</button>
-                </div>
-            </form>
-        </section>
+        <!-- Erfolgsmeldung -->
+        <?php if (isset($_GET['success']) && $_GET['success'] == 1){ ?>
+            <p class="success-message">Die Datei wurde erfolgreich hochgeladen!</p>
+        <?php } ?>
+        <a href="new-project.php" class="btn-new-project">Neues Projekt</a>
         <section class="project-edit">
-            <h2>Projekte bearbeiten</h2>
+                <?php if (isset($_GET['delete'])): ?>
+                    <?php if ($_GET['delete'] == 'success'): ?>
+                    <p class="success-message">Das Projekt wurde erfolgreich gelöscht!</p>
+                        <?php elseif ($_GET['delete'] == 'error'): ?>
+                        <p class="error-message">Es gab ein Problem beim Löschen des Projekts. Bitte versuchen Sie es erneut.</p>
+                        <?php elseif ($_GET['delete'] == 'invalid'): ?>
+                        <p class="error-message">Ungültige Projekt-ID. Das Projekt konnte nicht gelöscht werden.</p>
+                    <?php endif; ?>
+                <?php endif; ?>
+
+            <?php if (!empty($allProjects)): ?>
+        <table class="project-table">
+            <tbody>
+                <?php foreach ($allProjects as $project){ ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($project['title']); ?></td>
+                        <td>
+                            <!-- Bearbeiten-Button -->
+                            <a href="edit-single-project.php?id=<?php echo $project['ID']; ?>" class="btn-edit">Bearbeiten</a>
+                            <!-- Löschen-Button -->
+                            <a href="../controller/delete-project.php?id=<?php echo $project['ID']; ?>" class="btn-delete" onclick="return confirm('Möchten Sie dieses Projekt wirklich löschen?');">Löschen</a>
+
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Es wurden noch keine Projekte hinzugefügt.</p>
+    <?php endif; ?>
         </section>
     </main>
     <!-- FOOTER -->

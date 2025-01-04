@@ -156,40 +156,47 @@ class Database {
 
     // METHODEN FÜR EDIT-PROJECTS
 
-    // Abrufen Projekt-Daten aus der Datenbank
-public function getProjectData() {
-    $stmt = $this->db->prepare('SELECT ID, filepath, title, description, created_by, created_at FROM project WHERE ID = :id');
-    $stmt->bindParam(':id', $projectId, PDO::PARAM_INT); 
-    $stmt->execute();
+    // Abrufen Projekt-Daten aus der Datenbank basierend auf ID
+    public function getProjectData($id) {
+        $stmt = $this->db->prepare('SELECT ID, filepath, title, description, created_by, created_at FROM project WHERE ID = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT); 
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
 
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    public function updateProjectData($projectId, $newFilepath, $newTitle, $newDescription, $newCreatedBy) {
+        // Vorbereiten des SQL-Statements, um die Projekt-Daten zu aktualisieren
+        $stmt = $this->db->prepare('UPDATE project SET filepath = :filepath, title = :title, description = :description, created_by = :created_by WHERE ID = :id');
 
-    return $result ? $result : [
-        'ID' => null,
-        'filepath' => '',
-        'title' => '',
-        'description' => '',
-        'created_by' => '',
-        'created_at' => ''
-    ];
-}
-
-public function updateProjectData($projectId, $newFilepath, $newTitle, $newDescription, $newCreatedBy) {
-    // Vorbereiten des SQL-Statements, um die Projekt-Daten zu aktualisieren
-    $stmt = $this->db->prepare('UPDATE project SET filepath = :filepath, title = :title, description = :description, created_by = :created_by WHERE ID = :id');
-
-    // Binde die Parameter an die Platzhalter
+        // Binde die Parameter an die Platzhalter
         $stmt->bindParam(':filepath', $newFilepath);
-    $stmt->bindParam(':title', $newTitle);
-    $stmt->bindParam(':description', $newDescription);
-    $stmt->bindParam(':created_by', $newCreatedBy);
-    $stmt->bindParam(':id', $projectId, PDO::PARAM_INT);
+        $stmt->bindParam(':title', $newTitle);
+        $stmt->bindParam(':description', $newDescription);
+        $stmt->bindParam(':created_by', $newCreatedBy);
+        $stmt->bindParam(':id', $projectId, PDO::PARAM_INT);
 
-    // Die Datenbankabfrage ausführen
-    return $stmt->execute();
-}
+        return $stmt->execute();
+    }
 
+    // Daten in die Datenbank speichern
+    public function insertProjectData($filePath, $title, $description, $createdBy) {
+        $stmt = $this->db->prepare('INSERT INTO project (filepath, title, description, created_by, created_at) VALUES (:filepath, :title, :description, :created_by, CURRENT_TIMESTAMP)
+        ');
+        $stmt->bindParam(':filepath', $filePath);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':created_by', $createdBy);
 
+        return $stmt->execute();
+    }
+
+    // Alle Projekte aus der Datenbank abrufen
+    public function getAllProjects() {
+        $stmt = $this->db->prepare('SELECT ID, filepath, title, description FROM project ORDER BY created_at DESC');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

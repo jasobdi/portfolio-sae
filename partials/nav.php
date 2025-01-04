@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="../view/index.php">Home</a></li>
                 <li><a href="../view/ueber-mich.php">Über mich</a></li>
-                <li><a href="../view/projekte.php">Projekte</a></li>
+                <li><a href="../view/portfolio.php">Projekte</a></li>
             </ul>
         </nav>
         
@@ -23,7 +23,7 @@
                         <a href="../view/ueber-mich.php">ÜBER MICH</a>
                     </li>
                     <li>
-                        <a href="../view/projekte.php">PROJEKTE</a>
+                        <a href="../view/portfolio.php">PROJEKTE</a>
                     </li>
                     <li>
                         <a href="../view/impressum.php">IMPRESSUM</a>

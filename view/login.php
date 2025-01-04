@@ -33,9 +33,6 @@
                 <button type="submit" class="login">Anmelden</button>
             </form>
         </section>
-        <div class="registration-link">
-            <a href="registration.php">Registrieren</a>
-        </div>
         
     </main>
 

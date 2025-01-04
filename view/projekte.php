@@ -1,8 +1,8 @@
 <?php 
-// Datenbankverbindung & Abrufen von Daten
 require_once('../controller/class/Database.class.php');
 $db = Database::getInstance(); // Database-Klasse Initialisieren
-$PortfolioData = $db->getPortfolioData(); // Daten aus der Datenbank holen
+$portfolioData = $db->getPortfolioData(); // Titel & Beschreibung aus 'portfolio'-Tabelle
+$projectData = $db->getAllProjects(); // Titel, Beschreibung & Bild aus 'project'-Tabelle
 ?>
 
 
@@ -20,10 +20,23 @@ $PortfolioData = $db->getPortfolioData(); // Daten aus der Datenbank holen
 
     <!-- MAIN -->
     <main class="main-projects">
-        <h1><?php echo htmlspecialchars($PortfolioData['title']); ?></h1>
-        <p><?php echo nl2br(htmlspecialchars($PortfolioData['description'])); ?></p>
+        
+        <h1><?php echo htmlspecialchars($portfolioData['title']); ?></h1>
+        <p><?php echo nl2br(htmlspecialchars($portfolioData['description'])); ?></p>
         <section class="projects-wrap">
-            <!-- java script: projekte.json -->
+            <?php foreach ($projectData as $project){ ?>
+                <ul class="post">
+                    <li class="project-img">
+                        <img src="../images/projects/<?php echo htmlspecialchars($project['filepath']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>">
+                    </li>
+                    <li class="project-title">
+                        <a href="#"><?php echo htmlspecialchars($project['title']); ?></a>
+                    </li>
+                    <li class="project-description">
+                        <?php echo nl2br(htmlspecialchars($project['description'])); ?>
+                    </li>
+                </ul>
+            <?php } ?>
         </section>
     </main>
 

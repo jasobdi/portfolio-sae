@@ -1,5 +1,4 @@
 <?php
-
 class NewUpload extends PDO {
 
     // Zielverzeichnis
@@ -21,10 +20,7 @@ class NewUpload extends PDO {
     // Array Fehlermeldungen
     public $errorMessages = [];
 
-
-
     /** KONSTRUKTOR */
-
     // Verbindung Zielordner
     public function __construct($targetFolder) {
         $this->targetFolder = $targetFolder;
@@ -61,11 +57,22 @@ class NewUpload extends PDO {
     // Datei in Zielordner verschieben
     public function moveFile($file) {
         if (empty($this->errorMessages)) {
-            $fileName = basename($file['name']);
-            $targetPath = $this->targetFolder . DIRECTORY_SEPARATOR . $fileName;
+            // Ursprünglicher Dateiname
+            $originalName = pathinfo($file['name'], PATHINFO_FILENAME);
+            $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+
+            // Zeitstempel im Format 2024-12-10-141024
+            $timestamp = date('Y-m-d-His'); 
+    
+            // Neuen Dateinamen generieren mit Zeitstempel
+            $newFileName = $originalName . '_' . $timestamp . '.' . $extension;
+    
+            // Zielpfad erstellen
+            $targetPath = $this->targetFolder . DIRECTORY_SEPARATOR . $newFileName;
             
+            // Datei verschieben
             if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                return $targetPath; // Erfolgreich hochgeladen
+                return $newFileName; // Rückgabe nur des Dateinamens
             } else {
                 $this->errorMessages[] = "Fehler beim Verschieben der Datei.";
                 return false;
@@ -73,6 +80,7 @@ class NewUpload extends PDO {
         }
         return false;
     }
+    
 
     // Ausgabe aller Fehler
     public function getErrorMessages() {

@@ -1,7 +1,4 @@
 <?php 
-
-/** FUNKTIONIERT!! */
-
 require_once('config.php');
 require_once ('class/Auth.class.php');
 require_once('class/Database.class.php');
@@ -31,5 +28,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['safe'])) {
         $error = 'Der Titel darf nicht leer sein.';
     }
 }
-
 ?>
