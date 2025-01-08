@@ -6,7 +6,10 @@ require_once('../controller/edit-single-project.php');
 <!DOCTYPE html>
 <html lang="de">
 <!-- HEAD -->
-<?php include('../partials/head-cms.php') ?>
+<?php 
+$siteTitle = 'Projekt bearbeiten - CMS'; // <title>
+include('../partials/head-cms.php') 
+?>
 
 <body>
     <!-- NAVIGATION -->

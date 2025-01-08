@@ -1,18 +1,21 @@
-<!-- HTML zuoberst weil das Dokument im Browser im "Quirk Mode" war -->
+<!-- HTML zuoberst weil das Dokument im Browser sonst im "Quirk Mode" ist -->
+<!-- Startseite CMS -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <?php 
 require_once('../controller/config.php');
 require_once ('../controller/class/Auth.class.php');
 require_once('../controller/edit-projects.php');
 
-// Prüfen ob User eingeloggt ist anhand von CheckLogIn-Methode von Auth.class.php
+// Prüfen ob User eingeloggt ist
 Auth::checkLogIn(); 
+
+$siteTitle = 'Dashboard - CMS'; // <title>
+include('../partials/head-cms.php') 
 ?>
-<head>
-    <?php include('../partials/head-cms.php') ?>
-</head>
+
 <body>
     <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>

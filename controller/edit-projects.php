@@ -11,6 +11,9 @@ Auth::checkLogIn();
 // Datenbankverbindung initialisieren
 $db = Database::getInstance();
 
+// Überprüfen ob eine ID in URL vorhanden ist
+$id = isset($_GET['id']) ? $_GET['id'] : null;
+
 // Arrays für die spezifischen Fehler für jedes Eingabefeld
 $errorMessages = [];
 $fileErrors = [];

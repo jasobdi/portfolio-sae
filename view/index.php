@@ -1,7 +1,4 @@
 <?php
-
-/** FUNKTIONIERT!! */
-
 // Datenbankverbindung herstellen
 require_once('../controller/config.php');
 require_once('../controller/class/Database.class.php');
@@ -11,13 +8,15 @@ $title = $db->getHomePageTitle(); // Titel aus der Datenbank holen
 
 // Fallback falls kein Titel vorhanden ist
 $pageTitle = $title['title'] ?? 'PORTFOLIO JANICE BADER'; 
-
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
     <!--  HEAD  -->
-    <?php include('../partials/head.php') ?>
+    <?php 
+    $siteTitle = 'Home - Portfolio Janice Bader'; // <title>
+    include('../partials/head.php') 
+    ?>
 <body>
 
     <!-- HEADER -->

@@ -8,7 +8,10 @@ $aboutData = $db->getAboutPageData(); // Daten aus der Datenbank holen
 <!DOCTYPE html>
 <html lang="de">
     <!--  HEAD  -->
-    <?php include('../partials/head.php') ?>
+    <?php 
+    $siteTitle = 'About - Portfolio Janice Bader'; // <title>
+    include('../partials/head.php') 
+    ?>
 <body>
 
     <!-- HEADER -->

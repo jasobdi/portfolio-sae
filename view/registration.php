@@ -3,19 +3,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <!--  HEAD  -->
-<?php include('../partials/head-cms.php') ?>
+<?php
+$siteTitle = 'Registrieren - CMS'; // <title>
+include('../partials/head-cms.php')
+?>
 
 <body>
-
-    <!-- HEADER -->
-    <header>
-    </header>
 
     <main class="main-registration">
         <h1>Registrieren</h1>
 
-
         <section class="registration-form">
+
             <form action="" method="POST" novalidate>
 
                 <label for="username">Benutzername</label>
@@ -24,14 +23,16 @@
                     <li>4-16 Zeichen</li>
                     <li>keine Leerzeichen</li>
                 </ul>
+
+                <!-- Fehlermeldung -->
                 <?php if (isset($errorMessages['username'])): ?>
                     <span><?php echo $errorMessages['username']; ?></span>
                 <?php endif; ?>
-                
-
 
                 <label for="email">E-Mail</label>
                 <input type="email" id="email" name="email" required value="<?php echo htmlspecialchars($registrData['email']); ?>">
+
+                <!-- Fehlermeldung -->
                 <?php if (isset($errorMessages['email'])): ?>
                     <span><?php echo $errorMessages['email']; ?></span>
                 <?php endif; ?>
@@ -46,19 +47,24 @@
                     <li>Zahl</li>
                     <li>keine Leerzeichen</li>
                 </ul>
+
+                <!-- Fehlermeldung -->
                 <?php if (isset($errorMessages['password'])): ?>
                     <span><?php echo $errorMessages['password']; ?></span>
                 <?php endif; ?>
-                
+
 
                 <label for="confirmpassword">Passwort wiederholen</label>
                 <input type="password" id="confirmpassword" name="confirmpassword" required value="<?php echo htmlspecialchars($registrData['confirmpw']); ?>">
+
+                <!-- Fehlermeldung -->
                 <?php if (isset($errorMessages['confirmpassword'])): ?>
                     <span><?php echo $errorMessages['confirmpassword']; ?></span>
                 <?php endif; ?>
 
                 <button type="submit" class="register" name="register">Registrieren</button>
             </form>
+
         </section>
     </main>
 

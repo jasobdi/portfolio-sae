@@ -1,16 +1,17 @@
-<?php 
+<?php
 require_once('../controller/class/Database.class.php');
 $db = Database::getInstance(); // Database-Klasse Initialisieren
-$portfolioData = $db->getPortfolioData(); // Titel & Beschreibung aus 'portfolio'-Tabelle
-$projectData = $db->getAllProjects(); // Titel, Beschreibung & Bild aus 'project'-Tabelle
+$portfolioData = $db->getPortfolioData(); // Titel & Beschreibung aus 'portfolio'-Tabelle SQL
+$projectData = $db->getAllProjects(); // Titel, Beschreibung & Bild aus 'project'-Tabelle SQL
 ?>
-
 
 <!DOCTYPE html>
 <html lang="de">
-    <!--  HEAD  -->
-    <?php include('../partials/head.php') ?>
-    
+<!--  HEAD  -->
+<?php
+$siteTitle = 'Portfolio - Portfolio Janice Bader'; // <title>
+include('../partials/head.php')
+?>
 <body>
 
     <!-- HEADER -->
@@ -20,11 +21,12 @@ $projectData = $db->getAllProjects(); // Titel, Beschreibung & Bild aus 'project
 
     <!-- MAIN -->
     <main class="main-projects">
-        
+
         <h1><?php echo htmlspecialchars($portfolioData['title']); ?></h1>
         <p><?php echo nl2br(htmlspecialchars($portfolioData['description'])); ?></p>
+
         <section class="projects-wrap">
-            <?php foreach ($projectData as $project){ ?>
+            <?php foreach ($projectData as $project) { ?>
                 <ul class="post">
                     <li class="project-img">
                         <img src="../images/projects/<?php echo htmlspecialchars($project['filepath']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>">
@@ -38,10 +40,12 @@ $projectData = $db->getAllProjects(); // Titel, Beschreibung & Bild aus 'project
                 </ul>
             <?php } ?>
         </section>
+        
     </main>
 
     <!-- FOOTER -->
     <?php include('../partials/footer.php') ?>
-    
+
 </body>
+
 </html>

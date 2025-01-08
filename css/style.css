@@ -204,6 +204,57 @@ footer p {
     margin: 0.5rem 0 0 0;
 }
 
+/* 404 */
+.notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.notfound h1 {
+    font-size: var(--mobile-h1-size);
+    font-family: var(--main-font-family);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.notfound p {
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.notfound > a {
+    color: var(--rose);
+    background: var(--white);
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    text-decoration: none;
+    font-weight: var(--lato-bold);
+    padding: var(--padding-button);
+    border-radius: 5px;
+}
+
+.notfound a:hover {
+    text-decoration: underline;
+}
+
+.notfound img {
+    width: 100%;
+    max-width: 250px;
+    margin: 2rem 0;
+}
+
+.notfound small a {
+    font-size: 10px;
+    text-decoration: none;
+    color: var(--darkblue);
+}
+
+
 
 /* MAIN */
 main {
@@ -961,53 +1012,6 @@ a.btn-view-all {
     margin: 3rem 0 2rem 0;
 }
 
-/* NEUES PORJEKT */
-
-.main-new-project-cms {
-    margin: 0 2rem;
-}
-
-.main-new-project-cms h1 {
-    text-align: center;
-    font-size: var(--mobile-title-size);
-    font-weight: var(--lato-light);
-    color: var(--darkblue);
-    margin: 1rem 0 2rem 0;
-}
-
-.project-upload label {
-    font-size: var(--body-font-size);
-    color: var(--darkblue);
-}
-
-.form-check {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 90%;
-}
-.form-check button {
-    font-size: var(--body-font-size);
-}
-
-.feedback {
-    margin: 0 0 1rem 2rem;
-    color: blue;
-    font-size: var(--body-font-size);
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
-}
-
-.error-messages {
-    margin: 0 0 1rem 2rem;
-    color: red;
-    font-size: var(--body-font-size);
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
-}
-
-/* PROJEKTE BEARBEITEN */
-
 .project-table {
     width: 90%;
     border-collapse: collapse;
@@ -1065,4 +1069,62 @@ a.btn-view-all {
     }
 
 
+/* NEUES PORJEKT */
+
+.main-new-project-cms {
+    margin: 0 2rem;
+}
+
+.main-new-project-cms h1 {
+    text-align: center;
+    font-size: var(--mobile-title-size);
+    font-weight: var(--lato-light);
+    color: var(--darkblue);
+    margin: 1rem 0 2rem 0;
+}
+
+.project-upload label {
+    font-size: var(--body-font-size);
+    color: var(--darkblue);
+}
+
+.form-check {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+}
+.form-check button {
+    font-size: var(--body-font-size);
+}
+
+.feedback {
+    margin: 0 0 1rem 2rem;
+    color: blue;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--lato-regular);
+}
+
+.error-messages {
+    margin: 0 0 1rem 2rem;
+    color: red;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--lato-regular);
+}
+
+/* PROJEKTE BEARBEITEN */
+
+.main-edit-single-project-cms {
+    margin: 0 2rem;
+}
+
+.main-edit-single-project-cms h1 {
+    text-align: center;
+    font-size: var(--mobile-title-size);
+    font-weight: var(--lato-light);
+    color: var(--darkblue);
+    margin: 1rem 0 2rem 0;
+}
 

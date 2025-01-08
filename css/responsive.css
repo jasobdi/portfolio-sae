@@ -17,6 +17,23 @@
         margin-top: 2rem;
     }
 
+    /* tablet: 404 */
+    .notfound h1 {
+        font-size: calc(var(--mobile-h1-size)*1.5);
+    }
+
+    .notfound p {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .notfound > a {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .notfound img {
+        max-width: 300px;
+    }
+
 
     /* tablet: HOME */
 
@@ -331,6 +348,19 @@
 
     .copyright {
         margin: 0;
+    }
+
+    /* desktop: 404 */
+    .notfound h1 {
+        margin-top: 4rem;
+    }
+
+    .notfound p {
+        margin-bottom: 3rem;
+    }
+
+    .notfound img {
+        max-width: 400px;
     }
 
 
@@ -667,6 +697,18 @@
 
 .project-upload label {
     font-size: calc(var(--body-font-size)*1.5);
+}
+
+ /* PROJEKT BEARBEITEN */
+
+.main-edit-single-project-cms {
+    margin: 0 0 0 12rem;
+}
+
+.main-edit-single-project-cms h1 {
+    text-align: start;
+    font-size: calc(var(--mobile-h1-size)*1.5);
+    margin: 2rem 0 2rem 2rem;
 }
 
 

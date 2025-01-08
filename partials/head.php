@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Entdecke das Portfolio von Janice Bader, einer aufstrebenden Studentin im Bereich Webdesign-und Development.">
-    <title>Portfolio Janice Bader</title>
+    <title><?php echo isset($siteTitle) ? htmlspecialchars($siteTitle) : 'Portfolio Janice Bader'; ?></title>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">

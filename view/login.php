@@ -3,18 +3,17 @@
 <!DOCTYPE html>
 <html lang="de">
 <!--  HEAD  -->
-<?php include('../partials/head-cms.php') ?>
-
+<?php 
+$pageTitle = 'Login - CMS'; // <title>
+include('../partials/head-cms.php') 
+?>
 <body>
-
-    <!-- HEADER -->
-    <header>
-    </header>
 
     <main class="main-login">
         <h1>Anmelden</h1>
 
         <section class="login-form">
+
             <form action="" method="POST">
                 <label for="username">Benutzername</label>
                 <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>">
@@ -22,6 +21,7 @@
                 <label for="password">Passwort</label>
                 <input type="password" id="password" name="password">
 
+                <!-- Fehlermeldung -->
                 <?php if (!empty($errorMessages)): ?>
                     <div class="error-messages">
                         <?php foreach ($errorMessages as $message): ?>
@@ -32,6 +32,7 @@
 
                 <button type="submit" class="login">Anmelden</button>
             </form>
+
         </section>
         
     </main>

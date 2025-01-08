@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <html lang="de">
 <!-- HEAD -->
-<?php include('../partials/head-cms.php') ?>
+<?php 
+$siteTitle = 'About bearbeiten - CMS'; // <title>
+include('../partials/head-cms.php') 
+?>
 <body>
     <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>

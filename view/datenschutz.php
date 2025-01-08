@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html lang="de">
     <!--  HEAD  -->
-    <?php include('../partials/head.php') ?>
+    <?php 
+    $siteTitle = 'Datenschutz - Portfolio Janice Bader'; // <title>
+    include('../partials/head.php') 
+    ?>
 <body>
 
     <!-- HEADER -->
