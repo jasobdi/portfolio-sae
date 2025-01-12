@@ -2,11 +2,13 @@
 
 <!DOCTYPE html>
 <html lang="de">
+
 <!--  HEAD  -->
 <?php 
 $pageTitle = 'Login - CMS'; // <title>
 include('../partials/head-cms.php') 
 ?>
+
 <body>
 
     <main class="main-login">
@@ -32,7 +34,7 @@ include('../partials/head-cms.php')
 
                 <button type="submit" class="login">Anmelden</button>
             </form>
-            <a class="home-link" href="index.php">Zur Startseite</a>
+            <a class="home-link" href="home.php">Zur Startseite</a>
 
         </section>
         

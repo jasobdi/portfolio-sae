@@ -5,6 +5,7 @@ require_once('../controller/edit-single-project.php');
 
 <!DOCTYPE html>
 <html lang="de">
+
 <!-- HEAD -->
 <?php 
 $siteTitle = 'Projekt bearbeiten - CMS'; // <title>
@@ -21,6 +22,7 @@ include('../partials/head-cms.php')
         <!-- Erfolgsmeldung -->
         <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
             <p class="success-message">Die Änderungen wurden erfolgreich gespeichert!</p>
+        <!-- Fehlermeldung -->
         <?php elseif (isset($errorMessage)): ?>
             <p class="error-message"><?php echo htmlspecialchars($errorMessage); ?></p>
         <?php endif; ?>

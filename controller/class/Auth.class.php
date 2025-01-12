@@ -6,9 +6,11 @@ class Auth {
     public static function checkLogin() {
         // Sessionstart falls noch nicht passiert
         if(session_status() == PHP_SESSION_NONE) {
-            session_name(SESSIONCOOKIE_NAME);
-            session_start(); // Session starten
+            self::startSession();
         }
+
+        // Session-Timeout prüfen
+        self::checkSessionTimeout();
 
         // keine userid gesetzt oder userid leer
         if(!isset($_SESSION['userid']) || empty($_SESSION['userid'])) {
@@ -20,12 +22,12 @@ class Auth {
 
     // eingeloggten Benutzernamen abrufen
     public static function getUserName() {
-        return isset($_SESSION['username']) ? $_SESSION['username'] : 'Unbekannt';
+        return $_SESSION['username'] ?? 'Unbekannt';
     }
 
     // eingeloggte User-ID abrufen
     public static function getUserId() {
-        return isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
+        return $_SESSION['userid'] ?? null;
     }
 
     // Login prüfen
@@ -55,19 +57,46 @@ class Auth {
         }
     }
 
-        // SESSION ID erneuern (gegen Session Hijacking)
-        public static function regenerateSession() {
-            // Sessionstart falls noch nicht passiert
-            if (session_status() == PHP_SESSION_NONE) {
-                session_name(SESSIONCOOKIE_NAME);
-                session_start(); // Session starten
+    // SESSION ID erneuern (gegen Session Hijacking)
+    public static function regenerateSession() {
+        // Sessionstart falls noch nicht passiert
+        if (session_status() == PHP_SESSION_NONE) {
+            self::startSession();
+        }
+        session_regenerate_id(); // Session ID erneuern
+    }
+
+    // Überprüfen ob User gerade angemeldet ist
+    public static function isLoggedIn() {
+        return isset($_SESSION['userid']) && !empty($_SESSION['userid']);
+    }
+
+    // Startet die Session
+    private static function startSession() {
+    session_name(SESSIONCOOKIE_NAME);
+    session_set_cookie_params([
+        'lifetime' => SESSION_LIFETIME * 60, // Minuten in Sekunden
+        'path' => '/',
+        'secure' => isset($_SERVER['HTTPS']), // Nur HTTPS
+        'httponly' => true,
+        'samesite' => 'Strict'
+    ]);
+    session_start();
+}
+
+    // Prüft, ob die Session abgelaufen ist
+    private static function checkSessionTimeout() {
+        if (isset($_SESSION['logintime'])) {
+            $passedTime = time() - $_SESSION['logintime'];
+
+            // Wenn die Session die Lebensdauer (15 Minuten) überschreitet -> beenden und auf Login-Seite weiterleiten
+            if ($passedTime > (SESSION_LIFETIME * 60)) {
+                session_unset(); // Session-Daten löschen
+                session_destroy(); // Session beenden
+                header('Location: login.php?timeout=1'); // Weiterleitung mit Timeout-Hinweis
+                exit();
             }
-            session_regenerate_id(); // Session ID erneuern
         }
-    
-        // Überprüfen ob User gerade angemeldet ist
-        public static function isLoggedIn() {
-            return isset($_SESSION['userid']) && !empty($_SESSION['userid']);
-        }
+    }
     }
 ?>

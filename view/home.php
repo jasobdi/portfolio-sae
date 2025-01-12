@@ -1,10 +1,12 @@
 <?php
-// Datenbankverbindung herstellen
 require_once('../controller/config.php');
 require_once('../controller/class/Database.class.php');
 
-$db = Database::getInstance(); // Database-Klasse Initialisieren
-$title = $db->getHomePageTitle(); // Titel aus der Datenbank holen
+// Database-Klasse Initialisieren
+$db = Database::getInstance();
+
+// Titel aus der Datenbank holen
+$title = $db->getHomePageTitle(); 
 
 // Fallback falls kein Titel vorhanden ist
 $pageTitle = $title['title'] ?? 'PORTFOLIO JANICE BADER'; 
@@ -12,11 +14,13 @@ $pageTitle = $title['title'] ?? 'PORTFOLIO JANICE BADER';
 
 <!DOCTYPE html>
 <html lang="de">
-    <!--  HEAD  -->
-    <?php 
-    $siteTitle = 'Home - Portfolio Janice Bader'; // <title>
-    include('../partials/head.php') 
-    ?>
+
+<!--  HEAD  -->
+<?php 
+$siteTitle = 'Home - Portfolio Janice Bader'; // <title>
+include('../partials/head.php') 
+?>
+
 <body>
 
     <!-- HEADER -->
@@ -74,7 +78,9 @@ $pageTitle = $title['title'] ?? 'PORTFOLIO JANICE BADER';
                         alt="Logo Janice Bader">
                 </div>
             </div>
+
             <hr>
+            
             <div class="description">
                 <p>description</p>
             </div>

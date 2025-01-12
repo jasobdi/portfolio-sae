@@ -20,6 +20,7 @@ class NewUpload extends PDO {
     // Array Fehlermeldungen
     public $errorMessages = [];
 
+
     /** KONSTRUKTOR */
     // Verbindung Zielordner
     public function __construct($targetFolder) {
@@ -54,6 +55,31 @@ class NewUpload extends PDO {
         return true;
     }
 
+    // Überprüft Dateiendung (File-Extension)
+    public function checkFileExtension($file) {
+        $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+        if (!in_array($extension, $this->allowedFileExtensions)) {
+            $this->errorMessages[] = "Ungültige Dateiendung. Erlaubt sind: " . implode(", ", $this->allowedFileExtensions);
+            return false;
+        }
+        return true;
+    }
+
+    // Überprüft Bildmasse (Height & Width)
+    public function checkImageDimensions($file) {
+        $imageSize = getimagesize($file['tmp_name']);
+        if ($imageSize) {
+            [$width, $height] = $imageSize;
+            if ($width > $this->maxImageWidth || $height > $this->maxImageHeight) {
+                $this->errorMessages[] = "Die Bildmasse dürfen maximal {$this->maxImageWidth}x{$this->maxImageHeight} Pixel betragen.";
+                return false;
+            }
+            return true;
+        }
+        $this->errorMessages[] = "Die Bildgröße konnte nicht überprüft werden.";
+        return false;
+    }
+
     // Datei in Zielordner verschieben
     public function moveFile($file) {
         if (empty($this->errorMessages)) {
@@ -72,7 +98,7 @@ class NewUpload extends PDO {
             
             // Datei verschieben
             if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                return $newFileName; // Rückgabe nur des Dateinamens
+                return $newFileName;
             } else {
                 $this->errorMessages[] = "Fehler beim Verschieben der Datei.";
                 return false;
@@ -81,7 +107,6 @@ class NewUpload extends PDO {
         return false;
     }
     
-
     // Ausgabe aller Fehler
     public function getErrorMessages() {
         return $this->errorMessages;
@@ -89,7 +114,13 @@ class NewUpload extends PDO {
     
         // Validiert und führt den gesamten Uploadprozess aus
     public function uploadFile($file) {
-        if ($this->checkFileError($file) && $this->checkFileMimeType($file) && $this->checkFileSize($file)) {
+        if (
+            $this->checkFileError($file) && // Dateiupload
+            $this->checkFileMimeType($file) && // MIME-Type
+            $this->checkFileSize($file) && // Dateigrösse 5MB
+            $this->checkFileExtension($file) && // DAteiendung
+            $this->checkImageDimensions($file) // Bildmasse 1000x1000px
+        ) {
             return $this->moveFile($file);
         }
         return false;

@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="de">
+
 <!--  HEAD  -->
 <?php
 $siteTitle = 'Registrieren - CMS'; // <title>
@@ -25,16 +26,14 @@ include('../partials/head-cms.php')
                     <li>4-16 Zeichen</li>
                     <li>keine Leerzeichen</li>
                 </ul>
-
-                <!-- Fehlermeldung -->
+                <!-- Fehlermeldung Benutzername -->
                 <?php if (isset($errorMessages['username'])): ?>
                     <span><?php echo $errorMessages['username']; ?></span>
                 <?php endif; ?>
 
                 <label for="email">E-Mail</label>
                 <input type="email" id="email" name="email" required value="<?php echo htmlspecialchars($registrData['email']); ?>">
-
-                <!-- Fehlermeldung -->
+                <!-- Fehlermeldung E-Mail -->
                 <?php if (isset($errorMessages['email'])): ?>
                     <span><?php echo $errorMessages['email']; ?></span>
                 <?php endif; ?>
@@ -49,8 +48,7 @@ include('../partials/head-cms.php')
                     <li>Zahl</li>
                     <li>keine Leerzeichen</li>
                 </ul>
-
-                <!-- Fehlermeldung -->
+                <!-- Fehlermeldung Passwort -->
                 <?php if (isset($errorMessages['password'])): ?>
                     <span><?php echo $errorMessages['password']; ?></span>
                 <?php endif; ?>
@@ -58,8 +56,7 @@ include('../partials/head-cms.php')
 
                 <label for="confirmpassword">Passwort wiederholen</label>
                 <input type="password" id="confirmpassword" name="confirmpassword" required value="<?php echo htmlspecialchars($registrData['confirmpw']); ?>">
-
-                <!-- Fehlermeldung -->
+                <!-- Fehlermeldung Passwortwiederholung -->
                 <?php if (isset($errorMessages['confirmpassword'])): ?>
                     <span><?php echo $errorMessages['confirmpassword']; ?></span>
                 <?php endif; ?>

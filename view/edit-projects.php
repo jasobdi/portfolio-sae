@@ -1,7 +1,10 @@
-<?php include('../controller/edit-projects.php') ?>
+<?php 
+/** Projekte (projekte.php) verwalten & Übersicht */
+include('../controller/edit-projects.php') ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <!--  HEAD  -->
 <?php 
 $siteTitle = 'Projekte - CMS'; // <title>
@@ -20,7 +23,7 @@ include('../partials/head-cms.php')
             <p class="success-message">Die Datei wurde erfolgreich hochgeladen!</p>
         <?php } ?>
 
-        <!-- Erfolgs- und Fehlermeldungen (Löschen-Button) -->
+        <!-- Erfolgs- und Fehlermeldungen Löschen-Button -->
         <?php if (isset($_GET['delete'])): ?>
                     <?php if ($_GET['delete'] == 'success'): ?>
                     <p class="success-message">Das Projekt wurde erfolgreich gelöscht!</p>
@@ -60,6 +63,7 @@ include('../partials/head-cms.php')
     <?php endif; ?>
         </section>
     </main>
+
     <!-- FOOTER -->
     <?php include('../partials/footer-cms.php') ?>
 </body>

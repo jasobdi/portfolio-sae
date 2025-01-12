@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Erstellungszeit: 10. Dez 2024 um 17:19
+-- Erstellungszeit: 12. Jan 2025 um 17:44
 -- Server-Version: 8.0.35
 -- PHP-Version: 8.2.20
 
@@ -28,11 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `ID` int NOT NULL,
-  `username` varchar(16) NOT NULL,
-  `useremail` varchar(255) NOT NULL,
-  `userpassword` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+    `ID` int NOT NULL,
+    `username` varchar(16) NOT NULL,
+    `useremail` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+    `userpassword` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Daten für Tabelle `user`
+--
+
+INSERT INTO `user` (`ID`, `username`, `useremail`, `userpassword`) VALUES
+(1, 'Janice', 'janiceb@gmail.com', '$2y$10$URVg49XCz546/RZchkLUhea0HtFs/aGMd3ixpq4068EQazSV0KhVa'),
+(7, 'Admin', 'admin@gmail.com', '$2y$10$bYBur855dNBRsRy8dIRXAelZ0uIYjsqGqzMHrHG2LromEE97TuzrC');
 
 --
 -- Indizes der exportierten Tabellen
@@ -42,9 +50,9 @@ CREATE TABLE `user` (
 -- Indizes für die Tabelle `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `useremail` (`useremail`),
-  ADD UNIQUE KEY `username` (`username`);
+    ADD PRIMARY KEY (`ID`),
+    ADD UNIQUE KEY `useremail` (`useremail`),
+    ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -54,7 +62,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

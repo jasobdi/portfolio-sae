@@ -3,7 +3,8 @@
 include('../controller/edit-projects.php') ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <!--  HEAD  -->
 <?php
 $siteTitle = 'Projekt hinzufügen - CMS'; // <title>
@@ -26,8 +27,7 @@ include('../partials/head-cms.php')
 
             <form method="post" enctype="multipart/form-data" novalidate>
                 <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize; ?>">
-
-                <!-- Fehlermeldung -->
+                <!-- Fehlermeldung Dateigrösse -->
                 <?php if (!empty($errorMessages)) { ?>
                     <div class="feedback">
                         <?php foreach ($errorMessages as $error) { ?>
@@ -39,8 +39,7 @@ include('../partials/head-cms.php')
                 <div class="form-check">
                     <label for="upload-file">Bild auswählen</label>
                     <input type="file" accept="image/*" name="upload-file" id="upload-file" required>
-
-                    <!-- Fehlermeldung -->
+                    <!-- Fehlermeldung Bild -->
                     <?php if (!empty($fileErrors)) { ?>
                         <span class="error-messages">
                             <?php foreach ($fileErrors as $fileError) { ?>
@@ -53,8 +52,7 @@ include('../partials/head-cms.php')
                 <div class="form-check">
                     <label for="upload-title">Titel</label>
                     <input type="text" name="upload-title" id="upload-title" value="<?= htmlspecialchars($newTitle ?? '') ?>" required>
-
-                    <!-- Fehlermeldung -->
+                    <!-- Fehlermeldung Titel -->
                     <?php if (!empty($titleErrors)) { ?>
                         <span class="error-messages">
                             <?php foreach ($titleErrors as $titleError) { ?>
@@ -67,8 +65,7 @@ include('../partials/head-cms.php')
                 <div class="form-check">
                     <label for="upload-desc">Beschreibung <small>(max. 150 Zeichen)</small></label>
                     <textarea name="upload-desc" id="upload-desc" maxlength="150" cols="50" rows="5" required><?= htmlspecialchars($newDescription ?? '') ?></textarea>
-
-                    <!-- Fehlermeldung -->
+                    <!-- Fehlermeldung Beschreibung -->
                     <?php if (!empty($descErrors)) { ?>
                         <span class="error-messages">
                             <?php foreach ($descErrors as $descError) { ?>

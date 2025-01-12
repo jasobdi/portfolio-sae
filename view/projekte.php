@@ -2,13 +2,20 @@
 
 <?php
 require_once('../controller/class/Database.class.php');
-$db = Database::getInstance(); // Database-Klasse Initialisieren
-$portfolioData = $db->getPortfolioData(); // Titel & Beschreibung aus 'portfolio'-Tabelle SQL
-$projectData = $db->getAllProjects(); // Titel, Beschreibung & Bild aus 'project'-Tabelle SQL
+
+// Database-Klasse Initialisieren
+$db = Database::getInstance(); 
+
+// Titel & Beschreibung aus 'portfolio'-Tabelle SQL
+$portfolioData = $db->getPortfolioData(); 
+
+// Titel, Beschreibung & Bild aus 'project'-Tabelle SQL
+$projectData = $db->getAllProjects(); 
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
+    
 <!--  HEAD  -->
 <?php
 $siteTitle = 'Portfolio - Portfolio Janice Bader'; // <title>

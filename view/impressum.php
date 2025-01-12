@@ -1,17 +1,19 @@
 
 <!DOCTYPE html>
 <html lang="de">
+
     <!--  HEAD  -->
     <?php 
     $siteTitle = 'Impressum - Portfolio Janice Bader'; // <title>
     include('../partials/head.php') 
     ?>
+
 <body>
+
     <!-- HEADER -->
     <header>
         <?php include('../partials/nav.php') ?>
     </header>
-
 
     <!-- MAIN -->
     <main class="main-impressum">

@@ -2,7 +2,7 @@
 <!-- Startseite CMS -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <?php 
 require_once('../controller/config.php');
@@ -29,6 +29,7 @@ include('../partials/head-cms.php')
 
     <main class="main-dashboard-cms">
         <h1>Dashboard</h1>
+        
         <div class="dashboard-btns">
             <a href="new-project.php" class="btn-new-project-dashboard">Neues Projekt erstellen</a>
             <a href="edit-projects.php" class="btn-view-all-dashboard">Alle Projekte ansehen</a>

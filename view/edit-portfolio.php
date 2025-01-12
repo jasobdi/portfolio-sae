@@ -1,7 +1,10 @@
-<?php include('../controller/edit-portfolio.php') ?>
+<?php 
+/** Seite "Portfolio" (projekte.php) anpassen */
+include('../controller/edit-portfolio.php') ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <!--  HEAD  -->
 <?php 
 $siteTitle = 'Portfolio bearbeiten - CMS'; // <title>
@@ -34,6 +37,7 @@ include('../partials/head-cms.php')
             <button type="submit" name="safe">Speichern</button> 
         </form>
     </main>
+
     <!-- FOOTER -->
     <?php include('../partials/footer-cms.php') ?>
 </body>

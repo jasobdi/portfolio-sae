@@ -1,12 +1,15 @@
-<?php include('../controller/edit-home.php') ?>
+<?php 
+/** Seite "Home" (home.php) bearbeiten */
+include('../controller/edit-home.php') ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <!--  HEAD  -->
 <?php 
 $siteTitle = 'Home bearbeiten - CMS'; // <title>
 include('../partials/head-cms.php') 
 ?>
+
 <body>
     <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>
@@ -33,6 +36,7 @@ include('../partials/head-cms.php')
 
         </form>
     </main>
+
     <!-- FOOTER -->
     <?php include('../partials/footer-cms.php') ?>
 </body>

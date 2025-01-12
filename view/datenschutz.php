@@ -1,11 +1,13 @@
 
 <!DOCTYPE html>
 <html lang="de">
+
     <!--  HEAD  -->
     <?php 
     $siteTitle = 'Datenschutz - Portfolio Janice Bader'; // <title>
     include('../partials/head.php') 
     ?>
+    
 <body>
 
     <!-- HEADER -->

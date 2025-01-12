@@ -1,12 +1,16 @@
-<?php include('../controller/edit-about.php') ?>
+<?php 
+/** Seite "About" (ueber-mich.php) anpassen */
+include('../controller/edit-about.php') ?>
 
 <!DOCTYPE html>
 <html lang="de">
+
 <!-- HEAD -->
 <?php 
 $siteTitle = 'About bearbeiten - CMS'; // <title>
 include('../partials/head-cms.php') 
 ?>
+
 <body>
     <!-- NAVIGATION -->
     <?php include('../partials/nav-cms.php') ?>
@@ -19,7 +23,7 @@ include('../partials/head-cms.php')
             <p class="success-message">Die Änderungen wurden erfolgreich gespeichert!</p>
         <?php } ?>
 
-        <!-- Fehlermeldung -->
+        <!-- Fehlermeldung speichern -->
         <?php if (isset($error)) { ?>
             <p class="error-message"><?php echo $error; ?></p>
         <?php } ?>

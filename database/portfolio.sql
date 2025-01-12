@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Erstellungszeit: 12. Jan 2025 um 17:42
+-- Erstellungszeit: 12. Jan 2025 um 17:43
 -- Server-Version: 8.0.35
 -- PHP-Version: 8.2.20
 
@@ -24,29 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `home`
+-- Tabellenstruktur für Tabelle `portfolio`
 --
 
-CREATE TABLE `home` (
+CREATE TABLE `portfolio` (
     `ID` int NOT NULL,
-    `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+    `title` varchar(50) NOT NULL,
+    `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Daten für Tabelle `home`
+-- Daten für Tabelle `portfolio`
 --
 
-INSERT INTO `home` (`ID`, `title`) VALUES
-(1, 'PORTFOLIO JANICE BADER');
+INSERT INTO `portfolio` (`ID`, `title`, `description`) VALUES
+(1, 'Portfolio', 'Hier präsentiere ich einige der Projekte welche während meiner Ausbildung an der SAE entstanden sind. Auf den jeweiligen Unterseiten finden sich weitere Angaben zum Arbeitsprozess, den Tools und natürlich weitere Bilder.');
 
 --
 -- Indizes der exportierten Tabellen
 --
 
 --
--- Indizes für die Tabelle `home`
+-- Indizes für die Tabelle `portfolio`
 --
-ALTER TABLE `home`
+ALTER TABLE `portfolio`
     ADD PRIMARY KEY (`ID`);
 
 --
@@ -54,9 +55,9 @@ ALTER TABLE `home`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `home`
+-- AUTO_INCREMENT für Tabelle `portfolio`
 --
-ALTER TABLE `home`
+ALTER TABLE `portfolio`
     MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 

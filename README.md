@@ -13,8 +13,8 @@ Dies ist meine Portfolio-Webseite welche ich als Projekt während meiner Ausbild
 ## Datenbank verbinden
 
 Alle Datenbank-Dateien (.sql) befinden sich im Ordner *database*  
-Die Daten zur Konfiguration Datenbank sind hier zu finden: controller/config.php
-Eventuell müssen die Daten für DBSERVER, DBNAME, DBUSER & DBPASSWORD angepasst werden.
+Die Daten zur Konfiguration der Datenbank sind hier zu finden: controller/config.php
+Eventuell müssen die Daten für DBSERVER, DBNAME, DBUSER & DBPASSWORD angepasst werden:
 
 define('DBSERVER', 'localhost');
 define('DBNAME', 'portfolio_jb');
