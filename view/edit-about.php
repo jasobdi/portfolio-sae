@@ -40,8 +40,9 @@ include('../partials/head-cms.php')
             <input type="file" name="img-top" id="img-top">
 
             <?php if ($currentData['image_1']) { ?>
-                <img src="<?php echo $currentData['image_1']; ?>" class="img1" alt="Bild 1" width="100">
+                <img src="../images/about/<?php echo htmlspecialchars($currentData['image_1']); ?>" class="img1" alt="Bild 1">
             <?php } ?>
+
 
             <label for="intro-bottom">Text 2</label>
             <textarea name="intro-bottom" id="intro-bottom" cols="30" rows="10" required><?php echo htmlspecialchars($currentData['intro_2']); ?></textarea>
@@ -53,7 +54,7 @@ include('../partials/head-cms.php')
             <input type="file" name="img-bottom" id="img-bottom">
 
             <?php if ($currentData['image_2']) { ?>
-                <img src="<?php echo $currentData['image_2']; ?>" class="img2" alt="Bild 2" width="100">
+                <img src="../images/about/<?php echo htmlspecialchars($currentData['image_2']); ?>" class="img2" alt="Bild 2">
             <?php } ?>
 
             <button type="submit" name="safe">Speichern</button> 

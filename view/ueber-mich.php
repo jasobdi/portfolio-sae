@@ -1,8 +1,12 @@
 <?php 
-// Datenbankverbindung und Abrufen der Daten
+require_once('../controller/config.php');
 require_once('../controller/class/Database.class.php');
-$db = Database::getInstance();  // Database-Klasse Initialisieren
-$aboutData = $db->getAboutPageData(); // Daten aus der Datenbank holen
+
+// Database-Klasse Initialisieren
+$db = Database::getInstance();  
+
+// Daten aus der Datenbank holen
+$aboutData = $db->getAboutPageData(); 
 ?>
 
 <!DOCTYPE html>
@@ -22,28 +26,29 @@ $aboutData = $db->getAboutPageData(); // Daten aus der Datenbank holen
     <!-- MAIN -->
     <main class="main-about">
         <section class="about-me">
-            <h1><?php echo htmlspecialchars($aboutData['title']); ?></h1>
+        <h1><?php echo htmlspecialchars($aboutData['title'] ?? 'About'); ?></h1>
 
             <!-- INTRODUCTION -->
             <div class="introduction-left">
                 <p class="introduction now">
-                    <?php echo nl2br(htmlspecialchars($aboutData['intro_1'])); ?>
+                    <?php echo nl2br(htmlspecialchars($aboutData['intro_1'] ?? '')); ?>
                 </p>
-                <?php if ($aboutData['image_1']) { ?>
-                    <img src="<?php echo $aboutData['image_1']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="<?php echo (htmlspecialchars($aboutData['desc_1'])); ?>">
-                <?php } ?>
-            </div>
-            <div class="introduction-right">
-                <p class="introduction me">
-                    <?php echo nl2br(htmlspecialchars($aboutData['intro_2'])); ?>
-                </p>
-                <?php if ($aboutData['image_2']) { ?>
-                    <img src="<?php echo $aboutData['image_2']; ?>" sizes="(max-width: 768px) 296px, 300px, 400px" alt="<?php echo (htmlspecialchars($aboutData['desc_2'])); ?>">
-                <?php } ?>
+
+                <?php if (!empty($aboutData['image_1'])): ?>
+                    <img src="../images/about/<?php echo htmlspecialchars($aboutData['image_1']); ?>" alt="<?php echo htmlspecialchars($aboutData['desc_1']); ?>">
+                <?php endif; ?>
             </div>
 
-            <!-- BUTTON-LEBENSLAUF -->
-            <div class="cv"><a href="assets/CV_JB.pdf">Download Lebenslauf</a></div>
+            <div class="introduction-right">
+                <p class="introduction me">
+                    <?php echo nl2br(htmlspecialchars($aboutData['intro_2'] ?? '')); ?>
+                </p>
+                
+                <?php if (!empty($aboutData['image_2'])): ?>
+                    <img src="../images/about/<?php echo htmlspecialchars($aboutData['image_2']); ?>" alt="<?php echo htmlspecialchars($aboutData['desc_2']); ?>">
+                <?php endif; ?>
+            </div>
+
         </section>
 
         <!-- KONTAKTFORMULAR -->

@@ -31,7 +31,7 @@ include('../partials/head-cms.php')
                 <?php if (!empty($errorMessages)) { ?>
                     <div class="feedback">
                         <?php foreach ($errorMessages as $error) { ?>
-                            <p class="error"><?= $error ?></p>
+                            <p class="error-messages"><?= $error ?></p>
                         <?php } ?>
                     </div>
                 <?php } ?>

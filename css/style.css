@@ -214,7 +214,7 @@ footer p {
 }
 
 .notfound h1 {
-    font-size: var(--mobile-h1-size);
+    font-size: var(--mobile-title-size);
     font-family: var(--main-font-family);
     text-align: center;
     margin-bottom: 2rem;
@@ -254,13 +254,10 @@ footer p {
     color: var(--darkblue);
 }
 
-
-
 /* MAIN */
 main {
     flex-grow: 2;
 }
-
 
 /* MAIN-HOME */
 
@@ -276,10 +273,9 @@ main {
     margin: 2rem 0;
 }
 
+/* MAIN-HOME - Image slider */
 
-/* MAIN-HOME - IMAGE-SLIDER */
-
-/*container*/
+/* container */
 .slider {
     width: 100%;
     height: 300px;
@@ -291,7 +287,7 @@ main {
     margin: 2rem 0;
 }
 
-/*images*/
+/* images */
 .slide {
     display: flex;
     justify-content: center;
@@ -325,12 +321,16 @@ main {
     transition: 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+/* description */
+
 .description p {
     text-align: center;
     font-size: var(--body-font-size);
     font-weight: var(--lato-regular);
     margin: 2rem 0;
 }
+
+/* controls */
 
 .container-buttons {
     margin: 0 0 2rem 0;
@@ -383,13 +383,12 @@ main {
 
 .main-about h1 {
     text-align: center;
-    font-size: var(--mobile-h1-size);
+    font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     margin: 2rem 0;
 }
 
-
-/* ABOUT - INTRODUCTION */
+/* ABOUT - Introduction */
 
 .introduction {
     text-align: start;
@@ -407,29 +406,7 @@ main {
     width: 296px;
 }
 
-/* ABOUT - BUTTON CV */
-
-.cv {
-    display: flex;
-    justify-content: center;
-    margin: 4rem 0 2rem 0;
-}
-
-.cv a {
-    color: var(--rose);
-    background: var(--white);
-    text-decoration: none;
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--lato-bold);
-    padding: var(--padding-button);
-    border-radius: 5px;
-}
-
-.cv a:hover {
-    text-decoration: underline;
-}
-
-/* ABOUT - CONTACT-FORM */
+/* ABOUT - Kontaktformular */
 
 .main-about h2 {
     text-align: center;
@@ -494,7 +471,7 @@ form small {
     font-weight: var(--lato-regular);
 }
 
-/* Error Message Form */
+/* Error Messages */
 form span {
     margin-bottom: 1rem;
     color: red;
@@ -510,7 +487,7 @@ form button {
     color: var(--rose);
     background: var(--white);
     text-decoration: none;
-    font-size: var(--mobile-h2-size);
+    font-size: var(--mobile-button-size);
     font-weight: var(--lato-bold);
     border: none;
     border-radius: 5px;
@@ -521,8 +498,7 @@ form button:hover {
     text-decoration: underline;
 }
 
-
-/* PROJECTS */
+/* PORTFOLIO */
 .main-projects {
     margin: 0 2rem;
 }
@@ -531,7 +507,7 @@ form button:hover {
     text-align: center;
     color: var(--darkblue);
     font-family: var(--main-font-family);
-    font-size: var(--mobile-h1-size);
+    font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     margin: 2rem;
 }
@@ -551,8 +527,7 @@ form button:hover {
     grid-template-rows: repeat(6, 1fr);
 }
 
-
-/* PROJECTS - DATENBANK */
+/* PORTFOLIO - Projekte */
 .post {
     width: 100%;
     list-style: none;
@@ -564,10 +539,9 @@ form button:hover {
     border-radius: 20px;
     padding: 1rem 0;
     margin: 0 0 2rem 0;
-
 }
 
-/* bilder */
+/* Bilder */
 .post img {
     display: flex;
     flex-direction: column;
@@ -582,7 +556,7 @@ form button:hover {
     justify-content: center;
 }
 
-/* Titel (BUTTON) Projekte aus Datenbank */
+/* Titel (Button) */
 .project-title {
     display: flex;
     justify-content: center;
@@ -606,7 +580,7 @@ form button:hover {
     text-decoration: underline;
 }
 
-/* Beschreibung Projekte aus Datenbank */
+/* Beschreibung Projekte */
 .project-description {
     text-align: center;
     text-wrap: balance;
@@ -617,18 +591,6 @@ form button:hover {
     margin: 1rem 0;
 }
 
-/* Arbeitsart Projekte aus Datenbank */
-.project-type {
-    display: flex;
-    justify-content: flex-start;
-    color: var(--darkblue);
-    list-style: none;
-    font-family: var(--main-font-family);
-    font-size: var(--body-font-size);
-    margin: 0.2rem 0 2rem 0;
-}
-
-
 /* IMPRESSUM */
 .main-impressum {
     margin: 0 2rem;
@@ -638,7 +600,7 @@ form button:hover {
     text-align: center;
     color: var(--darkblue);
     font-family: var(--main-font-family);
-    font-size: var(--mobile-h1-size);
+    font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     margin: 2rem 0 4rem 0;
 }
@@ -654,7 +616,6 @@ form button:hover {
     margin-bottom: 2rem;
 }
 
-
 /* DATENSCHUTZ */
 .main-datenschutz {
     margin: 0 2rem;
@@ -664,7 +625,7 @@ form button:hover {
     text-align: center;
     color: var(--darkblue);
     font-family: var(--main-font-family);
-    font-size: var(--mobile-h1-size);
+    font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     margin: 2rem 0 4rem 0;
 }
@@ -690,35 +651,60 @@ p.subtitle {
     margin: 0;
 }
 
-/* REGISTRIEREN */
-.main-registration {
-    margin: 0 2rem;
-}
 
 
-.main-registration h1 {
-    text-align: center;
-    font-size: var(--mobile-h1-size);
-    font-weight: var(--lato-light);
-    margin: 2rem 0;
-}
+/* CMS */
 
-/* REGISTRIEREN - FORM */
-.registration-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.registration-form ul {
+/* Meldungen */
+.success-message{
     margin-bottom: 1rem;
+    color: rgb(25, 161, 25);
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--lato-regular);
 }
 
-.registration-form ul li {
-    font-weight: var(--lato-light);
-    margin-left: 1rem;
+.feedback {
+    margin-bottom: 1rem;
+    color: blue;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--lato-regular);
 }
 
-/* LOGIN */
+.error-messages {
+    margin-bottom: 1rem;
+    color: red;
+    font-size: var(--body-font-size);
+    font-family: var(--main-font-family);
+    font-weight: var(--lato-regular);
+}
+
+
+/* CMS - NAVIGATION */
+/* mobile & tablet */
+
+.mobile-nav-cms {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background: var(--gray);
+    padding: 0 1rem;
+}
+
+.mobile-nav-cms img {
+    position: relative;
+    padding: 0 0 0 1rem;
+    height: 60px;
+}
+
+.mobile-nav-cms .overlay-nav .nav-links {
+    padding: 20vh 0 0 0;
+}
+
+/* CMS - LOGIN */
 
 .main-login {
     margin: 0 2rem;
@@ -726,7 +712,7 @@ p.subtitle {
 
 .main-login h1 {
     text-align: center;
-    font-size: var(--mobile-h1-size);
+    font-size: var(--mobile-title-size);
     font-weight: var(--lato-light);
     margin: 2rem 0;
 }
@@ -750,7 +736,7 @@ p.subtitle {
     text-decoration: underline;
 }
 
-/* LOGIN - FORM */
+/* Formular */
 
 .login-form form {
     width: 100%;
@@ -760,7 +746,9 @@ p.subtitle {
 
 .login-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 button.login {
@@ -768,66 +756,21 @@ button.login {
     color: var(--darkblue);
     background-color: var(--rose);
     font-weight: var(--lato-bold);
-
 }
 
-
-
-
-/* CMS - CONTENT MANAGEMENT SYSTEM */
-
-/* NAVIGATION-CMS */
-/* mobile & tablet */
-
-.mobile-nav-cms {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    background: var(--gray);
-    padding: 0 1rem;
+.home-link {
+    color: var(--darkblue);
 }
 
-.mobile-nav-cms img {
-    position: relative;
-    padding: 0 0 0 1rem;
-    height: 60px;
-}
-
-.mobile-nav-cms .overlay-nav .nav-links {
-    padding: 20vh 0 0 0;
-}
-
-.mobile-nav-cms .logout-link {
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 100px;
-    
-}
-
-/* (HAMBURGER & OVERLAY bei MOBILE-NAVIGATION) */
-
-
-
-/* DASHBOARD - CMS */
-
-.success-message{
-    margin-bottom: 2rem;
-    color: blue;
-    font-size: var(--body-font-size);
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
-}
+/* CMS - DASHBOARD */
 
 .main-dashboard-cms {
-        display: flex; 
-        flex-direction: column; 
-        align-items: center;
-        text-align: center;
-        margin-top: 20px;
-    }
-
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
 
 .main-dashboard-cms h1 {
     text-align: center;
@@ -837,49 +780,140 @@ button.login {
     margin: 1rem 0 2rem 0;
 }
 
-.btn-new-project {
-    display: inline-block; 
+.latest-projects-dashboard {
+    margin-top: 20px;
+}
+
+.latest-projects-dashboard h2 {
+    font-size: var(--mobile-h1-size);
+    font-weight: var(--lato-light);
+    color: var(--darkblue);
+    margin: 40px 0;
+    text-align: center;
+}
+
+/* Buttons neues Projekt & alle ansehen */ 
+.dashboard-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-new-project-dashboard {
     padding: 10px 20px; 
-    font-size: var(--body-font-size);
+    background: var(--rose);  
+    border-radius: 5px; 
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-view-all-dashboard { 
+    padding: 10px 20px; 
     background: var(--white);  
     border-radius: 5px; 
     text-align: center;
-    margin: 20px 0 20px 2rem; 
+    margin: 10px 0;
 }
 
-.btn-new-project:hover {
+.btn-new-project-dashboard:hover, .btn-view-all-dashboard:hover {
     text-decoration: underline;
 }
 
-a.btn-new-project{
+a.btn-new-project-dashboard{
+    color: var(--darkblue);
+    text-decoration: none;
+    font-size: var(--mobile-button-size);
+    font-weight: var(--lato-bold);
+}
+
+a.btn-view-all-dashboard{
     color: var(--rose);
     text-decoration: none;
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--lato-regular);
+    font-size: var(--mobile-button-size);
+    font-weight: var(--lato-bold);
 }
 
-.btn-view-all {
+/* Grid */
+.projects-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Mobile: 1 Spalte */
+    padding: 0 20px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+}
+
+.project-card-images img {
+    width: 100%;
+    height: auto;
     border-radius: 5px;
-    padding: 8px 12px;
-    margin: 2rem 0 0 0;
+    margin-bottom: 1rem;
 }
 
-.btn-view-all:hover {
-    color: var(--rose);
+.project-image {
+    max-width: 250px;
 }
 
-a.btn-view-all {
+.project-card-title {
+    font-size: var(--body-font-size);
+    margin: 20px 0;
+    font-weight: var(--lato-bold);
+    text-align: left;
+}
+
+.project-card-description {
+    font-size: 1rem;
     color: var(--darkblue);
-    font-size: var(--mobile-h2-size);
-    font-weight: var(--lato-light);
+    margin-bottom: 10px;
+    text-align: left;
 }
 
+/* Buttons löschen & bearbeiten */
+.project-card-actions {
+    display: flex;
+    flex-direction: column;
+}
 
-/* EDIT HOME - CMS */
+.btn-edit-dashboard, .btn-delete-dashboard {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: var(--body-font-size); 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-edit-dashboard {
+    background-color: blue;
+}
+
+.btn-edit-dashboard:hover {
+    text-decoration: underline;
+}
+
+.btn-delete-dashboard {
+    background-color: red;
+}
+
+.btn-delete-dashboard:hover {
+    text-decoration: underline;
+}
+
+/* CMS - EDIT-HOME */
 .main-edit-home-cms {
     margin: 0 2rem;
 }
@@ -907,9 +941,7 @@ a.btn-view-all {
     font-size: var(--body-font-size);
 }
 
-
-/* EDIT ABOUT - CMS */
-
+/* CMS - EDIT-ABOUT */
 .main-edit-about-cms {
     margin: 0 2rem;
 }
@@ -926,7 +958,7 @@ a.btn-view-all {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 90%;
+    width: 100%;
 }
 
 .edit-about label {
@@ -938,15 +970,14 @@ a.btn-view-all {
 }
 
 /* bilder */
-.img-top, .img-bottom {
-    height: 250px;
-    width: 250px;
-    background-color: antiquewhite;
-    margin-bottom: 1rem;
+img.img1 {
+    margin-bottom: 2rem;
+    max-width: 250px;
 }
 
-.img1, .img2 {
-    margin-bottom: 2rem;
+img.img2 {
+    margin-bottom: 1rem;
+    max-width: 250px;
 }
 
 .label-container {
@@ -961,7 +992,7 @@ a.btn-view-all {
     cursor: pointer;
 }
 
-/* EDIT PORTFOLIO - CMS */
+/* CMS - EDIT-PORTFOLIO */
 .main-edit-portfolio-cms {
     margin: 0 2rem;
 }
@@ -989,9 +1020,7 @@ a.btn-view-all {
     font-size: var(--body-font-size);
 }
 
-
-/* EDIT PROJECTS - CMS */
-
+/* CMS - EDIT-PROJECTS */
 .main-edit-projects-cms {
     margin: 0 2rem;
 }
@@ -1004,14 +1033,31 @@ a.btn-view-all {
     margin: 1rem 0 2rem 0;
 }
 
-.main-edit-projects-cms h2 {
-    text-align: center;
-    font-weight: var(--lato-light);
-    font-size: var(--mobile-h1-size);
-    color: var(--darkblue);
-    margin: 3rem 0 2rem 0;
+.container-btn-new-project {
+    display: flex;
+    justify-content: center;
 }
 
+.btn-new-project {
+    padding: 10px 20px; 
+    background: var(--rose);  
+    border-radius: 5px; 
+    text-align: center;
+    margin: 20px 0 20px 2rem;
+}
+
+.btn-new-project:hover {
+    text-decoration: underline;
+}
+
+a.btn-new-project {
+    color: var(--darkblue);
+    text-decoration: none;
+    font-size: var(--mobile-button-size);
+    font-weight: var(--lato-bold);
+}
+
+/* Tabelle Projekte */
 .project-table {
     width: 90%;
     border-collapse: collapse;
@@ -1026,23 +1072,24 @@ a.btn-view-all {
 
 .project-table tr {
     display: block; 
-    margin-bottom: 15px; 
+    margin-bottom: 2rem; 
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
 }
 
 .project-table td {
+    font-size: var(--body-font-size);
     display: block;
     width: 100%;
 }
 
-/* buttons in tabelle */
+/* Buttons in Tabelle */
 .btn-edit, .btn-delete {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    font-size: 14px; 
+    font-size: var(--body-font-size); 
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
@@ -1053,24 +1100,31 @@ a.btn-view-all {
     background-color: blue;
 }
 
+.btn-edit:hover {
+    text-decoration: underline;
+}
+
 .btn-delete {
     background-color: red;
 }
 
+.btn-delete:hover {
+    text-decoration: underline;
+}
+
 .project-table tr {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; 
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
 
     .btn-edit, .btn-delete {
-        width: 100%;
-        margin-top: 5px;
-    }
+    width: 100%;
+    margin-top: 5px;
+}
 
 
-/* NEUES PORJEKT */
-
+/* CMS - NEW-PROJECT */
 .main-new-project-cms {
     margin: 0 2rem;
 }
@@ -1098,23 +1152,7 @@ a.btn-view-all {
     font-size: var(--body-font-size);
 }
 
-.feedback {
-    margin: 0 0 1rem 2rem;
-    color: blue;
-    font-size: var(--body-font-size);
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
-}
-
-.error-messages {
-    margin: 0 0 1rem 2rem;
-    color: red;
-    font-size: var(--body-font-size);
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
-}
-
-/* PROJEKTE BEARBEITEN */
+/* CMS - EDIT-SINGLE-PROJECT */
 
 .main-edit-single-project-cms {
     margin: 0 2rem;
@@ -1127,4 +1165,46 @@ a.btn-view-all {
     color: var(--darkblue);
     margin: 1rem 0 2rem 0;
 }
+
+.main-edit-single-project-cms form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a.go-back {
+    font-size: var(--body-font-size);
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/* CMS - REGISTRIEREN */
+.main-registration {
+    margin: 0 2rem;
+}
+
+.main-registration h1 {
+    text-align: center;
+    font-size: var(--mobile-title-size);
+    font-weight: var(--lato-light);
+    margin: 2rem 0;
+}
+
+/* Formular */
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form ul {
+    margin-bottom: 1rem;
+}
+
+.registration-form ul li {
+    font-weight: var(--lato-light);
+    margin-left: 1rem;
+}
+
+
 

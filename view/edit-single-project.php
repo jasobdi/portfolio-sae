@@ -48,6 +48,7 @@ include('../partials/head-cms.php')
 
             <button type="submit" name="update">Speichern</button>
         </form>
+        <a class="go-back" href="edit-projects.php"><< Zurück zu allen Projekten</a>
     </main>
 
     <!-- FOOTER -->

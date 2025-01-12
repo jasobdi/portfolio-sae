@@ -4,7 +4,6 @@
 /* TABLET */
 @media (min-width: 768px) {
 
-
     /* tablet: NAVIGATION */
 
     .nav-links a {
@@ -34,7 +33,6 @@
         max-width: 300px;
     }
 
-
     /* tablet: HOME */
 
     .main-home h1 {
@@ -61,18 +59,16 @@
         font-size: 3rem;
     }
 
-
     /* tablet: ABOUT */
-
-
-    .main-about h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
-        text-align: start;
-        margin: 2rem 0;
-    }
 
     .main-about {
         margin: 4rem 4rem;
+    }
+
+    .main-about h1 {
+        font-size: calc(var(--mobile-title-size)*1.5);
+        text-align: start;
+        margin: 2rem 0;
     }
 
     .introduction {
@@ -100,19 +96,7 @@
         margin-bottom: 6rem;
     }
 
-
-    /* tablet: ABOUT - CV-BUTTON */
-
-    .cv {
-        display: flex;
-        justify-content: center;
-    }
-
-    .cv a {
-        font-size: calc(var(--body-font-size)*1.5);
-    }
-
-    /* tablet: ABOUT - CONTACT FORM */
+    /* ABOUT - Kontaktformular */
 
     .main-about h2 {
         font-size: calc(var(--mobile-h1-size)*1.5);
@@ -135,15 +119,14 @@
         margin: 4rem 0;
     }
 
-
-    /* tablet: PROJECTS */
+    /* tablet: PORTFOLIO */
 
     .main-projects {
         margin: 2rem 4rem 4rem 4rem;
     }
 
     .main-projects h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         text-align: start;
         margin: 2rem 0;
     }
@@ -159,45 +142,10 @@
         grid-template-rows: repeat(6, 1fr);
     }
 
-
-    /* PROJECTS - DATENBANK */
-
-    .post {
-        margin: 2rem 0;
-    }
-
-    /* bilder */
-    .post img {
-        width: 70%;
-    }
-
-    /* Titel (BUTTON) Projekte aus Datenbank */
-    .project-title {
-        margin: 3rem 0;
-    }
-
-    .project-title a {
-        font-size: calc(var(--body-font-size)*1.5);
-    }
-
-    /* Beschreibung Projekte aus Datenbank */
-    .project-description {
-        font-size: calc(var(--body-font-size)*1.5);
-        font-weight: var(--lato-light);
-        margin: 0 0 1rem 0;
-    }
-
-    /* Arbeitsart Projekte aus Datenbank */
-    .project-type {
-        font-size: calc(var(--body-font-size)*1.5);
-        font-weight: var(--lato-light);
-    }
-
-
     /* tablet: IMPRESSUM */
 
     .main-impressum h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         text-align: center;
         margin: 2rem 0;
     }
@@ -208,11 +156,10 @@
         line-height: 4rem;
     }
 
-
     /* tablet: DATENSCHUTZ */
 
     .main-datenschutz h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         text-align: start;
         margin: 2rem 0;
     }
@@ -221,19 +168,14 @@
         font-weight: var(--lato-bold);
     }
 
-    /* tablet: REGISTRIEREN - FORM */
-    .main-registration h1 {
-        text-align: start;
-        font-size: calc(var(--mobile-h1-size)*1.5);
-    }
 
-    .registration-form form {
-        width: 70%;
-    }
 
-     /* tablet: LOGIN - FORM */
+    /* tablet: CMS */
+
+     /* tablet: CMS - LOGIN  */
+
     .main-login h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
     }
 
     .login-form form {
@@ -249,14 +191,34 @@
         font-size: calc(var(--body-font-size)*1.5);
     }
 
-    /* tablet: DASHBOARD - CMS */
+    /* tablet: CMS - DASHBOARD */
+
+    .latest-projects-dashboard h2 {
+        font-weight: var(--lato-light);
+    }
+
+    /* Grid */
+
+    .latest-projects-dashboard {
+        margin: 0 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: 2 Spalten */
+    }
 
 
-    /* tablet: EDIT-PROJECTS - CMS */
+    /* tablet: CMS - EDIT-PROJECTS */
 
     .project-edit {
         margin: 0 2rem;
     }
+
+    a.go-back {
+        font-size: 24px;
+        justify-content: flex-start;
+    }
+
     /* tabelle */
     .project-table {
         display: table; 
@@ -277,8 +239,8 @@
     }
 
     .project-table tr {
-        display: table-row;
-        margin: 0; 
+        display: table-row; 
+        margin-bottom: 4rem;
         border: none; 
     }
 
@@ -289,7 +251,11 @@
         margin: 0 0 0 10px; 
     }
 
+    /* tablet: CMS - REGISTRIEREN */
 
+    .registration-form form {
+        width: 70%;
+    }
 
 }
 
@@ -319,7 +285,6 @@
     .mobile-nav-cms {
         display: none;
     }
-
 
     /* desktop: FOOTER */
 
@@ -363,7 +328,6 @@
         max-width: 400px;
     }
 
-
     /* desktop: HOME */
 
     .main-home {
@@ -374,7 +338,7 @@
         font-size: calc(var(--mobile-title-size)*3);
     }
 
-    /* HOME - IMAGE-SLIDER */
+    /* HOME- Image Slider */
 
     .slide {
         display: flex;
@@ -399,12 +363,7 @@
         font-size: 4rem;
     }
 
-
     /* desktop: ABOUT */
-
-    .main-about h1 {
-        font-size: calc(var(--mobile-h1-size)*1.5);
-    }
 
     .introduction {
         font-size: calc(var(--body-font-size)*1.5);
@@ -421,11 +380,7 @@
         ;
     }
 
-    .main-about h2 {
-        font-size: calc(var(--mobile-h2-size)*2);
-    }
-
-    /* ABOUT - CONTACT-FORM */
+    /* ABOUT - Kontaktformular */
 
     .contact-form form {
         width: 50%;
@@ -443,7 +398,6 @@
     form select {
         font-size: calc(var(--body-font-size)*1.5);
     }
-
 
     /* desktop: PROJECTS */
 
@@ -463,41 +417,10 @@
         margin: 5rem;
     }
 
-
-    /* PROJECTS - DATENBANK */
-
-    .post {
-        margin: 2rem 0;
-    }
-
-    /* Titel (BUTTON) Projekte aus Datenbank */
-    .project-title {
-        margin: 3rem 0;
-    }
-
-    .project-title a {
-        font-size: calc(var(--body-font-size)*1.5);
-    }
-
-    /* Beschreibung Projekte aus Datenbank */
-    .project-description {
-        font-size: calc(var(--body-font-size)*1.5);
-        font-weight: var(--lato-light);
-        margin: 0 4rem 1rem 4rem;
-    }
-
-    /* Arbeitsart Projekte aus Datenbank */
-    .project-type {
-        font-size: calc(var(--body-font-size)*1.5);
-        font-weight: var(--lato-light);
-    }
-
-
     /* desktop: DATENSCHUTZ */
 
     .main-datenschutz h2 {
         font-size: calc(var(--body-font-size)*1.5);
-        font-weight: var(--lato-bold);
     }
 
     .main-datenschutz p {
@@ -505,28 +428,20 @@
     }
 
 
-    /* desktop: REGISTRIEREN - FORM */
 
-    .registration-form form {
-        width: 50%;
+    /* desktop: CMS */
+
+    /* Meldungen */
+    .success-message {
+        margin-left: 2rem;
     }
-
-    .registration-form label {
-        margin-bottom: 0.7rem;
+    
+    .feedback {
+        margin-left: 2rem;
     }
+    
 
-    /* desktop: LOGIN - FORM */
-
-    .login-form form {
-        width: 50%;
-    }
-
-    .login-form label {
-        margin-bottom: 1rem;
-    }
-
-
-    /* desktop: SIDEBAR-NAVIGATION-CMS */
+    /* desktop: CMS - SIDEBAR-NAVIGATION */
 
     .sidenav-cms {
         display: flex;
@@ -551,7 +466,7 @@
 
     .sidenav-cms a {
         text-decoration: none;
-        font-size: var(--mobile-h2-size);
+        font-size: var(--mobile-button-size);
         color: var(--white);
         padding: 1rem 0 1rem 2rem;
     }
@@ -562,42 +477,75 @@
     }
 
     .sidenav-cms a:last-child {
-        color: var(--rose);
         margin-top: 8rem;
     }
 
     .sidenav-cms a:last-child:hover {
-        color: var(--white);
+        color: var(--rose);
     }
 
-    /* dasktop: DASHBOARD-CMS */
+    /* desktop: CMS - FOOTER */
 
-    .success-message{ 
-    margin: 0 0 1rem 2rem;
-    color: blue;
-    font-size: var(--body-font-size);
-    font-family: var(--main-font-family);
-    font-weight: var(--lato-regular);
+    .footer-cms {
+        margin-left: 10rem;
     }
+
+    /* desktop: CMS - LOGIN */
+
+    .login-form form {
+        width: 50%;
+    }
+
+    .login-form label {
+        margin-bottom: 1rem;
+    }
+
+    /* desktop: CMS - DASHBOARD */
 
     .main-dashboard-cms {
         margin: 0 0 0 12rem;
+        align-items: flex-start;
     }
 
     .main-dashboard-cms h1 {
         text-align: start;
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         margin: 2rem 0 2rem 2rem;
     }
 
-    /* desktop: EDIT HOME - CMS */
+    .latest-projects-dashboard h2 {
+        text-align: start;
+        font-size: calc(var(--mobile-h1-size)*1.5);
+        margin: 2rem 0;
+    }
+
+    .dashboard-btns {
+        flex-direction: row;
+    }
+
+    .btn-new-project-dashboard {
+        margin: 2rem 0 2rem 2rem;
+    }
+
+    .btn-view-all-dashboard {
+        margin: 2rem 0 2rem 2rem;
+    }
+
+    /* Grid */
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 Spalten */
+    }
+
+
+    /* desktop: CMS - EDIT HOME */
     .main-edit-home-cms {
         margin: 0 0 0 12rem;
     }
 
     .main-edit-home-cms h1 {
         text-align: start;
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         margin: 2rem 0 2rem 2rem;
     }
 
@@ -610,14 +558,18 @@
         font-size: calc(var(--body-font-size)*1.5);
     }
 
-    /* desktop: EDIT ABOUT - CMS */
+    .edit-home button {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    /* desktop: CMS - EDIT ABOUT */
     .main-edit-about-cms {
         margin: 0 0 0 12rem;
     }
 
     .main-edit-about-cms h1 {
         text-align: start;
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         margin: 2rem 0 2rem 2rem;
     }
 
@@ -628,17 +580,24 @@
 
     .edit-about label {
         font-size: calc(var(--body-font-size)*1.5);
-
     }
 
-    /* desktop: EDIT PORTFOLIO - CMS */
+    .edit-about textarea {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .edit-about button {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    /* desktop: CMS - EDIT PORTFOLIO */
     .main-edit-portfolio-cms {
         margin: 0 0 0 12rem;
     }
 
     .main-edit-portfolio-cms h1 {
         text-align: start;
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         margin: 2rem 0 2rem 2rem;
     }
 
@@ -652,20 +611,32 @@
 
     }
 
-    /* desktop: EDIT PROJECTS - CMS */
+    .edit-portfolio textarea {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .edit-portfolio button {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    /* desktop: CMS - EDIT PROJECTS */
     .main-edit-projects-cms {
         margin: 0 0 0 12rem;
     }
 
     .main-edit-projects-cms h1 {
         text-align: start;
-        font-size: calc(var(--mobile-h1-size)*1.5);
+        font-size: calc(var(--mobile-title-size)*1.5);
         margin: 2rem 0 2rem 2rem;
+    }
+
+    .container-btn-new-project {
+        justify-content: flex-start;
     }
 
     .main-edit-projects-cms h2 {
         text-align: start;
-        font-size: calc(var(--mobile-h2-size)*1.5);
+        font-size: calc(var(--mobile-h1-size)*1.5);
         margin: 2rem 0 2rem 2rem;
     }
 
@@ -674,16 +645,20 @@
         margin: 0 0 0 2rem;
     }
 
-    .feedback, .error-messages {
-        font-size: calc(var(--body-font-size)*1.5);
-    }
-
      /* tabelle */
     .project-table tr:hover {
         background-color: #f9f9f9;
     }
 
-    /* NEUES PORJEKT */
+    .project-table td {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    .project-table-title {
+        font-size: calc(var(--body-font-size)*1.5);
+    }
+
+    /* desktop: CMS - NEUES PORJEKT */
 
 .main-new-project-cms {
     margin: 0 0 0 12rem;
@@ -691,7 +666,7 @@
 
 .main-new-project-cms h1 {
     text-align: start;
-    font-size: calc(var(--mobile-h1-size)*1.5);
+    font-size: calc(var(--mobile-title-size)*1.5);
     margin: 2rem 0 2rem 2rem;
 }
 
@@ -699,7 +674,7 @@
     font-size: calc(var(--body-font-size)*1.5);
 }
 
- /* PROJEKT BEARBEITEN */
+ /* desktop: CMS - PROJEKT BEARBEITEN */
 
 .main-edit-single-project-cms {
     margin: 0 0 0 12rem;
@@ -707,8 +682,39 @@
 
 .main-edit-single-project-cms h1 {
     text-align: start;
-    font-size: calc(var(--mobile-h1-size)*1.5);
+    font-size: calc(var(--mobile-title-size)*1.5);
     margin: 2rem 0 2rem 2rem;
+}
+
+.main-edit-single-project-cms textarea {
+    font-size: calc(var(--body-font-size)*1.5);
+}
+
+.main-edit-single-project-cms button {
+    margin-left: 2rem;
+}
+
+a.go-back {
+    margin-left: 2rem;
+}
+
+/* desktop: CMS - REGISTRIEREN */
+
+.main-registration {
+    margin: 0 0 0 14rem;
+}
+
+.main-registration h1 {
+    text-align: start;
+    font-size: calc(var(--mobile-title-size)*1.5);
+}
+
+.registration-form form {
+    width: 50%;
+}
+
+.registration-form label {
+    margin-bottom: 0.7rem;
 }
 
 

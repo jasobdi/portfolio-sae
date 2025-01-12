@@ -1,3 +1,5 @@
+<!-- Neuer Seitenname: "Portfolio" - Dateiname bleibt vorerst "Projekte.php" -->
+
 <?php
 require_once('../controller/class/Database.class.php');
 $db = Database::getInstance(); // Database-Klasse Initialisieren
@@ -40,7 +42,7 @@ include('../partials/head.php')
                 </ul>
             <?php } ?>
         </section>
-        
+
     </main>
 
     <!-- FOOTER -->

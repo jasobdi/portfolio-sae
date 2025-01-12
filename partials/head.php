@@ -21,6 +21,6 @@
     <script src="https://kit.fontawesome.com/9bb62c958c.js" crossorigin="anonymous" defer></script>
     <script src="../js/nav.js" defer></script>
     <script src="../js/slider.js" defer></script>
-    <script src="../js/projekte.js" defer></script>
-    <script src="../js/registration.js" defer></script>
+    <script src="../js/contact.js" defer></script>
+    <!-- <script src="../js/projekte.js" defer></script> -->
 </head>

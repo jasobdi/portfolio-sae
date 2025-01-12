@@ -12,7 +12,7 @@ include('../partials/head-cms.php')
     <?php include('../partials/nav-cms.php') ?>
 
     <main class="main-edit-portfolio-cms">
-        <h1>Portfolioseite bearbeiten</h1>
+        <h1>Portfolio bearbeiten</h1>
 
         <!-- Erfolgsmeldung -->
         <?php if (isset($_GET['success']) && $_GET['success'] == 1) { ?>

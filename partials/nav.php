@@ -4,8 +4,8 @@
             <a href="#"><img class="logo" src="../images/logo_jb.webp" alt="Initialen JB in rosa, leicht kursiv"></a>
             <ul>
                 <li><a href="../view/index.php">Home</a></li>
-                <li><a href="../view/ueber-mich.php">Über mich</a></li>
-                <li><a href="../view/portfolio.php">Projekte</a></li>
+                <li><a href="../view/ueber-mich.php">About</a></li>
+                <li><a href="../view/projekte.php">Portfolio</a></li>
             </ul>
         </nav>
         
@@ -20,10 +20,10 @@
                         <a href="../view/index.php">HOME</a>
                     </li>
                     <li>
-                        <a href="../view/ueber-mich.php">ÜBER MICH</a>
+                        <a href="../view/ueber-mich.php">ABOUT</a>
                     </li>
                     <li>
-                        <a href="../view/portfolio.php">PROJEKTE</a>
+                        <a href="../view/projekte.php">PORTFOLIO</a>
                     </li>
                     <li>
                         <a href="../view/impressum.php">IMPRESSUM</a>

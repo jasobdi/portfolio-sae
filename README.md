@@ -2,7 +2,7 @@
 
 ## Übersicht
 
-Dies ist meine Portfolio-Webseite welche ich als Projekt während meiner Ausbildung an der SAE erstelle und weiterentwickle.
+Dies ist meine Portfolio-Webseite welche ich als Projekt während meiner Ausbildung an der SAE erstellt habe und weiterentwickle.
 
 ## Projekt installieren
 
@@ -12,7 +12,7 @@ Dies ist meine Portfolio-Webseite welche ich als Projekt während meiner Ausbild
 
 ## Datenbank verbinden
 
-Alle Datenbank-Dateien befinden sich im Ordner *database*  
+Alle Datenbank-Dateien (.sql) befinden sich im Ordner *database*  
 Die Daten zur Konfiguration Datenbank sind hier zu finden: controller/config.php
 Eventuell müssen die Daten für DBSERVER, DBNAME, DBUSER & DBPASSWORD angepasst werden.
 
@@ -25,8 +25,8 @@ define('DBPASSWORD', 'root');
 
 Dies sind die Logindaten für den Admin um Änderungen im CMS vorzunehmen.
 
-Benutzername: 
-Passwort:
+Benutzername: Admin
+Passwort: Admin_9876
 
 ## Technische Daten
     

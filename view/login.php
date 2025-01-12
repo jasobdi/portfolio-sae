@@ -25,13 +25,14 @@ include('../partials/head-cms.php')
                 <?php if (!empty($errorMessages)): ?>
                     <div class="error-messages">
                         <?php foreach ($errorMessages as $message): ?>
-                            <p style="color: red;"><?php echo htmlspecialchars($message); ?></p>
+                            <p><?php echo htmlspecialchars($message); ?></p>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
 
                 <button type="submit" class="login">Anmelden</button>
             </form>
+            <a class="home-link" href="index.php">Zur Startseite</a>
 
         </section>
         

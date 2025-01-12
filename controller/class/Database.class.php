@@ -198,6 +198,14 @@ class Database {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Limitierte Anzahl Projekte abrufen (hier: 3 neuste)
+    public function getLatestProjects($limit = 3) {
+        $stmt = $this->db->prepare('SELECT ID, filepath, title, description, created_by, created_at FROM project ORDER BY created_at DESC LIMIT :limit');
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 
 ?>

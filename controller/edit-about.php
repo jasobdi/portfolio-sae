@@ -31,30 +31,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['safe'])) {
     // Neue Upload-Instanz für die Bilder
     $upload = new NewUpload($targetFolder);
     
-    // Bild 1 hochladen
-    $newImage1 = '';
-    if (isset($_FILES['img-top'])) {
+    // Bild 1 hochladen oder bestehenden Pfad beibehalten
+    $newImage1 = $currentData['image_1']; // aktueller Pfad
+    if (!empty($_FILES['img-top']['name'])) {
         $uploadedImage1 = $upload->uploadFile($_FILES['img-top']);
         if ($uploadedImage1) {
-            $newImage1 = $uploadedImage1; // Pfad zum hochgeladenen Bild
+            $newImage1 = $uploadedImage1; // Neuer Pfad, falls Upload erfolgreich
         } else {
             $errorMessages = array_merge($errorMessages, $upload->getErrorMessages());
         }
     }
 
-    // Bild 2 hochladen
-    $newImage2 = '';
-    if (isset($_FILES['img-bottom'])) {
+    // Bild 2 hochladen oder bestehenden Pfad beibehalten
+    $newImage2 = $currentData['image_2']; // aktueller Pfad
+    if (!empty($_FILES['img-bottom']['name'])) {
         $uploadedImage2 = $upload->uploadFile($_FILES['img-bottom']);
         if ($uploadedImage2) {
-            $newImage2 = $uploadedImage2; // Pfad zum hochgeladenen Bild
+            $newImage2 = $uploadedImage2; // Neuer Pfad, falls Upload erfolgreich
         } else {
             $errorMessages = array_merge($errorMessages, $upload->getErrorMessages());
         }
     }
 
     // Sicherstellen, dass die Pflichtfelder ausgefüllt sind
-    if (!empty($newTitle) && !empty($newIntroduction1) && !empty($newDescription1) &&  !empty($newIntroduction2) && !empty($newDescription2)) {
+    if (!empty($newTitle) && !empty($newIntroduction1) && !empty($newDescription1) && !empty($newIntroduction2) && !empty($newDescription2)) {
         if ($db->updateAboutPageData($newTitle, $newIntroduction1, $newDescription1, $newImage1, $newIntroduction2, $newDescription2, $newImage2)) {
             // Erfolgreich gespeichert
             header('Location: edit-about.php?success=1');

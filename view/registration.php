@@ -9,7 +9,9 @@ include('../partials/head-cms.php')
 ?>
 
 <body>
-
+    <!-- NAVIGATION -->
+    <?php include('../partials/nav-cms.php') ?>
+    
     <main class="main-registration">
         <h1>Registrieren</h1>
 
