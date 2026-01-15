@@ -1,4 +1,4 @@
-# Portfolio Janice Bader
+# Portfolio
 
 ## Übersicht
 
@@ -21,12 +21,6 @@ define('DBNAME', 'portfolio_jb');
 define('DBUSER', 'root');
 define('DBPASSWORD', 'root');
 
-## Logindaten
-
-Dies sind die Logindaten für den Admin um Änderungen im CMS vorzunehmen.
-
-Benutzername: Admin
-Passwort: Admin_9876
 
 ## Technische Daten
     
